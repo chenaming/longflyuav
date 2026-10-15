@@ -1,0 +1,2 @@
+odin_ros_driver
+-DCATKIN_DEVEL_PREFIX=/home/nvidia/agile/odin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/nvidia/agile/odin_ws/install -G Unix Makefiles

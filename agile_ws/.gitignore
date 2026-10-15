@@ -1,0 +1,19 @@
+build/
+devel/
+*.pcd
+
+**/Log/*
+!**/Log/*.py
+!**/Log/*.m
+!**/Log/*.md
+
+.vscode/c_cpp_properties.json
+.vscode/settings.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Agent / local tooling
+.agents/

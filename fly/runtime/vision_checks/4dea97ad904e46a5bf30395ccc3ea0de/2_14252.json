@@ -1,0 +1,86 @@
+{
+  "label": "continue",
+  "run_id": "chair-00866a5ee82c",
+  "request_id": 14252,
+  "instruction": "fly to the chair",
+  "image_stamp": 4665.016569888,
+  "camera_jpeg_sha256": "6ef0973355352491194cecc780953b86a338bbc20b4a94e1ac61065e15244c1a",
+  "model_jpeg_sha256": "6efa45818e7ed21d6a5341a59496831d13023bb996f37ea854ac67b056b7f60a",
+  "model_image_note": "reconstructed using the unchanged bridge JPEG preprocessing",
+  "input_proprio_cm_deg": [
+    0.07138806726567454,
+    -0.021924275405849764,
+    -0.4154,
+    0.9013174155085404
+  ],
+  "server_action_ori_cm_rad": [
+    30.065167336711152,
+    -1.8121081787971605,
+    0.646498373765283,
+    0.030249469501993476
+  ],
+  "trace": {
+    "request_id": 14252,
+    "epoch": 42,
+    "run_id": "chair-00866a5ee82c",
+    "instruction": "fly to the chair",
+    "image_stamp": 4665.016569888,
+    "elapsed_s": 0.35271558400017966,
+    "observation_age_s": 0.46982713600027637,
+    "preview_pair_alignment": true,
+    "control_publishing_configured": false,
+    "source_frame": "odom",
+    "target_frame": "map",
+    "origin_odin_xyz_m": [
+      0.09138,
+      -0.178239,
+      0.014275
+    ],
+    "origin_odin_yaw_deg": -6.780972945846643,
+    "input_proprio_cm_deg": [
+      0.07138806726567454,
+      -0.021924275405849764,
+      -0.4154,
+      0.9013174155085404
+    ],
+    "server_action_ori_cm_rad": [
+      30.065167336711152,
+      -1.8121081787971605,
+      0.646498373765283,
+      0.030249469501993476
+    ],
+    "server_composition_max_error": 3.0986107191210976e-07,
+    "server_action_cm_rad": [
+      30.161340181942737,
+      -1.3608738724424825,
+      0.23109837533884559,
+      0.04598042607130748
+    ],
+    "converted_action_m_rad": [
+      0.30161340181942736,
+      -0.013608738724424824,
+      0.0023109837533884557,
+      0.04598042607130748
+    ],
+    "paired_mavros_xyz_m": [
+      0.09522009640932083,
+      -0.18043021857738495,
+      0.009102613665163517
+    ],
+    "paired_mavros_yaw_deg": -5.897465753024111,
+    "target_mavros_xyz_m": [
+      0.3924186118031628,
+      -0.229346911805695,
+      0.015567597418551972
+    ],
+    "target_mavros_yaw_deg": -4.164298814433435,
+    "target_minus_paired_mavros_m": [
+      0.29719851539384196,
+      -0.04891669322831005,
+      0.006464983753388455
+    ],
+    "target_minus_paired_mavros_yaw_deg": 1.7331669385906876
+  },
+  "camera_file": "/home/nvidia/agile/fly/runtime/vision_checks/4dea97ad904e46a5bf30395ccc3ea0de/2_14252_camera.jpg",
+  "model_file": "/home/nvidia/agile/fly/runtime/vision_checks/4dea97ad904e46a5bf30395ccc3ea0de/2_14252_model.jpg"
+}

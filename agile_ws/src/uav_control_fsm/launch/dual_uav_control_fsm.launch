@@ -1,0 +1,53 @@
+<launch>
+	<env name="LANG" value="zh_CN.UTF-8" />
+	<env name="LC_ALL" value="zh_CN.UTF-8" />
+
+	<!-- 全机共用参数（uav1 / uav2 相同） -->
+	<arg name="no_RC" default="true"/><!-- 是否没有遥控器；仿真 true，实飞可改为 false -->
+	<arg name="loop_hz" default="20"/><!-- FSM 主循环频率 Hz -->
+	<arg name="takeoff_height" default="1.5"/><!-- 自动起飞目标高度 m -->
+	<arg name="vision_pose_pub_rate_hz" default="30.0"/><!-- 视觉位姿转发频率；GPS 模式可设为 0 -->
+	<arg name="pos_smooth_enable" default="true"/><!-- Move_mode=0 惯性系位置软件平滑开关 -->
+	<arg name="enable_world_map" default="true"/><!-- 是否发布 world -> uavX_map 静态 TF -->
+	<arg name="enable_odom_remap" default="false"/><!-- GPS 定位设为 false；Fast_Lio/Vins 仿真可 true -->
+	<arg name="odom_remap_topic" default="fast_lio_odometry"/>
+	<arg name="odom_remap_to_topic" default="Odometry"/>
+
+	<!-- ========== uav1 ========== -->
+	<include file="$(find uav_control_fsm)/launch/uav_control_fsm_unit.launch">
+		<arg name="uav_id" value="1" />
+		<arg name="no_RC" value="$(arg no_RC)" />
+		<arg name="loop_hz" value="$(arg loop_hz)" />
+		<arg name="takeoff_height" value="$(arg takeoff_height)" />
+		<arg name="vision_pose_pub_rate_hz" value="$(arg vision_pose_pub_rate_hz)" />
+		<arg name="pos_smooth_enable" value="$(arg pos_smooth_enable)" />
+		<arg name="load_pos_smooth_yaml" value="true" />
+		<arg name="enable_world_map" value="$(arg enable_world_map)" />
+		<arg name="world_map_transform" value="[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]" />
+		<arg name="enable_odom_remap" value="$(arg enable_odom_remap)" />
+		<arg name="odom_remap_topic" value="$(arg odom_remap_topic)" />
+		<arg name="odom_remap_to_topic" value="$(arg odom_remap_to_topic)" />
+		<arg name="rc_offboard_channel" value="5" />
+		<arg name="rc_offboard_enter_threshold" value="0.3" />
+		<arg name="rc_offboard_exit_threshold" value="-0.3" />
+	</include>
+
+	<!-- ========== uav2 ========== -->
+	<include file="$(find uav_control_fsm)/launch/uav_control_fsm_unit.launch">
+		<arg name="uav_id" value="2" />
+		<arg name="no_RC" value="$(arg no_RC)" />
+		<arg name="loop_hz" value="$(arg loop_hz)" />
+		<arg name="takeoff_height" value="$(arg takeoff_height)" />
+		<arg name="vision_pose_pub_rate_hz" value="$(arg vision_pose_pub_rate_hz)" />
+		<arg name="pos_smooth_enable" value="$(arg pos_smooth_enable)" />
+		<arg name="load_pos_smooth_yaml" value="true" />
+		<arg name="enable_world_map" value="$(arg enable_world_map)" />
+		<arg name="world_map_transform" value="[0.0, 1.0, 0.0, 0.0, 0.0, 0.0]" />
+		<arg name="enable_odom_remap" value="$(arg enable_odom_remap)" />
+		<arg name="odom_remap_topic" value="$(arg odom_remap_topic)" />
+		<arg name="odom_remap_to_topic" value="$(arg odom_remap_to_topic)" />
+		<arg name="rc_offboard_channel" value="5" />
+		<arg name="rc_offboard_enter_threshold" value="0.3" />
+		<arg name="rc_offboard_exit_threshold" value="-0.3" />
+	</include>
+</launch>

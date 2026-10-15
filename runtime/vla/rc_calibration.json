@@ -1,0 +1,97 @@
+{
+  "RC_MAP_THROTTLE": {
+    "success": true,
+    "integer": 3,
+    "real": 0.0
+  },
+  "RC_MAP_ARM_SW": {
+    "success": true,
+    "integer": 9,
+    "real": 0.0
+  },
+  "RC_MAP_FLTMODE": {
+    "success": true,
+    "integer": 6,
+    "real": 0.0
+  },
+  "RC_MAP_OFFB_SW": {
+    "success": true,
+    "integer": 0,
+    "real": 0.0
+  },
+  "RC3_MIN": {
+    "success": true,
+    "integer": 0,
+    "real": 1000.0
+  },
+  "RC3_MAX": {
+    "success": true,
+    "integer": 0,
+    "real": 2000.0
+  },
+  "RC3_TRIM": {
+    "success": true,
+    "integer": 0,
+    "real": 1500.0
+  },
+  "RC3_REV": {
+    "success": true,
+    "integer": 0,
+    "real": 1.0
+  },
+  "RC3_DZ": {
+    "success": true,
+    "integer": 0,
+    "real": 10.0
+  },
+  "RC6_MIN": {
+    "success": true,
+    "integer": 0,
+    "real": 1000.0
+  },
+  "RC6_MAX": {
+    "success": true,
+    "integer": 0,
+    "real": 2000.0
+  },
+  "RC6_TRIM": {
+    "success": true,
+    "integer": 0,
+    "real": 1500.0
+  },
+  "RC6_REV": {
+    "success": true,
+    "integer": 0,
+    "real": 1.0
+  },
+  "RC9_MIN": {
+    "success": true,
+    "integer": 0,
+    "real": 1000.0
+  },
+  "RC9_MAX": {
+    "success": true,
+    "integer": 0,
+    "real": 2000.0
+  },
+  "RC9_TRIM": {
+    "success": true,
+    "integer": 0,
+    "real": 1500.0
+  },
+  "RC9_REV": {
+    "success": true,
+    "integer": 0,
+    "real": 1.0
+  },
+  "COM_ARM_SWISBTN": {
+    "success": true,
+    "integer": 0,
+    "real": 0.0
+  },
+  "COM_RC_IN_MODE": {
+    "success": true,
+    "integer": 3,
+    "real": 0.0
+  }
+}

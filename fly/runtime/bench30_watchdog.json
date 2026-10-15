@@ -1,0 +1,10 @@
+{
+  "token": "017aa615d87f481a93c52f3e51624586",
+  "armed_seen": true,
+  "triggers": [],
+  "stop_results": [],
+  "status": "stopped",
+  "updated_unix": 1792057884.5272334,
+  "normal_cleanup_acknowledged": true,
+  "final_armed": false
+}

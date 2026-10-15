@@ -1,0 +1,70 @@
+<launch>
+
+    <arg name="uav_id" default="1"/>
+    <!-- Real vehicle: raw Odin cloud, matching odin1_ros1.launch ns:=uav1. -->
+    <arg name="lidar_topic" default="$(eval '/uav' + str(arg('uav_id')) + '/odin1/cloud_raw')"/>
+    <!-- 最终 topic: /uav{id} + odom_topic，例如 /uav1/mavros/local_position/odom -->
+    <arg name="odom_topic" default="/mavros/local_position/odom"/>
+    
+    <!-- 最终 topic: /uav{id} + cloud_topic，例如 /uav1/livox/lidar_map -->
+    <arg name="cloud_topic" default="/livox/lidar_map"/>
+    
+    <!-- 深度相机模式才改；点云模式保持 /unused_pose、/unused_depth -->
+    <!-- 最终 topic: /uav{id} + pose_topic，例如 /uav1/unused_pose -->
+    <arg name="pose_topic" default="/unused_pose"/>
+    <arg name="depth_topic" default="/unused_depth"/>
+    
+    <!-- 1: RViz 2D Nav Goal；2: 预设航点 -->
+    <arg name="flight_type" default="1"/>
+
+    <!-- 局部地图范围（米），决定 ring buffer 的半径大小 -->
+    <arg name="local_update_range_x" default="10.0"/>
+    <arg name="local_update_range_y" default="10.0"/>
+    <arg name="local_update_range_z" default="2.0"/>
+    
+    <!-- ***虚拟天花板/地面，替代 map_size_z ***-->
+    <arg name="enable_virtual_wall" default="true"/><!-- 是否启用虚拟墙 -->
+    <arg name="virtual_ceil" default="3.0"/><!-- 虚拟天花板高度 -->
+    <arg name="virtual_ground" default="-2.0"/><!-- 虚拟地面高度，须低于目标 z；与 FSM 目标校验一致 -->
+    
+    <!-- ***障碍物膨胀半径（米），影响规划安全距离；XY / Z 可分别设置*** -->
+    <arg name="obstacles_inflation" default="0.15"/>
+    <arg name="obstacles_inflation_z" default="0.2"/>
+    
+    <!-- ***最大速度（米/秒）*** -->
+    <arg name="max_vel" default="1.0"/>
+    <arg name="max_acc" default="4.0"/>
+    <arg name="planning_horizon" default="7.5"/><!-- 一般为传感器检测距离的1.5倍 -->
+    
+    <!-- 急停后停稳是否自动重规划 -->
+    <arg name="fail_safe" default="true"/>
+
+    <!-- 一并启动 body_to_world 点云变换 -->
+    <arg name="launch_body_to_world" default="true"/>
+
+    <include if="$(arg launch_body_to_world)" file="$(find plan_env)/launch/body_to_world.launch">
+        <arg name="uav_id" value="$(arg uav_id)"/>
+        <arg name="lidar_topic" value="$(arg lidar_topic)"/>
+    </include>
+
+    <include file="$(find ego_planner)/launch/params/exp_params/exp_plan_1uav.xml">
+        <arg name="uav_id" value="$(arg uav_id)"/>
+        <arg name="odom_topic" value="$(arg odom_topic)"/>
+        <arg name="cloud_topic" value="$(arg cloud_topic)"/>
+        <arg name="pose_topic" value="$(arg pose_topic)"/>
+        <arg name="depth_topic" value="$(arg depth_topic)"/>
+        <arg name="flight_type" value="$(arg flight_type)"/>
+        <arg name="local_update_range_x" value="$(arg local_update_range_x)"/>
+        <arg name="local_update_range_y" value="$(arg local_update_range_y)"/>
+        <arg name="local_update_range_z" value="$(arg local_update_range_z)"/>
+        <arg name="enable_virtual_wall" value="$(arg enable_virtual_wall)"/>
+        <arg name="virtual_ceil" value="$(arg virtual_ceil)"/>
+        <arg name="virtual_ground" value="$(arg virtual_ground)"/>
+        <arg name="obstacles_inflation" value="$(arg obstacles_inflation)"/>
+        <arg name="obstacles_inflation_z" value="$(arg obstacles_inflation_z)"/>
+        <arg name="max_vel" value="$(arg max_vel)"/>
+        <arg name="max_acc" value="$(arg max_acc)"/>
+        <arg name="planning_horizon" value="$(arg planning_horizon)"/>
+        <arg name="fail_safe" value="$(arg fail_safe)"/>
+    </include>
+</launch>

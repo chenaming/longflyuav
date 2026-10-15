@@ -1,0 +1,73 @@
+[33m[WARN] [1791626195.346461807]: MOTOR BENCH: explicit armed lease, hard 10-second limit; no automatic arm/takeoff[0m
+[33m[WARN] [1791626195.350078034]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1791626195.360961091]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1791626195.361017869]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1791626195.362355099]: [OdometryBridge] uav1 vision_pose_pub_rate_hz<=0 (publish on every odom)[0m
+[0m[INFO] [1791626195.366266899]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1791626195.399713619]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1791626195.699913123]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [7642.955807200]: MOTOR BENCH: explicit armed lease, hard 10-second limit; no automatic arm/takeoff[0m
+[33m[WARN] [7642.960669888]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [7642.974969504]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [7642.975018912]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [7642.975981408]: [OdometryBridge] uav1 vision_pose_pub_rate_hz<=0 (publish on every odom)[0m
+[0m[INFO] [7642.979945824]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [7642.998781088]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [7643.299011712]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [7658.135437280]: BENCH: command rejected by frame/age/step limits; holding current pose[0m
+[33m[WARN] [10078.092839008]: MOTOR BENCH: explicit armed lease, hard 10-second limit; no automatic arm/takeoff[0m
+[33m[WARN] [10078.097872224]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [10078.109000704]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [10078.109088736]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [10078.110177728]: [OdometryBridge] uav1 vision_pose_pub_rate_hz<=0 (publish on every odom)[0m
+[0m[INFO] [10078.113655200]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [10078.144496640]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [10078.444706112]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [10094.347043456]: BENCH: command rejected by frame/age/step limits; holding current pose[0m
+[33m[WARN] [10120.849971648]: MOTOR BENCH: explicit armed lease, hard 10-second limit; no automatic arm/takeoff[0m
+[33m[WARN] [10120.853525728]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [10120.865283872]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [10120.865341312]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [10120.866461600]: [OdometryBridge] uav1 vision_pose_pub_rate_hz<=0 (publish on every odom)[0m
+[0m[INFO] [10120.870206336]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [10120.899925408]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [10121.200155904]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [10134.403402944]: BENCH: command rejected by frame/age/step limits; holding current pose[0m
+[33m[WARN] [10139.969978272]: BENCH: command rejected by frame/age/step limits; holding current pose[0m
+[33m[WARN] [10144.714260928]: Shutdown request received.[0m
+[33m[WARN] [10144.714348160]: Reason given for shutdown: [[/uav1/uav_control_fsm] Reason: new node registered with same name][0m
+[33m[WARN] [10605.889713248]: MOTOR BENCH: explicit armed lease, hard 10-second limit; no automatic arm/takeoff[0m
+[33m[WARN] [10605.893683488]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [10605.909940576]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [10605.910007008]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [10605.911182880]: [OdometryBridge] uav1 vision_pose_pub_rate_hz<=0 (publish on every odom)[0m
+[0m[INFO] [10605.916192832]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [10605.937823648]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [10606.238030400]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [10624.807058848]: BENCH: command rejected by frame/age/step limits; holding current pose[0m
+[33m[WARN] [11657.352956448]: MOTOR BENCH: explicit armed lease, hard 10-second limit; no automatic arm/takeoff[0m
+[33m[WARN] [11657.356041536]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [11657.375868096]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [11657.375958144]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [11657.377226880]: [OdometryBridge] uav1 vision_pose_pub_rate_hz<=0 (publish on every odom)[0m
+[0m[INFO] [11657.381428480]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [11657.401219424]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [11657.701436416]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [11675.503729632]: BENCH: command rejected by frame/age/step limits; holding current pose[0m
+[33m[WARN] [1792044239.549744192]: MOTOR BENCH: explicit armed lease, hard 10-second limit; no automatic arm/takeoff[0m
+[33m[WARN] [1792044239.555090016]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1792044239.565856896]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1792044239.565920064]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1792044239.567033888]: [OdometryBridge] uav1 vision_pose_pub_rate_hz<=0 (publish on every odom)[0m
+[0m[INFO] [1792044239.570938240]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1792044239.589652096]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1792044239.889882656]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [1792044253.058980576]: BENCH: command rejected by frame/age/step limits; holding current pose[0m
+[33m[WARN] [1792044258.258932320]: BENCH: command rejected by frame/age/step limits; holding current pose[0m

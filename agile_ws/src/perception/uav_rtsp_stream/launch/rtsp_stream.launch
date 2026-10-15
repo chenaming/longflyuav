@@ -1,0 +1,12 @@
+<launch>
+  <!-- USB 摄像头 RTSP / ROS 图像（多机 uav_id） -->
+  <arg name="uav_id" default="1"/>
+  <arg name="config_file" default="$(find uav_rtsp_stream)/config/rtsp_stream.yaml"/>
+
+  <rosparam file="$(arg config_file)" command="load" ns="uav$(arg uav_id)/rtsp_server"/>
+
+  <node pkg="uav_rtsp_stream" type="rtsp_server_node" name="rtsp_server" output="screen" ns="uav$(arg uav_id)">
+    <param name="uav_id" value="$(arg uav_id)"/>
+    <param name="source_type" value="camera"/>
+  </node>
+</launch>

@@ -1,0 +1,9 @@
+cmake_minimum_required(VERSION 3.0.2)
+project(agile_openvla_bridge)
+find_package(catkin REQUIRED COMPONENTS rospy nav_msgs geometry_msgs sensor_msgs
+  std_msgs std_srvs mavros_msgs quadrotor_msgs message_filters cv_bridge)
+catkin_python_setup()
+catkin_package()
+catkin_install_python(PROGRAMS scripts/openvla_ego_bridge.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION})
+install(DIRECTORY launch config DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})

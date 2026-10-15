@@ -1,0 +1,22 @@
+# Plan 4.3 recording list. Image is compressed-only. Never add point clouds.
+topics:
+  - /vla/instruction
+  - /uav1/odin1/image/compressed
+  - /uav1/odin1/odometry
+  - /uav1/odin1/odometry_highfreq
+  - /uav1/odin1/imu
+  - /uav1/mavros/local_position/odom
+  - /uav1/mavros/local_position/pose
+  - /uav1/mavros/state
+  - /uav1/mavros/rc/in
+  - /uav1/move_command
+  - /uav1/mavros/setpoint_raw/local
+  - /tf
+  - /tf_static
+
+# Reject these even if someone appends extra topics.
+forbid_substrings:
+  - cloud
+  - points
+  - undistorted
+  - render

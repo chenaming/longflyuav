@@ -1,0 +1,14 @@
+{
+  "kind": "disarmed_diagnostic_targets",
+  "status": "failed",
+  "model_predictions_used": false,
+  "cases": [],
+  "armed_ever": false,
+  "run_id": "chair-7bfa8db35d06",
+  "instruction": "飞到椅子上",
+  "original_mode": "MANUAL",
+  "updated_unix": 1791625244.9787178,
+  "offboard_mode_sent": true,
+  "error": "OFFBOARD was not accepted",
+  "restored_mode": "MANUAL"
+}

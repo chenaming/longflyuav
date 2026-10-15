@@ -1,0 +1,34 @@
+<launch>
+  <arg name="uav_id" default="1" />
+
+  <!-- mode: 建图输入模式
+       deskew        - 默认。原始 Livox+IMU+外部odom；本节点 IMU 去畸变后落到 world 建图（不依赖 Fast-LIO）
+       body_odom     - 已去畸变的 body 点云 + odom（常接 Fast-LIO 的 cloud_registered_body / Odometry）
+       already_world - 点云已在 world，只滤波融合建图 -->
+  <arg name="mode" default="deskew" />
+
+  <!-- 外部绝对位姿（PX4/MAVROS 等）；deskew / body_odom 必需 -->
+  <arg name="odom_topic" default="/uav$(arg uav_id)/mavros/local_position/odom" />
+  <!-- 地图 PCD 保存路径；关节点或 rosservice call .../save_map 时写入 -->
+  <arg name="pcd_path" default="$(env HOME)/maps/lidar_world_map.pcd" />
+  <!-- AirSim 原始点云是 PointCloud2（有数据）；
+       /.../LidarSensor1 是 CustomMsg 桥接名，当前常无 publisher -->
+  <arg name="lidar_type" default="pointcloud2" />
+  <arg name="cloud_topic" default="/airsim_node_lite/uav$(arg uav_id)/lidarPointCloud2/LidarSensor1" />
+  <arg name="imu_topic" default="/uav$(arg uav_id)/mavros/imu/data" />
+
+  <node pkg="lidar_world_mapper" type="lidar_world_mapper_node" name="lidar_world_mapper" output="screen">
+    <rosparam file="$(find lidar_world_mapper)/config/mapper.yaml" command="load"/>
+    <param name="uav_id" value="$(arg uav_id)" />
+    <param name="mode" value="$(arg mode)" />
+    <param name="lidar_type" value="$(arg lidar_type)" />
+    <param name="cloud_topic" value="$(arg cloud_topic)" />
+    <param name="imu_topic" value="$(arg imu_topic)" />
+    <param name="odom_topic" value="$(arg odom_topic)" />
+    <!-- 输出：本帧 world 扫描 / 去畸变点云 / 融合地图 -->
+    <param name="scan_world_topic" value="/uav$(arg uav_id)/map_builder/scan_world" />
+    <param name="deskew_topic" value="/uav$(arg uav_id)/map_builder/cloud_deskewed" />
+    <param name="map_topic" value="/uav$(arg uav_id)/map_builder/map" />
+    <param name="pcd_path" value="$(arg pcd_path)" />
+  </node>
+</launch>

@@ -1,0 +1,15 @@
+{
+  "test": "unarmed ownership suppression and fresh-frame contract",
+  "passed": true,
+  "suppressed_setpoints": 0,
+  "vision_forwarded": 7,
+  "resumed_setpoints": 111,
+  "armed_seen": false,
+  "flight_modes": [
+    "MANUAL"
+  ],
+  "prediction": null,
+  "prediction_error": "timeout exceeded while waiting for message on topic /vla/validated_prediction",
+  "mode_services_called": false,
+  "arming_services_called": false
+}

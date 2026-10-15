@@ -1,0 +1,105 @@
+{
+  "instruction": "目标坐标 [map]：x=0.246009 m，y=-0.033621 m，z=0.000688 m，yaw=-5.019°",
+  "run_id": "chair-00866a5ee82c",
+  "request_id": 9842,
+  "target_frame": "map",
+  "position_unit": "m",
+  "yaw_unit": "deg",
+  "target": {
+    "x": 0.15885149911200533,
+    "y": -0.32050875494011094,
+    "z": 0.023662951737516785,
+    "yaw": -8.908400362752403
+  },
+  "relative_to_observation": {
+    "dx": 0.23368167355811129,
+    "dy": -0.08014745184906175,
+    "dz": -0.00253518953931961,
+    "dyaw": -2.074926809671119
+  },
+  "bridge_check": "passed",
+  "rejection": null,
+  "control_published_by_fly": false,
+  "physical_axes_calibrated": false,
+  "physical_target_reached": false,
+  "trace": {
+    "request_id": 9842,
+    "epoch": 26,
+    "run_id": "chair-00866a5ee82c",
+    "instruction": "目标坐标 [map]：x=0.246009 m，y=-0.033621 m，z=0.000688 m，yaw=-5.019°",
+    "image_stamp": 2774.065315392,
+    "elapsed_s": 0.28114956799981883,
+    "observation_age_s": 0.3478601280003204,
+    "preview_pair_alignment": true,
+    "control_publishing_configured": false,
+    "source_frame": "odom",
+    "target_frame": "map",
+    "origin_odin_xyz_m": [
+      -0.078578,
+      -0.241355,
+      0.023249
+    ],
+    "origin_odin_yaw_deg": -6.823646929588499,
+    "input_proprio_cm_deg": [
+      -0.0030186344384602144,
+      -0.000864780970503226,
+      0.0023999999999999716,
+      -0.0015129512083094845
+    ],
+    "server_action_ori_cm_rad": [
+      24.155790663086016,
+      -5.1773702747242325,
+      -0.2535189540459548,
+      -0.0362143045667177
+    ],
+    "server_composition_max_error": 8.46654302222305e-09,
+    "server_action_cm_rad": [
+      24.152635315156527,
+      -5.1788729130218485,
+      -0.25111895393196093,
+      -0.03624071054666966
+    ],
+    "converted_action_m_rad": [
+      0.24152635315156526,
+      -0.05178872913021849,
+      -0.0025111895393196094,
+      -0.03624071054666966
+    ],
+    "paired_mavros_xyz_m": [
+      -0.07483017444610596,
+      -0.2403613030910492,
+      0.026198141276836395
+    ],
+    "paired_mavros_yaw_deg": -6.83347355308129,
+    "target_mavros_xyz_m": [
+      0.15885149911200533,
+      -0.32050875494011094,
+      0.023662951737516785
+    ],
+    "target_mavros_yaw_deg": -8.908400362752403,
+    "target_minus_paired_mavros_m": [
+      0.23368167355811129,
+      -0.08014745184906175,
+      -0.00253518953931961
+    ],
+    "target_minus_paired_mavros_yaw_deg": -2.074926809671119
+  },
+  "validated_prediction": {
+    "run_id": "chair-00866a5ee82c",
+    "request_id": 9842,
+    "instruction": "目标坐标 [map]：x=0.246009 m，y=-0.033621 m，z=0.000688 m，yaw=-5.019°",
+    "observation_stamp": 2774.065315392,
+    "validated_stamp": 2774.425229183,
+    "target_frame": "map",
+    "target_xyz_m": [
+      0.15885149911200533,
+      -0.32050875494011094,
+      0.023662951737516785
+    ],
+    "target_yaw_rad": -0.15548091741588665,
+    "coordinate_mode": "paired_estimate",
+    "physical_axes_calibrated": false
+  },
+  "client_wait_s": 0.5261387519999516,
+  "client_result_id": "40246f76a4d843f4b27408759c8bd5ce"
+}

@@ -1,0 +1,88 @@
+"""Run with the Agile ROS environment sourced; never starts publishers."""
+import importlib.util
+import math
+from pathlib import Path
+import threading
+import time
+import unittest
+from unittest.mock import Mock
+import rospy
+from nav_msgs.msg import Odometry
+from std_msgs.msg import String
+from std_srvs.srv import SetBoolRequest
+
+script = Path(__file__).resolve().parents[1] / "scripts" / "openvla_ego_bridge.py"
+spec = importlib.util.spec_from_file_location("bridge_node_under_test", script)
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+
+
+class NodeGuardsTest(unittest.TestCase):
+    def node(self):
+        n = module.Bridge.__new__(module.Bridge)
+        n.lock = threading.RLock()
+        n.enabled = True
+        n.origin = object()
+        n.generation = 5
+        n.goal = (1, 0, 1)
+        n.stop_pub = Mock()
+        n.publish_status = Mock()
+        n.frame, n.body_frame = "map", "base_link"
+        n.max_tilt = math.radians(20)
+        n.require_offboard = True
+        n.state = Mock(connected=True, armed=True, mode="OFFBOARD")
+        n.state_arrival = time.monotonic()
+        return n
+
+    def test_stop_invalidates_inflight_and_sends_single_planner_stop(self):
+        n = self.node()
+        n.disable("operator")
+        self.assertFalse(n.enabled)
+        self.assertEqual(n.generation, 6)
+        self.assertIsNone(n.origin)
+        self.assertIsNone(n.goal)
+        n.stop_pub.publish.assert_called_once()
+        n.on_stop(None)
+        n.stop_pub.publish.assert_called_once()
+
+    def test_instruction_change_cancels_old_mission(self):
+        n = self.node()
+        n.on_instruction(String(data="fly left"))
+        self.assertEqual(n.instruction, "fly left")
+        self.assertFalse(n.enabled)
+        self.assertGreater(n.generation, 5)
+
+    def test_frame_and_tilt_rejected(self):
+        n = self.node()
+        odom = Odometry()
+        odom.header.frame_id, odom.child_frame_id = "map", "base_link"
+        odom.pose.pose.orientation.w = 1
+        n.pose(odom)
+        odom.header.frame_id = "odom"
+        with self.assertRaises(ValueError):
+            n.pose(odom)
+        odom.header.frame_id = "map"
+        odom.pose.pose.orientation.x = math.sin(math.pi/6)
+        odom.pose.pose.orientation.w = math.cos(math.pi/6)
+        with self.assertRaises(ValueError):
+            n.pose(odom)
+
+    def test_preview_and_unconfirmed_camera_cannot_enable(self):
+        n = self.node()
+        n.dry_run = True
+        self.assertFalse(n.on_enable(SetBoolRequest(data=True)).success)
+        n.dry_run, n.alignment_confirmed = False, False
+        self.assertFalse(n.on_enable(SetBoolRequest(data=True)).success)
+
+    def test_offboard_state_freshness(self):
+        n = self.node()
+        self.assertTrue(n.offboard_ready())
+        n.state_arrival -= 2
+        self.assertFalse(n.offboard_ready())
+        n.state_arrival = time.monotonic()
+        n.state.armed = False
+        self.assertFalse(n.offboard_ready())
+
+
+if __name__ == "__main__":
+    unittest.main()

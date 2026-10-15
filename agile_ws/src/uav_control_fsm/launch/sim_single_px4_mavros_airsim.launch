@@ -1,0 +1,37 @@
+<launch>
+  <!-- 本机 AirSim SITL：PX4（无 Gazebo）+ MAVROS -->
+  <arg name="uav_id" default="1"/>
+  <arg name="vehicle" default="iris"/>
+  <arg name="est" default="ekf2"/>
+  <arg name="interactive" default="true"/>
+  <arg name="mavros_start_delay" default="3.0"/>
+
+  <arg name="ID" value="$(eval arg('uav_id') - 1)"/>
+  <arg name="udp_offboard_port_remote" value="$(eval 14030 + arg('ID'))"/>
+  <arg name="udp_offboard_port_local"  value="$(eval 14280 + arg('ID'))"/>
+
+  <env name="PX4_SIM_MODEL" value="$(arg vehicle)"/>
+  <env name="PX4_ESTIMATOR" value="$(arg est)"/>
+  <!-- PX4_SIM_HOST_ADDR 仍在 ~/.bashrc 或 source_local_sitl_env.sh 里设置 -->
+
+  <!-- 1. PX4 SITL（等同 make none_iris，但不走 make） -->
+  <include file="$(find px4)/launch/px4.launch">
+    <arg name="vehicle" value="$(arg vehicle)"/>
+    <arg name="est" value="$(arg est)"/>
+    <arg name="ID" value="$(arg ID)"/>
+    <arg name="interactive" value="$(arg interactive)"/>
+  </include>
+
+  <!-- 2. MAVROS（延迟几秒，等 PX4 起来） -->
+  <group ns="/uav$(arg uav_id)">
+    <node pkg="mavros" type="mavros_node" name="mavros" output="screen"
+          launch-prefix="bash -c 'sleep $(arg mavros_start_delay); exec $0 $@' --">
+      <param name="fcu_url" value="udp://:$(arg udp_offboard_port_remote)@localhost:$(arg udp_offboard_port_local)"/>
+      <param name="gcs_url" value=""/>
+      <param name="target_system_id" value="$(eval 1 + arg('ID'))"/>
+      <param name="target_component_id" value="1"/>
+      <rosparam command="load" file="$(find mavros)/launch/px4_config.yaml"/>
+      <rosparam command="load" file="$(find mavros)/launch/px4_pluginlists.yaml"/>
+    </node>
+  </group>
+</launch>

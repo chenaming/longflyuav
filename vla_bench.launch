@@ -1,0 +1,8 @@
+<launch>
+  <include file="$(find uav_control_fsm)/launch/exp_single_uav_control_fsm.launch">
+    <arg name="vision_pose_pub_rate_hz" value="50.0"/>
+    <arg name="odom_remap_to_topic" value="odin1/odometry_highfreq"/>
+  </include>
+  <param name="/uav1/uav_control_fsm/bench_disarmed" value="true"/>
+  <param name="/uav1/uav_control_fsm/bench_allow_armed" value="false"/>
+</launch>

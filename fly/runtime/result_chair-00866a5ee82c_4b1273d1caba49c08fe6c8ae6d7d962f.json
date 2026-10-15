@@ -1,0 +1,90 @@
+{
+  "instruction": "Fly to the chair.",
+  "run_id": "chair-00866a5ee82c",
+  "request_id": 8645,
+  "target_frame": "map",
+  "position_unit": "m",
+  "yaw_unit": "deg",
+  "target": {
+    "x": 0.34911233167815736,
+    "y": -0.023915182046268916,
+    "z": -0.010926245502240027,
+    "yaw": -6.487570034580327
+  },
+  "relative_to_observation": {
+    "dx": 0.35779953170288137,
+    "dy": -0.017839972108279204,
+    "dz": -0.00853530506142136,
+    "dyaw": -1.781996521600302
+  },
+  "bridge_check": "rejected",
+  "rejection": "target exceeds XY step limit",
+  "control_published_by_fly": false,
+  "physical_axes_calibrated": false,
+  "physical_target_reached": false,
+  "trace": {
+    "request_id": 8645,
+    "epoch": 12,
+    "run_id": "chair-00866a5ee82c",
+    "instruction": "Fly to the chair.",
+    "image_stamp": 2294.019570496,
+    "elapsed_s": 0.28304179199994906,
+    "observation_age_s": 0.3953627199998664,
+    "preview_pair_alignment": true,
+    "control_publishing_configured": false,
+    "source_frame": "odom",
+    "target_frame": "map",
+    "origin_odin_xyz_m": [
+      -0.009961,
+      -0.004564,
+      -0.002975
+    ],
+    "origin_odin_yaw_deg": -4.731124534869624,
+    "input_proprio_cm_deg": [
+      0.007178884637975098,
+      0.0066146515671381915,
+      -0.005899999999999959,
+      0.0019061630329731938
+    ],
+    "server_action_ori_cm_rad": [
+      35.80570467680413,
+      1.157240729373786,
+      -0.8535305059201086,
+      -0.031101706561432185
+    ],
+    "server_composition_max_error": 1.9641909432266402e-08,
+    "server_action_cm_rad": [
+      35.812845061234206,
+      1.1650465944996824,
+      -0.8594305061421359,
+      -0.03106843774000645
+    ],
+    "converted_action_m_rad": [
+      0.35812845061234205,
+      0.011650465944996824,
+      -0.00859430506142136,
+      -0.03106843774000645
+    ],
+    "paired_mavros_xyz_m": [
+      -0.008687200024724007,
+      -0.006075209937989712,
+      -0.0023909404408186674
+    ],
+    "paired_mavros_yaw_deg": -4.705573512980016,
+    "target_mavros_xyz_m": [
+      0.34911233167815736,
+      -0.023915182046268916,
+      -0.010926245502240027
+    ],
+    "target_mavros_yaw_deg": -6.487570034580327,
+    "target_minus_paired_mavros_m": [
+      0.35779953170288137,
+      -0.017839972108279204,
+      -0.00853530506142136
+    ],
+    "target_minus_paired_mavros_yaw_deg": -1.781996521600302
+  },
+  "validated_prediction": null,
+  "client_wait_s": 0.6714581760002147,
+  "client_result_id": "4b1273d1caba49c08fe6c8ae6d7d962f"
+}

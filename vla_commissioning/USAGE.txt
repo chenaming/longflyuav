@@ -1,0 +1,61 @@
+无人机 / OpenVLA 链路验证（2026-10-10，Asia/Shanghai）
+
+面板：http://192.168.1.108:8088/
+
+已实现：
+1. 通过 Mac 的两个 SSH 会话转发连接无人机与 4090。
+   NX 请求 http://127.0.0.1:15007/predict，转发到 4090 的 5007。
+   当前 vla_direct_bridge.py 使用直接模型协议；旧 5008 适配器的 schema
+   与该桥接不一致，因此未启动旧适配器。
+2. 桥接逐次核验 action = proprio + R(yaw) * action_ori，检查单位 cm/deg、
+   cm/rad，再转换成 m；证据发布到 /vla/coordinate_audit。
+3. uav_control_fsm 增加私有参数 bench_disarmed（默认 false）。台架模式跳过
+   常规 RC/自动起飞/自动解锁/定位参数重设逻辑；外部明确请求 OFFBOARD 后，
+   仅接受新鲜的 uav1_map、Move_mode=0、小幅位置及 yaw 目标。
+   任意 armed=True、飞控心跳过期、里程计过期时停止台架 setpoint。
+4. 台架测试通过真实 /uav1/move_command → 原 ControlManager →
+   /uav1/mavros/setpoint_raw/local 验证 XYZ、yaw 及拒绝逻辑。
+   不调用 arming 服务，不发送 offboard_command，不触发 AUTO_TAKEOFF。
+5. 面板显示消息发布来源、数学坐标审计、台架测试结果，区分模型目标与诊断目标。
+
+结果与范围：
+- coordinate_tests.json：软件坐标转换测试。
+- bench_report.json：真实 OFFBOARD 未解锁台架测试；诊断目标，不是模型预测。
+- panel_snapshot.json：保存时面板状态。
+- 当前真实模型在现场画面上多次给出约 28.68° 偏航变化，被原 8° 阈值拒绝。
+  保留阈值；没有把模型预测送入真实控制。
+- Odin→MAVROS 仍是同步位姿配对估算，不能据此声称物理轴向已标定，
+  或模型可正确导航。需要已知物理位移/转角或标定变换继续验证。
+
+本次运行结束：
+- 飞控恢复 MANUAL、保持未解锁。
+- FSM 保留 bench_disarmed=true，持续发送当前位置保持 setpoint。
+- 模型桥接仍为 preview=True、operator=False。
+- 台架测试节点保持证据 topic latch，不再发送测试目标。
+- 没有更改系统开机服务；网络转发依赖 Mac 及 SSH 会话保持连接。
+
+断线后在 Mac 本机终端执行：
+  bash reconnect_macos.sh
+  需要时按终端提示输入密码。
+
+重复台架测试（在 NX，先拆桨固定）：
+  bash /home/nvidia/agile/vla_commissioning/run_bench_nx.sh
+  tail -f /home/nvidia/.local/state/vla-commissioning/bench.log
+
+查看证据：
+  cat /home/nvidia/.local/state/vla-commissioning/bench_report.json
+  cat /home/nvidia/.local/state/vla-commissioning/coordinate_tests.json
+
+退出台架模式、恢复常规 FSM（仅在需要恢复原运行行为时执行）：
+  source /opt/ros/noetic/setup.bash
+  source /home/nvidia/agile/agile_ws/devel/setup.bash
+  rosnode kill /vla_bench_validation
+  rosnode kill /uav1/uav_control_fsm
+  rosrun uav_control_fsm uav_control_fsm_node __ns:=/uav1 __name:=uav_control_fsm \
+    _bench_disarmed:=false fast_lio_odometry:=odin1/odometry
+  常规 FSM 保留原有自动解锁/起飞行为；此操作不是实飞标定通过的标志。
+
+原文件备份：
+  /home/nvidia/.local/state/vla-commissioning/backups/
+
+本次未变更 4090 权重、训练参数或原 5007 模型进程。

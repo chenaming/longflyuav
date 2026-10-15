@@ -1,0 +1,72 @@
+{
+  "session_token": "3f832ea196fc4a018f63db079de32e3d",
+  "armed_seen": true,
+  "disarm_triggered": true,
+  "run_id": "chair-fadfc1f2db12",
+  "instruction": "fly to the chair",
+  "started_unix": 1792044240.075735,
+  "trigger_monotonic": 11840.67873952,
+  "rc_snapshot": {
+    "channels": [
+      1500,
+      1500,
+      999,
+      1504,
+      999,
+      999,
+      999,
+      999,
+      999,
+      999,
+      2000,
+      1507,
+      880,
+      880,
+      2012,
+      2012
+    ],
+    "age_s": 0.04306764800094243,
+    "initial_ch9_high": false
+  },
+  "rc_reasons": {
+    "missing_or_short": false,
+    "stale": false,
+    "throttle_high": false,
+    "ch9_changed": false
+  },
+  "rc_guard_triggered": false,
+  "task_guard_triggered": false,
+  "state_guard_triggered": true,
+  "updated_unix": 1792044263.5582342,
+  "stop_result": {
+    "normal_response": {
+      "success": true,
+      "result": 0
+    },
+    "force_disarm_used": false,
+    "manual_stop_preparation": {
+      "mode_sent": true,
+      "rc_channels": [
+        1500,
+        1500,
+        999,
+        1504,
+        999,
+        999,
+        999,
+        999,
+        999,
+        999,
+        2000,
+        1507,
+        880,
+        880,
+        2012,
+        2012
+      ],
+      "reason": "explicit fixed propeller-removed bench shutdown"
+    },
+    "disarmed_confirmed": true
+  },
+  "final_armed": false
+}

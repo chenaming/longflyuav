@@ -1,0 +1,48 @@
+ground:
+  protocol: http
+  host: 10.62.25.215
+  port: 5007
+  endpoint: /predict
+  infer_timeout_sec: 1.5
+
+image:
+  source: /uav1/odin1/image/compressed
+  odometry: /uav1/odin1/odometry
+  inference_rate_hz: 2.0
+  resize: 224
+  resize_mode: letterbox
+  jpeg_quality: 80
+  max_jpeg_bytes: 40000
+  sync_slop_sec: 0.15
+
+frames:
+  pose_for_model: /uav1/odin1/odometry
+  pose_for_control: /uav1/mavros/local_position/odom
+  odom_disagree_m: 0.3
+  vla_body_y_sign: 1
+  odom_to_enu:
+    R: [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
+    t: [0.0, 0.0, 0.0]
+
+control:
+  backend: direct_fsm
+  enable_publish: false
+  control_rate_hz: 25
+  move_mode: 0
+  lock_altitude: true
+  fixed_altitude: 1.2
+  use_vla_yaw: false
+  max_step_xy_m: 0.25
+  max_step_z_m: 0.05
+  max_yaw_step_deg: 8.0
+  stale_action_sec: 1.0
+
+watchdog:
+  heartbeat_timeout_sec: 2.0
+  fail_to_hover_count: 3
+  fail_to_land_sec: 8.0
+  image_timeout_sec: 0.5
+  odom_timeout_sec: 0.5
+  enable_auto_land: true
+  hover_topic: /uav1/hover_command
+  land_topic: /uav1/land_command

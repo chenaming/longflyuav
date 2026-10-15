@@ -1,0 +1,7 @@
+# Move_mode=0 惯性系位置软件平滑默认参数（launch 可覆盖 pos_smooth_enable）
+pos_smooth_enable: true          # 是否启用平滑；false 时 Move_mode=0 直接跟踪目标点
+pos_smooth_max_vel: 0.5          # 平滑过程最大线速度 m/s
+pos_smooth_max_accel: 1.2        # 平滑过程最大线加速度 m/s²（用于减速距离 v=sqrt(2*a*dist)）
+pos_smooth_arrival_dist: 0.1     # 到达判定距离 m；进入此范围后锁定目标并置零速度
+pos_smooth_lookahead_dist: 0.5   # 每步位置 setpoint 沿目标方向的前视距离 m
+pos_smooth_vel_deadband: 0.05     # 速度死区 m/s；低于此值输出零速，避免末端抖动

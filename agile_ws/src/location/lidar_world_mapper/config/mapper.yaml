@@ -1,0 +1,50 @@
+# 不依赖 FAST-LIO：本节点用 IMU 做帧内去畸变，用外部里程计落到 world
+mode: "deskew"              # deskew | body_odom | already_world
+lidar_type: "livox"         # livox(CustomMsg) | pointcloud2
+uav_id: 1
+
+cloud_topic: "/uav1/livox/lidar"
+imu_topic: "/uav1/livox/imu"
+# 外部绝对位姿（PX4/VIO 等）。要和雷达时间同步较好
+odom_topic: "/uav1/mavros/local_position/odom"
+odom_child: "imu"           # odom 位姿是 IMU 系还是雷达系：imu | lidar
+odom_time_slop: 0.08
+world_frame: "map"
+
+# LiDAR 在 IMU 下的外参（与 FAST-LIO mid360.yaml 一致）
+extrinsic_T: [-0.011, -0.02329, 0.04412]
+extrinsic_R: [1, 0, 0,
+              0, 1, 0,
+              0, 0, 1]
+
+blind: 0.5
+point_filter_num: 3
+# 扫描内平移补偿；若航向变化大/振动大可先关，只留旋转 deskew
+enable_translation_deskew: true
+
+scan_world_topic: "/uav1/map_builder/scan_world"
+deskew_topic: "/uav1/map_builder/cloud_deskewed"
+map_topic: "/uav1/map_builder/map"
+
+min_range: 0.8
+max_range: 60.0
+z_min: -1.5
+z_max: 4.0
+frame_voxel: 0.12
+map_voxel: 0.10
+
+enable_sor: true
+sor_mean_k: 20
+sor_stddev: 1.0
+enable_ror: true
+ror_radius: 0.40
+ror_min_neighbors: 5
+
+skip_frames: 0
+max_speed_for_insert: 2.5
+publish_map_hz: 1.0
+
+pcd_save_en: true
+save_on_shutdown: true
+pcd_binary: true
+pcd_path: "/tmp/lidar_world_map.pcd"

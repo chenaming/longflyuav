@@ -1,0 +1,49 @@
+{
+  "pid": 44300,
+  "run_id": "chair-7bfa8db35d06",
+  "updated_unix": 1791625377.526015,
+  "ready": false,
+  "instruction": "飞到椅子上",
+  "inference_url": "http://127.0.0.1:15017/predict",
+  "fcu": {
+    "connected": true,
+    "armed": false,
+    "mode": "MANUAL",
+    "fresh": true
+  },
+  "odom_age_s": 0.0644524300005287,
+  "validated_prediction_age_s": 8.233191102999626,
+  "last_request_id": 344,
+  "motor_test_owns_fsm": false,
+  "processes": {
+    "master": {
+      "pid": 44302,
+      "running": true
+    },
+    "odin": {
+      "pid": 44394,
+      "running": true
+    },
+    "mavros": {
+      "pid": 44397,
+      "running": true
+    },
+    "monitor": {
+      "pid": 44401,
+      "running": true
+    },
+    "evidence": {
+      "pid": 44402,
+      "running": true
+    },
+    "fsm": {
+      "pid": 44599,
+      "running": true
+    },
+    "bridge": {
+      "pid": 44600,
+      "running": true
+    }
+  },
+  "scope": "protected bench; physical navigation not verified"
+}

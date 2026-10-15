@@ -1,0 +1,105 @@
+{
+  "instruction": "hover in place",
+  "run_id": "chair-14dba5cb0aa0",
+  "request_id": 1660,
+  "target_frame": "map",
+  "position_unit": "m",
+  "yaw_unit": "deg",
+  "target": {
+    "x": 0.22690877189266292,
+    "y": -0.012703518035017609,
+    "z": -0.021770283098466292,
+    "yaw": 1.3973145377802507
+  },
+  "relative_to_observation": {
+    "dx": 0.2229219401382169,
+    "dy": -0.01150971639541602,
+    "dz": -0.020535536094702378,
+    "dyaw": 1.7331669337626312
+  },
+  "bridge_check": "passed",
+  "rejection": null,
+  "control_published_by_fly": false,
+  "physical_axes_calibrated": false,
+  "physical_target_reached": false,
+  "trace": {
+    "request_id": 1660,
+    "epoch": 10,
+    "run_id": "chair-14dba5cb0aa0",
+    "instruction": "hover in place",
+    "image_stamp": 1791973715.122063,
+    "elapsed_s": 1.0335965499999702,
+    "observation_age_s": 1.1284797191619873,
+    "preview_pair_alignment": true,
+    "control_publishing_configured": false,
+    "source_frame": "odom",
+    "target_frame": "map",
+    "origin_odin_xyz_m": [
+      0.006053,
+      -0.002634,
+      0.001399
+    ],
+    "origin_odin_yaw_deg": -0.3016083827825816,
+    "input_proprio_cm_deg": [
+      0.000490009456786243,
+      -0.01709765746329773,
+      0.0103,
+      0.017310848858440753
+    ],
+    "server_action_ori_cm_rad": [
+      22.298557994232404,
+      -1.0202818032849095,
+      -2.0535536096684233,
+      0.030249469501993476
+    ],
+    "server_composition_max_error": 3.113925579611987e-07,
+    "server_action_cm_rad": [
+      22.299354933625327,
+      -1.0306423079759306,
+      -2.043253609470238,
+      0.030551600789747058
+    ],
+    "converted_action_m_rad": [
+      0.22299354933625326,
+      -0.010306423079759305,
+      -0.02043253609470238,
+      0.030551600789747058
+    ],
+    "paired_mavros_xyz_m": [
+      0.00398683175444603,
+      -0.0011938016396015882,
+      -0.001234747003763914
+    ],
+    "paired_mavros_yaw_deg": -0.335852395982391,
+    "target_mavros_xyz_m": [
+      0.22690877189266292,
+      -0.012703518035017609,
+      -0.021770283098466292
+    ],
+    "target_mavros_yaw_deg": 1.3973145377802507,
+    "target_minus_paired_mavros_m": [
+      0.2229219401382169,
+      -0.01150971639541602,
+      -0.020535536094702378
+    ],
+    "target_minus_paired_mavros_yaw_deg": 1.7331669337626312
+  },
+  "validated_prediction": {
+    "run_id": "chair-14dba5cb0aa0",
+    "request_id": 1660,
+    "instruction": "hover in place",
+    "observation_stamp": 1791973715.122063,
+    "validated_stamp": 1791973716.2603872,
+    "target_frame": "map",
+    "target_xyz_m": [
+      0.22690877189266292,
+      -0.012703518035017609,
+      -0.021770283098466292
+    ],
+    "target_yaw_rad": 0.024387739370248074,
+    "coordinate_mode": "paired_estimate",
+    "physical_axes_calibrated": false
+  },
+  "client_wait_s": 2.4564976330000263,
+  "client_result_id": "7aeb63ceb6ac4b8492aaf267f6129c57"
+}

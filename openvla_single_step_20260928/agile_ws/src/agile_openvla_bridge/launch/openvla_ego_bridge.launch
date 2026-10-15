@@ -1,0 +1,36 @@
+<launch>
+  <arg name="server_url"/>
+  <arg name="instruction" default="fly forward 1 meter"/>
+  <arg name="dry_run" default="true"/>
+  <arg name="enabled" default="false"/>
+  <arg name="camera_alignment_confirmed" default="true"/>
+  <arg name="model_convention_confirmed" default="true"/>
+  <arg name="camera_yaw_offset_deg" default="0.0"/>
+  <arg name="image_topic" default="/uav1/odin1/image/compressed"/>
+  <arg name="odom_topic" default="/uav1/mavros/local_position/odom"/>
+  <arg name="goal_topic" default="/uav1/goal_point"/>
+  <arg name="state_topic" default="/uav1/mavros/state"/>
+  <arg name="stop_topic" default="/uav1/mandatory_stop_to_planner"/>
+  <arg name="planner_frame" default="map"/>
+  <arg name="body_frame" default="base_link"/>
+  <arg name="image_transport" default="compressed"/>
+  <node pkg="agile_openvla_bridge" type="openvla_ego_bridge.py"
+        name="openvla_ego_bridge" output="screen" required="true">
+    <rosparam command="load" file="$(find agile_openvla_bridge)/config/bridge.yaml"/>
+    <param name="server_url" value="$(arg server_url)"/>
+    <param name="instruction" value="$(arg instruction)"/>
+    <param name="dry_run" value="$(arg dry_run)"/>
+    <param name="enabled" value="$(arg enabled)"/>
+    <param name="camera_alignment_confirmed" value="$(arg camera_alignment_confirmed)"/>
+    <param name="model_convention_confirmed" value="$(arg model_convention_confirmed)"/>
+    <param name="camera_yaw_offset_deg" value="$(arg camera_yaw_offset_deg)"/>
+    <param name="image_topic" value="$(arg image_topic)"/>
+    <param name="odom_topic" value="$(arg odom_topic)"/>
+    <param name="goal_topic" value="$(arg goal_topic)"/>
+    <param name="state_topic" value="$(arg state_topic)"/>
+    <param name="stop_topic" value="$(arg stop_topic)"/>
+    <param name="planner_frame" value="$(arg planner_frame)"/>
+    <param name="body_frame" value="$(arg body_frame)"/>
+    <param name="image_transport" value="$(arg image_transport)"/>
+  </node>
+</launch>

@@ -1,0 +1,540 @@
+{
+  "kind": "disarmed_bounded_model_targets",
+  "status": "passed",
+  "model_predictions_used": true,
+  "cases": [
+    {
+      "name": "model_request_28",
+      "expected_acceptance": true,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 18,
+      "expected_xyz_m": [
+        0.04961101158120583,
+        -0.010419378516040826,
+        0.009560165771981701
+      ],
+      "actual_xyz_m": [
+        0.04961101158120583,
+        -0.010419378516040826,
+        0.009560165771981701
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 6.000187651005789e-08,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496,
+      "prediction": {
+        "run_id": "chair-b79eb62a6d92",
+        "request_id": 28,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792057824.9611318,
+        "validated_stamp": 1792057825.3237207,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.2553757292298512,
+          -0.05866084572244939,
+          0.030498275491837045
+        ],
+        "target_yaw_rad": -0.03592953563151413,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          25.33766599781104,
+          -5.9691966502364835,
+          3.046544581261916,
+          -0.0362143045667177
+        ],
+        "observed_xyz_m": [
+          0.001982079353183508,
+          0.0009589649853296578,
+          3.282968464191072e-05
+        ],
+        "observed_yaw_rad": 0.00028476893647646335
+      },
+      "raw_model_delta_xyz_m": [
+        0.2544447256332175,
+        -0.05965447831750419,
+        0.030938109719855344
+      ],
+      "bounded_delta_xyz_m": [
+        0.04868000798457216,
+        -0.011413011111095632,
+        0.01
+      ],
+      "bounded_delta_yaw_deg": -2.0850181226673707,
+      "model_target_was_limited": true,
+      "command_source": "/vla_model_bench_validation"
+    },
+    {
+      "name": "model_request_32",
+      "expected_acceptance": true,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 19,
+      "expected_xyz_m": [
+        0.049754239641755515,
+        -0.0044379793434244615,
+        0.009863613076740876
+      ],
+      "actual_xyz_m": [
+        0.049754239641755515,
+        -0.0044379793434244615,
+        0.009863613076740876
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 1.8336330294073854e-08,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496,
+      "prediction": {
+        "run_id": "chair-b79eb62a6d92",
+        "request_id": 32,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792057826.6040804,
+        "validated_stamp": 1792057826.9089832,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.2533753932060866,
+          -0.029993718836382424,
+          0.03217483857856499
+        ],
+        "target_yaw_rad": -0.03603618251497753,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          25.33766599781104,
+          -3.1978043359436015,
+          3.196547469230456,
+          -0.0362143045667177
+        ],
+        "observed_xyz_m": [
+          -6.958935500733787e-06,
+          0.001939192065037787,
+          0.000209363890462555
+        ],
+        "observed_yaw_rad": 0.00017812204932210512
+      },
+      "raw_model_delta_xyz_m": [
+        0.2532319497389911,
+        -0.031782207425609624,
+        0.032311225501824116
+      ],
+      "bounded_delta_xyz_m": [
+        0.04961079617466002,
+        -0.006226467932651661,
+        0.01
+      ],
+      "bounded_delta_yaw_deg": -2.063572792357722,
+      "model_target_was_limited": true,
+      "command_source": "/vla_model_bench_validation"
+    },
+    {
+      "name": "model_request_35",
+      "expected_acceptance": true,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 18,
+      "expected_xyz_m": [
+        0.05162302609314758,
+        -0.005228269864106169,
+        0.011055889646522701
+      ],
+      "actual_xyz_m": [
+        0.05162302609314758,
+        -0.005228269864106169,
+        0.011055889646522701
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 1.2338084053645629e-07,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496,
+      "prediction": {
+        "run_id": "chair-b79eb62a6d92",
+        "request_id": 35,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792057827.769639,
+        "validated_stamp": 1792057828.110359,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.25263656093580056,
+          -0.026942270664423267,
+          0.02002036190870575
+        ],
+        "target_yaw_rad": 0.04034356243181758,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          25.168826664278892,
+          -2.801891148187476,
+          1.9965243654821379,
+          0.0404746655125644
+        ],
+        "observed_xyz_m": [
+          0.0009519647574052215,
+          0.0011096382513642311,
+          5.5118252930697054e-05
+        ],
+        "observed_yaw_rad": -0.00013110308488642814
+      },
+      "raw_model_delta_xyz_m": [
+        0.2507243413695075,
+        -0.027083890412742766,
+        0.01896447226218305
+      ],
+      "bounded_delta_xyz_m": [
+        0.04971080652685452,
+        -0.005369889612425668,
+        0.01
+      ],
+      "bounded_delta_yaw_deg": 2.3320277797143363,
+      "model_target_was_limited": true,
+      "command_source": "/vla_model_bench_validation"
+    },
+    {
+      "name": "model_request_38",
+      "expected_acceptance": true,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 18,
+      "expected_xyz_m": [
+        0.05180043345108143,
+        -0.010569420961313327,
+        0.010164224271429703
+      ],
+      "actual_xyz_m": [
+        0.05180043345108143,
+        -0.010569420961313327,
+        0.010164224271429703
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 6.727514351119121e-08,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496,
+      "prediction": {
+        "run_id": "chair-b79eb62a6d92",
+        "request_id": 38,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792057829.1234243,
+        "validated_stamp": 1792057829.582092,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.25470305931375475,
+          -0.04756912519876881,
+          0.020932066319227526
+        ],
+        "target_yaw_rad": -0.04669201491471231,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          25.168826664278892,
+          -4.5835004930900425,
+          1.9965243654821379,
+          -0.04643950057728874
+        ],
+        "observed_xyz_m": [
+          0.003026374150067568,
+          -0.0016705667367205024,
+          0.0009668226703070104
+        ],
+        "observed_yaw_rad": -0.0002525143347397622
+      },
+      "raw_model_delta_xyz_m": [
+        0.25209149321162255,
+        -0.04596939369292034,
+        0.020767842047797823
+      ],
+      "bounded_delta_xyz_m": [
+        0.04918886734894923,
+        -0.00896968945546486,
+        0.01
+      ],
+      "bounded_delta_yaw_deg": -2.6619455707598947,
+      "model_target_was_limited": true,
+      "command_source": "/vla_model_bench_validation"
+    },
+    {
+      "name": "model_request_42",
+      "expected_acceptance": true,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 19,
+      "expected_xyz_m": [
+        0.0454598088748068,
+        -0.019365051865539957,
+        -0.0074966337041994565
+      ],
+      "actual_xyz_m": [
+        0.0454598088748068,
+        -0.019365051865539957,
+        -0.0074966337041994565
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 2.7876035116780623e-08,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496,
+      "prediction": {
+        "run_id": "chair-b79eb62a6d92",
+        "request_id": 42,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792057831.1702397,
+        "validated_stamp": 1792057831.5699599,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.2513276928102895,
+          -0.10350786073516002,
+          -0.0074966337041994565
+        ],
+        "target_yaw_rad": -0.036546521375333985,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          25.168826664278892,
+          -10.324241715553871,
+          -0.8535305059201086,
+          -0.0362143045667177
+        ],
+        "observed_xyz_m": [
+          -0.00032626857864670455,
+          -0.00018183112842962146,
+          0.0010386713547632098
+        ],
+        "observed_yaw_rad": -0.0003322167967858248
+      },
+      "raw_model_delta_xyz_m": [
+        0.25215120705527433,
+        -0.10305983826085804,
+        -0.008844864924817347
+      ],
+      "bounded_delta_xyz_m": [
+        0.046283323119791636,
+        -0.018917029391237978,
+        -0.008844864924817347
+      ],
+      "bounded_delta_yaw_deg": -2.072828005397386,
+      "model_target_was_limited": true,
+      "command_source": "/vla_model_bench_validation"
+    },
+    {
+      "name": "model_request_44",
+      "expected_acceptance": true,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 19,
+      "expected_xyz_m": [
+        0.050118929115859495,
+        -0.008391204745164419,
+        0.009827179402927868
+      ],
+      "actual_xyz_m": [
+        0.050118929115859495,
+        -0.008391204745164419,
+        0.009827179402927868
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 9.103078276035457e-09,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496,
+      "prediction": {
+        "run_id": "chair-b79eb62a6d92",
+        "request_id": 44,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792057832.144197,
+        "validated_stamp": 1792057832.5444617,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.2580751685660014,
+          -0.02989886904560909,
+          0.022624932935277384
+        ],
+        "target_yaw_rad": 0.0451953446766411,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          25.844183998407477,
+          -2.801891148187476,
+          2.146527253450678,
+          0.04558726351785003
+        ],
+        "observed_xyz_m": [
+          -0.0003556648443918675,
+          -0.001778672100044787,
+          0.0011596604017540812
+        ],
+        "observed_yaw_rad": -0.0003919188109364066
+      },
+      "raw_model_delta_xyz_m": [
+        0.25769095274751613,
+        -0.026651426856005047,
+        0.022797753532349516
+      ],
+      "bounded_delta_xyz_m": [
+        0.04973471329737425,
+        -0.005143762555560374,
+        0.01
+      ],
+      "bounded_delta_yaw_deg": 2.6165484313547176,
+      "model_target_was_limited": true,
+      "command_source": "/vla_model_bench_validation"
+    },
+    {
+      "name": "model_request_46",
+      "expected_acceptance": true,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 18,
+      "expected_xyz_m": [
+        0.04323156531266544,
+        -0.029955077530139377,
+        -0.005090195704233646
+      ],
+      "actual_xyz_m": [
+        0.04323156531266544,
+        -0.029955077530139377,
+        -0.005090195704233646
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 1.18095776433362e-08,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496,
+      "prediction": {
+        "run_id": "chair-b79eb62a6d92",
+        "request_id": 46,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792057833.9889178,
+        "validated_stamp": 1792057834.4750013,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.2525690461163491,
+          -0.172105778083653,
+          -0.005090195704233646
+        ],
+        "target_yaw_rad": -0.03689619546878653,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          25.168826664278892,
+          -16.856809313529947,
+          -0.4035218420144915,
+          -0.0362143045667177
+        ],
+        "observed_xyz_m": [
+          0.0009957836009562016,
+          -0.00336610060185194,
+          -0.001054977299645543
+        ],
+        "observed_yaw_rad": -0.000681890881475809
+      },
+      "raw_model_delta_xyz_m": [
+        0.2507020618188277,
+        -0.17023933593228532,
+        -0.0040687537006855005
+      ],
+      "bounded_delta_xyz_m": [
+        0.04136458101514403,
+        -0.028088635378771713,
+        -0.0040687537006855005
+      ],
+      "bounded_delta_yaw_deg": -2.070861431618871,
+      "model_target_was_limited": true,
+      "command_source": "/vla_model_bench_validation"
+    },
+    {
+      "name": "model_request_48",
+      "expected_acceptance": true,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 18,
+      "expected_xyz_m": [
+        0.04682405153422764,
+        -0.021310419241191935,
+        -0.009334263989194298
+      ],
+      "actual_xyz_m": [
+        0.04682405153422764,
+        -0.021310419241191935,
+        -0.009334263989194298
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 6.423743390158158e-08,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496,
+      "prediction": {
+        "run_id": "chair-b79eb62a6d92",
+        "request_id": 48,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792057834.9600754,
+        "validated_stamp": 1792057835.366342,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.25447728874006587,
+          -0.12214192129603918,
+          -0.009334263989194298
+        ],
+        "target_yaw_rad": -0.03704673163949579,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          25.168826664278892,
+          -12.105851060456436,
+          -0.8535305059201086,
+          -0.0362143045667177
+        ],
+        "observed_xyz_m": [
+          0.002889889059588313,
+          -0.0008739440818317235,
+          -0.0007989589357748628
+        ],
+        "observed_yaw_rad": -0.0008324270708249803
+      },
+      "raw_model_delta_xyz_m": [
+        0.25263108294767606,
+        -0.1226716804520912,
+        -0.00871321240342688
+      ],
+      "bounded_delta_xyz_m": [
+        0.04497784574183783,
+        -0.021840178397243958,
+        -0.00871321240342688
+      ],
+      "bounded_delta_yaw_deg": -2.080542467438568,
+      "model_target_was_limited": true,
+      "command_source": "/vla_model_bench_validation"
+    }
+  ],
+  "armed_ever": false,
+  "run_id": "chair-b79eb62a6d92",
+  "instruction": "fly to the chair",
+  "physical_navigation_verified": false,
+  "limits": {
+    "xy_m": 0.05,
+    "z_m": 0.01,
+    "yaw_deg": 3.0
+  },
+  "original_mode": "MANUAL",
+  "updated_unix": 1792057838.550855,
+  "offboard_mode_sent": true,
+  "restored_mode": "MANUAL"
+}

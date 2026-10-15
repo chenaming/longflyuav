@@ -1,0 +1,485 @@
+#!/usr/bin/env python3
+"""Synchronize Odin RGB + Ego odometry, request VLA, publish Ego GoalSet.
+
+Default is preview only. No arming, takeoff or mode changes are performed.
+"""
+import base64
+import json
+import math
+import os
+import threading
+import time
+import uuid
+import xmlrpc.client
+from pathlib import Path
+
+import cv2
+import message_filters
+import numpy as np
+import requests
+import rospy
+from cv_bridge import CvBridge
+from geometry_msgs.msg import PoseStamped
+from mavros_msgs.msg import State
+from nav_msgs.msg import Odometry
+from quadrotor_msgs.msg import GoalSet
+from sensor_msgs.msg import CompressedImage, Image
+from std_msgs.msg import Empty, String, Bool
+from std_srvs.srv import SetBool, SetBoolResponse, Trigger, TriggerResponse
+
+from agile_openvla_bridge.geometry import (
+    MissionFrame, check_goal, distance, finite, quaternion_rpy, wrap,
+)
+
+from agile_openvla_bridge.step_cycle import StepCycle
+
+SCHEMA = "openvla-agile/v1"
+CONVENTION = "mission_fru_cm_yaw_deg"
+
+
+class Bridge:
+    def __init__(self):
+        self.lock = threading.RLock()
+        self.quit = threading.Event()
+        p = lambda name, default: rospy.get_param("~" + name, default)
+        self.url = p("server_url", "http://127.0.0.1:5008/predict")
+        self.record_dir = Path(os.path.expanduser(p("record_dir", "~/agile/openvla_runs")))
+        self.record_dir.mkdir(parents=True, exist_ok=True)
+        self.planner_node = p("planner_node", "/uav1_planner_node")
+        self.instruction = p("instruction", "fly forward 1 meter")
+        self.dry_run = bool(p("dry_run", True))
+        self.enabled = False
+        self.start_enabled = bool(p("enabled", False))
+        self.cycle = StepCycle(float(p("goal_reached_distance", 0.04)),
+                               float(p("goal_reached_speed", 0.10)),
+                               float(p("hover_dwell_seconds", 1.0)))
+        self.require_offboard = bool(p("require_offboard", True))
+        self.alignment_confirmed = bool(p("camera_alignment_confirmed", False))
+        self.convention_confirmed = bool(p("model_convention_confirmed", False))
+        self.camera_offset = math.radians(p("camera_yaw_offset_deg", 0.0))
+        self.frame = p("planner_frame", "map").lstrip("/")
+        self.body_frame = p("body_frame", "base_link").lstrip("/")
+        self.period = float(p("request_period", 3.0))
+        self.timeout = float(p("http_timeout", 10.0))
+        self.max_sensor_age = float(p("max_sensor_age", 0.75))
+        self.max_response_age = float(p("max_response_age", 8.0))
+        self.max_drift = float(p("max_position_drift", 0.25))
+        self.max_yaw_drift = math.radians(p("max_yaw_drift_deg", 15.0))
+        self.max_tilt = math.radians(p("max_tilt_deg", 20.0))
+        self.quality = int(p("jpeg_quality", 85))
+        self.max_width = int(p("image_max_width", 960))
+        self.max_step = float(p("max_goal_step", 1.0))
+        self.max_vertical = float(p("max_vertical_step", 0.3))
+        self.max_radius = float(p("max_mission_radius", 6.0))
+        self.min_z = float(p("min_goal_z", 0.2))
+        self.max_z = float(p("max_goal_z", 2.5))
+        self.min_step = float(p("min_goal_step", 0.03))
+        self.reach = float(p("goal_reached_distance", 0.07))
+        self.goal_timeout = float(p("goal_timeout", 15.0))
+        self.max_goals = int(p("max_goals", 100))
+        self.max_duration = float(p("max_mission_seconds", 300.0))
+        self.small_limit = int(p("small_action_stop_count", 3))
+        self.sync_slop = float(p("sync_slop", 0.15))
+        positive = [self.period, self.timeout, self.max_sensor_age, self.max_response_age,
+                    self.max_step, self.max_radius, self.goal_timeout, self.max_duration,
+                    self.max_vertical, self.max_drift, self.max_yaw_drift, self.max_tilt,
+                    self.sync_slop, self.reach, self.max_goals, self.small_limit]
+        if not finite(positive) or min(positive) <= 0:
+            raise ValueError("timing, distance and count limits must be finite and positive")
+        if not finite([self.min_z, self.max_z, self.min_step, self.camera_offset]) or self.min_z >= self.max_z or self.min_step < 0:
+            raise ValueError("invalid goal bounds")
+        if not 1 <= self.quality <= 100 or self.max_width < 0:
+            raise ValueError("invalid JPEG settings")
+        if not self.frame or not self.body_frame or not self.instruction.strip():
+            raise ValueError("frame names and instruction must not be empty")
+        self.latest_pair = None
+        self.latest_odom = None
+        self.state = None
+        self.state_arrival = 0.0
+        self.origin = None
+        self.mission_id = str(uuid.uuid4())
+        self.generation = 0
+        self.goal = None
+        self.goal_started = 0.0
+        self.goal_count = 0
+        self.small_count = 0
+        self.mission_started = time.monotonic()
+        self.next_request = 0.0
+        self.last_image_stamp = None
+        self.cv = CvBridge()
+        self.http = requests.Session()
+        self.http.trust_env = False
+        token = os.getenv("OPENVLA_API_TOKEN", "")
+        if token:
+            self.http.headers["Authorization"] = "Bearer " + token
+        self.status_pub = rospy.Publisher("~status", String, queue_size=1, latch=True)
+        self.preview_pub = rospy.Publisher("~target_pose", PoseStamped, queue_size=1)
+        self.preview_goal_pub = rospy.Publisher("~preview_goal", GoalSet, queue_size=1)
+        self.result_pub = rospy.Publisher("~result", String, queue_size=1)
+        self.goal_pub = None if self.dry_run else rospy.Publisher(
+            p("goal_topic", "/uav1/goal_point"), GoalSet, queue_size=1, latch=False)
+        self.stop_pub = None if self.dry_run else rospy.Publisher(
+            p("stop_topic", "/uav1/mandatory_stop_to_planner"), Empty, queue_size=1)
+        self.hover_pub = None if self.dry_run else rospy.Publisher(
+            p("hover_topic", "/uav1/hover_command"), Bool, queue_size=1)
+        rospy.Service("~step", Trigger, self.on_step)
+        rospy.Subscriber(p("state_topic", "/uav1/mavros/state"), State, self.on_state, queue_size=1)
+        rospy.Subscriber(p("stop_topic", "/uav1/mandatory_stop_to_planner"), Empty, self.on_stop, queue_size=1)
+        rospy.Subscriber("~instruction", String, self.on_instruction, queue_size=1)
+        rospy.Service("~enable", SetBool, self.on_enable)
+        rospy.Service("~reset", Trigger, self.on_reset)
+        self.odom_sub = message_filters.Subscriber(p("odom_topic", "/uav1/mavros/local_position/odom"),
+                                                   Odometry, queue_size=30)
+        self.odom_sub.registerCallback(self.on_odom)
+        image_type = CompressedImage if p("image_transport", "compressed") == "compressed" else Image
+        self.image_sub = message_filters.Subscriber(p("image_topic", "/uav1/odin1/image/compressed"),
+                                                    image_type, queue_size=1, buff_size=8*1024*1024)
+        self.sync = message_filters.ApproximateTimeSynchronizer(
+            [self.image_sub, self.odom_sub], 30, self.sync_slop, allow_headerless=False)
+        self.sync.registerCallback(self.on_pair)
+        rospy.on_shutdown(self.shutdown)
+        self.worker = threading.Thread(target=self.run, name="vla-http", daemon=True)
+        self.worker.start()
+        self.publish_status("idle_preview" if self.dry_run else "disabled")
+
+    def publish_status(self, status, **details):
+        self.status_pub.publish(String(data=json.dumps(dict(status=status, dry_run=self.dry_run,
+                                                           enabled=self.enabled, **details))))
+
+    def planner_connected(self):
+        # Match the real planner, as send_goal.sh does, not a rostopic monitor.
+        code, _, bus = xmlrpc.client.ServerProxy(rospy.get_node_uri()).getBusInfo(rospy.get_name())
+        return code == 1 and any(row[1] == self.planner_node and row[2] == "o"
+                                and row[4] == self.goal_pub.resolved_name and row[5] for row in bus)
+
+    def record(self, rid, name, data):
+        path = self.record_dir / (rid + "." + name)
+        if isinstance(data, bytes):
+            path.write_bytes(data)
+        else:
+            path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n")
+
+    def on_step(self, _):
+        with self.lock:
+            if not self.dry_run and not self.enabled:
+                return TriggerResponse(success=False, message="enable live output first")
+            try:
+                if self.latest_pair is None:
+                    raise ValueError("no synchronized image/odom")
+                self.check_observation(*self.latest_pair)
+                self.cycle.request(self.goal is not None)
+            except ValueError as exc:
+                return TriggerResponse(success=False, message=str(exc))
+            self.publish_status("step_queued")
+            return TriggerResponse(success=True, message="one step queued; follow ~result and ~status")
+
+    def finish_goal(self):
+        goal = self.goal
+        self.goal = None
+        self.cycle.cancel()
+        # Stop further replanning and request the existing FSM hover interface.
+        # The installed traj_server stops commands after trajectory duration;
+        # the FSM's command timeout also returns to AUTO_HOVER.
+        if self.stop_pub is not None:
+            self.stop_pub.publish(Empty())
+        if self.hover_pub is not None:
+            self.hover_pub.publish(Bool(data=True))
+        self.publish_status("hovering", goal_map_m=goal,
+                            message="arrived and settled; waiting for next explicit step")
+
+    def on_state(self, msg):
+        with self.lock:
+            self.state, self.state_arrival = msg, time.monotonic()
+            if not self.dry_run and self.enabled and not self.offboard_ready():
+                self.disable("OFFBOARD/armed state lost")
+
+    def on_odom(self, msg):
+        with self.lock:
+            self.latest_odom = msg, time.monotonic()
+
+    def on_pair(self, image, odom):
+        with self.lock:
+            self.latest_pair = image, odom, time.monotonic()
+
+    def offboard_ready(self):
+        return (not self.require_offboard or
+                (self.state is not None and time.monotonic()-self.state_arrival < 1.5
+                 and self.state.connected and self.state.armed and self.state.mode == "OFFBOARD"))
+
+    def reset_mission(self):
+        self.cycle.cancel()
+        self.generation += 1
+        self.origin = None
+        self.mission_id = str(uuid.uuid4())
+        self.goal = None
+        self.goal_count = self.small_count = 0
+        self.mission_started = time.monotonic()
+        self.next_request = 0.0
+        self.last_image_stamp = None
+
+    def disable(self, reason):
+        with self.lock:
+            had_goal = self.goal is not None
+            self.enabled = False
+            self.start_enabled = False
+            self.reset_mission()
+            if had_goal and self.stop_pub is not None:
+                self.stop_pub.publish(Empty())
+            self.publish_status("disabled", reason=reason)
+
+    def on_stop(self, msg):
+        # An owned completion stop must not erase the fixed mission origin.
+        header = getattr(msg, "_connection_header", None)
+        if header and header.get("callerid") == rospy.get_name():
+            return
+        self.disable("planner stop received")
+
+    def on_instruction(self, msg):
+        if not msg.data.strip() or len(msg.data) > 1000:
+            return
+        with self.lock:
+            self.disable("new instruction; enable to start new mission")
+            self.instruction = msg.data.strip()
+
+    def on_reset(self, _):
+        self.disable("mission reset")
+        return TriggerResponse(success=True, message="origin reset; live output disabled")
+
+    def on_enable(self, req):
+        if not req.data:
+            self.disable("operator disabled")
+            return SetBoolResponse(success=True, message="disabled")
+        with self.lock:
+            if self.dry_run:
+                return SetBoolResponse(success=False, message="preview only; restart with dry_run:=false")
+            if self.enabled:
+                return SetBoolResponse(success=False, message="already enabled; disable before resetting mission")
+            if not self.convention_confirmed:
+                return SetBoolResponse(success=False, message="confirm checkpoint FRU/cm/degree input and radian output convention first")
+            if not self.alignment_confirmed:
+                return SetBoolResponse(success=False, message="confirm camera/body yaw calibration first")
+            if not self.offboard_ready():
+                return SetBoolResponse(success=False, message="requires fresh armed OFFBOARD state")
+            try:
+                if self.latest_pair is None:
+                    raise ValueError("no synchronized image/odom")
+                image, odom, arrived = self.latest_pair
+                self.check_observation(image, odom, arrived)
+            except ValueError as exc:
+                return SetBoolResponse(success=False, message=str(exc))
+            if self.goal is not None:
+                return SetBoolResponse(success=False, message="already executing a goal")
+            self.reset_mission()
+            self.enabled = True
+            self.publish_status("enabled")
+            return SetBoolResponse(success=True, message="enabled; call ~step to run one inference and one goal")
+
+    def pose(self, odom):
+        if odom.header.frame_id.lstrip("/") != self.frame:
+            raise ValueError("odom frame differs from Ego planner frame: " + odom.header.frame_id)
+        if odom.child_frame_id.lstrip("/") != self.body_frame:
+            raise ValueError("unexpected odom body frame: " + odom.child_frame_id)
+        pos, q = odom.pose.pose.position, odom.pose.pose.orientation
+        xyz = (pos.x, pos.y, pos.z)
+        if not finite(xyz):
+            raise ValueError("invalid position")
+        roll, pitch, yaw = quaternion_rpy((q.x, q.y, q.z, q.w))
+        if abs(roll) > self.max_tilt or abs(pitch) > self.max_tilt:
+            raise ValueError("vehicle tilt exceeds yaw-only model assumption")
+        return xyz, yaw
+
+    def check_stamp(self, stamp, limit):
+        age = (rospy.Time.now() - stamp).to_sec()
+        if stamp.to_sec() <= 0 or age < -0.2 or age > limit:
+            raise ValueError("stale/invalid sensor timestamp (age %.3fs)" % age)
+
+    def check_observation(self, image, odom, arrived):
+        if time.monotonic() - arrived > self.max_sensor_age:
+            raise ValueError("no recent synchronized image/odom")
+        self.check_stamp(image.header.stamp, self.max_sensor_age)
+        self.check_stamp(odom.header.stamp, self.max_sensor_age)
+        if abs((image.header.stamp - odom.header.stamp).to_sec()) > self.sync_slop:
+            raise ValueError("image and odometry timestamps are not synchronized")
+        return self.pose(odom)
+
+    def jpeg(self, msg):
+        if isinstance(msg, CompressedImage):
+            image = cv2.imdecode(np.frombuffer(msg.data, dtype=np.uint8), cv2.IMREAD_COLOR)
+        else:
+            image = self.cv.imgmsg_to_cv2(msg, desired_encoding="bgr8")
+        if image is None or not image.size:
+            raise ValueError("image decode failed")
+        if self.max_width > 0 and image.shape[1] > self.max_width:
+            scale = self.max_width / float(image.shape[1])
+            image = cv2.resize(image, (self.max_width, max(1, int(image.shape[0]*scale))))
+        ok, data = cv2.imencode(".jpg", image, [cv2.IMWRITE_JPEG_QUALITY, self.quality])
+        if not ok:
+            raise ValueError("JPEG encode failed")
+        return base64.b64encode(data).decode("ascii")
+
+    def run(self):
+        while not self.quit.wait(0.05) and not rospy.is_shutdown():
+            try:
+                with self.lock:
+                    if not self.dry_run and not self.enabled:
+                        if self.start_enabled:
+                            reply = self.on_enable(type("EnableRequest", (), {"data": True})())
+                            if reply.success:
+                                self.start_enabled = False
+                            else:
+                                rospy.logwarn_throttle(5.0, "Waiting to enable: %s", reply.message)
+                        continue
+                    if not self.dry_run and not self.offboard_ready():
+                        self.disable("OFFBOARD/armed state lost")
+                        continue
+                    if not self.cycle.pending and self.goal is None:
+                        continue
+                    if self.latest_pair is None or self.latest_odom is None:
+                        self.publish_status("waiting_for_sensors")
+                        continue
+                    image, odom, arrived = self.latest_pair
+                    latest, latest_arrival = self.latest_odom
+                    self.check_stamp(latest.header.stamp, self.max_sensor_age)
+                    current, current_yaw = self.pose(latest)
+                    if time.monotonic()-latest_arrival > self.max_sensor_age:
+                        raise ValueError("odometry stopped")
+                    if self.goal is not None:
+                        if time.monotonic()-self.goal_started > self.goal_timeout:
+                            raise ValueError("Ego goal timed out")
+                        v = latest.twist.twist.linear
+                        if self.cycle.arrived(distance(self.goal, current),
+                                              math.sqrt(v.x*v.x+v.y*v.y+v.z*v.z), time.monotonic()):
+                            self.finish_goal()
+                        continue
+                    if time.monotonic() < self.next_request or image.header.stamp == self.last_image_stamp:
+                        continue
+                    observation, obs_yaw = self.check_observation(image, odom, arrived)
+                    if self.origin is None:
+                        self.origin = MissionFrame(observation, obs_yaw, self.camera_offset)
+                        self.mission_started = time.monotonic()
+                    if not self.dry_run and (self.goal_count >= self.max_goals or
+                                            time.monotonic()-self.mission_started > self.max_duration):
+                        raise ValueError("mission budget reached")
+                    if not self.cycle.begin():
+                        continue
+                    self.publish_status("inferring")
+                    origin, generation, mission_id = self.origin, self.generation, self.mission_id
+                    instruction = self.instruction
+                    self.next_request = time.monotonic() + self.period
+                    self.last_image_stamp = image.header.stamp
+                rid = str(uuid.uuid4())
+                payload = dict(schema=SCHEMA, convention=CONVENTION, request_id=rid,
+                               mission_id=mission_id, observation_stamp=image.header.stamp.to_sec(),
+                               image=self.jpeg(image), instr=instruction,
+                               proprio=origin.encode_pose(observation, obs_yaw))
+                self.record(rid, "jpg", base64.b64decode(payload["image"]))
+                self.record(rid, "request.json", dict(
+                    **{k: v for k, v in payload.items() if k != "image"},
+                    image_file=rid + ".jpg", observation_map_m=list(observation),
+                    observation_yaw_rad=obs_yaw, mission_origin_map_m=list(origin.position),
+                    camera_yaw_offset_rad=self.camera_offset))
+                began = time.monotonic()
+                response = self.http.post(self.url, json=payload, timeout=(3.0, self.timeout))
+                response.raise_for_status()
+                result = response.json()
+                with self.lock:
+                    # A stop or instruction change while HTTP is in flight cancels it.
+                    if generation != self.generation or (not self.dry_run and not self.enabled):
+                        continue
+                    if result.get("status") != "success" or result.get("schema") != SCHEMA:
+                        raise ValueError("invalid inference response")
+                    if result.get("convention") != CONVENTION or result.get("position_unit") != "cm" or result.get("yaw_unit") != "rad":
+                        raise ValueError("response units/convention mismatch")
+                    if result.get("request_id") != rid or result.get("mission_id") != mission_id:
+                        raise ValueError("response request/mission mismatch")
+                    if result.get("observation_stamp") != payload["observation_stamp"]:
+                        raise ValueError("response observation mismatch")
+                    if time.monotonic()-began > self.max_response_age:
+                        raise ValueError("inference response arrived too late")
+                    self.check_stamp(image.header.stamp, self.max_response_age)
+                    latest, latest_arrival = self.latest_odom
+                    self.check_stamp(latest.header.stamp, self.max_sensor_age)
+                    if time.monotonic()-latest_arrival > self.max_sensor_age:
+                        raise ValueError("odometry stopped during inference")
+                    current, current_yaw = self.pose(latest)
+                    if abs(wrap(current_yaw-obs_yaw)) > self.max_yaw_drift:
+                        raise ValueError("vehicle rotated too far during inference")
+                    actions = result.get("action")
+                    if not isinstance(actions, list) or len(actions) != 1:
+                        raise ValueError("expected exactly one target")
+                    goal, goal_yaw = origin.decode_action(actions[0])
+                    validation_error = None
+                    try:
+                        check_goal(goal, observation, current, origin.position,
+                                   max_step=self.max_step, max_drift=self.max_drift,
+                                   max_radius=self.max_radius, min_z=self.min_z, max_z=self.max_z,
+                                   max_vertical_step=self.max_vertical)
+                        # Same planner bounds as ~/agile/send_goal.sh.
+                        ground = rospy.get_param("/uav1_planner_node/grid_map/virtual_ground", self.min_z)
+                        ceiling = rospy.get_param("/uav1_planner_node/grid_map/virtual_ceil", self.max_z)
+                        if not ground < goal[2] < ceiling:
+                            raise ValueError("goal outside planner ground/ceiling")
+                    except ValueError as exc:
+                        validation_error = str(exc)
+                    result["goal_validation_error"] = validation_error
+                    # Preview still reports a ground-level prediction on the bench.
+                    # Live mode rejects the same target before creating a command.
+                    if validation_error and not self.dry_run:
+                        result.update(goal_map_m=list(goal), sent_to_ego=False)
+                        self.result_pub.publish(String(data=json.dumps(result)))
+                        raise ValueError(validation_error)
+                    pose = PoseStamped()
+                    pose.header.stamp, pose.header.frame_id = rospy.Time.now(), self.frame
+                    pose.pose.position.x, pose.pose.position.y, pose.pose.position.z = goal
+                    pose.pose.orientation.z = math.sin(goal_yaw/2)
+                    pose.pose.orientation.w = math.cos(goal_yaw/2)
+                    message = GoalSet()
+                    message.goal = list(goal)
+                    self.preview_pub.publish(pose)
+                    self.preview_goal_pub.publish(message)
+                    result.update(goal_map_m=list(goal), goal_body_yaw_rad=goal_yaw,
+                                  yaw_sent_to_ego=False, planner_frame=self.frame,
+                                  sent_to_ego=False, instruction=instruction,
+                                  observation_map_m=list(observation), proprio_sent=payload["proprio"])
+                    self.cycle.inflight = False
+                    near_zero = distance(goal, current) < self.min_step
+                    if near_zero:
+                        self.small_count += 1
+                        if not self.dry_run and self.small_count >= self.small_limit:
+                            self.disable("model produced consecutive near-zero actions")
+                    elif not self.dry_run:
+                        if not self.offboard_ready():
+                            raise ValueError("OFFBOARD lost before goal publication")
+                        if not self.planner_connected():
+                            raise ValueError("Ego goal subscriber is absent")
+                        self.goal = goal
+                        self.goal_started = time.monotonic()
+                        self.goal_count += 1
+                        self.small_count = 0
+                        self.goal_pub.publish(message)
+                        result["sent_to_ego"] = True
+                    self.record(rid, "result.json", result)
+                    self.result_pub.publish(String(data=json.dumps(result)))
+                    self.publish_status(("preview_rejected" if validation_error else "preview_done") if self.dry_run
+                                        else ("no_motion" if near_zero else "goal_sent"),
+                                        goal_map_m=goal, request_id=rid)
+                    rospy.loginfo("VLA %s target map metres=%s", "preview" if self.dry_run else "Ego", goal)
+            except Exception as exc:
+                rospy.logwarn_throttle(3.0, "OpenVLA bridge: %s", str(exc))
+                if self.dry_run:
+                    with self.lock:
+                        self.cycle.cancel()
+                    self.publish_status("step_error", reason=str(exc))
+                    self.quit.wait(0.5)
+                else:
+                    self.disable(str(exc))
+
+    def shutdown(self):
+        self.quit.set()
+        self.disable("node shutdown")
+
+
+if __name__ == "__main__":
+    rospy.init_node("openvla_ego_bridge")
+    Bridge()
+    rospy.spin()

@@ -1,0 +1,8756 @@
+Starting finite five-second real model motor bench.
+{
+  "kind": "five_second_armed_model_point_bench",
+  "status": "passed_transport_pending_motor_observation",
+  "model_predictions_used": true,
+  "cases": [],
+  "armed_ever": true,
+  "run_id": "chair-fadfc1f2db12",
+  "instruction": "fly to the chair",
+  "physical_navigation_verified": false,
+  "limits": {
+    "xy_m": 0.02,
+    "z_m": 0.003,
+    "yaw_deg": 1.0
+  },
+  "motor_rotation_confirmed": false,
+  "model_targets": [
+    {
+      "prediction": {
+        "run_id": "chair-fadfc1f2db12",
+        "request_id": 15290,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792044252.6517127,
+        "validated_stamp": 1792044253.0781543,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.6984249994098455,
+          0.04399750996307928,
+          0.027874533997581566
+        ],
+        "target_yaw_rad": -0.17694010545562167,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          26.857219999600364,
+          1.157240729373786,
+          -0.2535189540459548,
+          0.030249469501993476
+        ],
+        "observed_xyz_m": [
+          0.4332162141799927,
+          0.08792069554328918,
+          0.03040972352027893
+        ],
+        "observed_yaw_rad": -0.2071895816776934
+      },
+      "raw_delta_xyz_m": [
+        0.26499873846166433,
+        -0.042270490341619664,
+        -0.00221166668672744
+      ],
+      "limited_delta_xyz_m": [
+        0.01975031388028069,
+        -0.0031504129301397972,
+        -0.00221166668672744
+      ],
+      "limited_delta_yaw_deg": 1.0,
+      "sent_xyz_m": [
+        0.45317657482846185,
+        0.08311758737455914,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.865349104250239
+    },
+    {
+      "prediction": {
+        "run_id": "chair-fadfc1f2db12",
+        "request_id": 15291,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792044253.5280185,
+        "validated_stamp": 1792044253.8270178,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.7011656396120955,
+          0.0517083494391819,
+          0.026632071437196102
+        ],
+        "target_yaw_rad": -0.1666208534172502,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          26.857219999600364,
+          2.344980292642159,
+          -0.2535189540459548,
+          0.0404746655125644
+        ],
+        "observed_xyz_m": [
+          0.43351051211357117,
+          0.08398298919200897,
+          0.029167260974645615
+        ],
+        "observed_yaw_rad": -0.20709550984899328
+      },
+      "raw_delta_xyz_m": [
+        0.26773100421132345,
+        -0.03068920835586586,
+        -0.0019932957721191975
+      ],
+      "limited_delta_xyz_m": [
+        0.01986988725607502,
+        -0.0022776260515869665,
+        -0.0019932957721191975
+      ],
+      "limited_delta_yaw_deg": 1.0,
+      "sent_xyz_m": [
+        0.4533045226568471,
+        0.0801199317434608,
+        0.026632071437196102
+      ],
+      "sent_yaw_deg": -10.864835498312607
+    },
+    {
+      "prediction": {
+        "run_id": "chair-fadfc1f2db12",
+        "request_id": 15292,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792044253.919263,
+        "validated_stamp": 1792044254.282326,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.6908856728163129,
+          0.009409560766591385,
+          0.03942201721779992
+        ],
+        "target_yaw_rad": -0.2636819569065878,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          26.688380666068216,
+          -1.8121081787971605,
+          1.0965070376709,
+          -0.056664696587859664
+        ],
+        "observed_xyz_m": [
+          0.4334249198436737,
+          0.08199949562549591,
+          0.028456946834921837
+        ],
+        "observed_yaw_rad": -0.20701725227535406
+      },
+      "raw_delta_xyz_m": [
+        0.2571963765707379,
+        -0.07086542347394054,
+        0.011406334744021196
+      ],
+      "limited_delta_xyz_m": [
+        0.019281490791112122,
+        -0.00531263709209076,
+        0.003
+      ],
+      "limited_delta_yaw_deg": -1.0,
+      "sent_xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "sent_yaw_deg": -12.861393446884131
+    },
+    {
+      "prediction": {
+        "run_id": "chair-fadfc1f2db12",
+        "request_id": 15293,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792044254.3083906,
+        "validated_stamp": 1792044254.7150388,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.7014140716757535,
+          0.04783914450055907,
+          0.02543396778027829
+        ],
+        "target_yaw_rad": -0.16656998806176038,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          26.857219999600364,
+          2.344980292642159,
+          -0.2535189540459548,
+          0.0404746655125644
+        ],
+        "observed_xyz_m": [
+          0.43375730514526367,
+          0.0801001712679863,
+          0.027969157323241234
+        ],
+        "observed_yaw_rad": -0.2070446583349891
+      },
+      "raw_delta_xyz_m": [
+        0.267760091182208,
+        -0.03170817133539369,
+        -0.002289540175392065
+      ],
+      "limited_delta_xyz_m": [
+        0.019861224720577175,
+        -0.0023519678141365376,
+        -0.002289540175392065
+      ],
+      "limited_delta_yaw_deg": 1.0,
+      "sent_xyz_m": [
+        0.4535152052141227,
+        0.07719534802181623,
+        0.02543396778027829
+      ],
+      "sent_yaw_deg": -10.858406929195489
+    },
+    {
+      "prediction": {
+        "run_id": "chair-fadfc1f2db12",
+        "request_id": 15294,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792044254.6988473,
+        "validated_stamp": 1792044255.1081293,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.7013132119257125,
+          0.04730674433954101,
+          0.025188318414644563
+        ],
+        "target_yaw_rad": -0.16649356882013544,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          26.857219999600364,
+          2.344980292642159,
+          -0.2535189540459548,
+          0.0404746655125644
+        ],
+        "observed_xyz_m": [
+          0.43365398049354553,
+          0.07954731583595276,
+          0.027723507955670357
+        ],
+        "observed_yaw_rad": -0.20696824495577143
+      },
+      "raw_delta_xyz_m": [
+        0.26898218632527915,
+        -0.03266670000307221,
+        -0.002584564538641608
+      ],
+      "limited_delta_xyz_m": [
+        0.019854121396720027,
+        -0.0024111954637282876,
+        -0.002584564538641608
+      ],
+      "limited_delta_yaw_deg": 1.0,
+      "sent_xyz_m": [
+        0.4521851469971534,
+        0.07756224887888494,
+        0.025188318414644563
+      ],
+      "sent_yaw_deg": -10.852601159630522
+    },
+    {
+      "prediction": {
+        "run_id": "chair-fadfc1f2db12",
+        "request_id": 15295,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792044255.087403,
+        "validated_stamp": 1792044255.5388927,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.6898026904484049,
+          0.007422216306388868,
+          0.03873795332995046
+        ],
+        "target_yaw_rad": -0.263531618391573,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          26.688380666068216,
+          -1.8121081787971605,
+          1.0965070376709,
+          -0.056664696587859664
+        ],
+        "observed_xyz_m": [
+          0.43233102560043335,
+          0.07997344434261322,
+          0.02777288295328617
+        ],
+        "observed_yaw_rad": -0.20686691516125064
+      },
+      "raw_delta_xyz_m": [
+        0.2608339032551066,
+        -0.07597240053588103,
+        0.010916889334589133
+      ],
+      "limited_delta_xyz_m": [
+        0.01920205976329352,
+        -0.005592933116612782,
+        0.003
+      ],
+      "limited_delta_yaw_deg": -1.0,
+      "sent_xyz_m": [
+        0.4481708469565919,
+        0.07780168372565711,
+        0.030821063995361327
+      ],
+      "sent_yaw_deg": -12.852386691959998
+    },
+    {
+      "prediction": {
+        "run_id": "chair-fadfc1f2db12",
+        "request_id": 15296,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792044255.4810405,
+        "validated_stamp": 1792044255.8810353,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.6968709146147407,
+          0.05080532215722946,
+          0.025224427658484545
+        ],
+        "target_yaw_rad": -0.16645179106412167,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          26.857219999600364,
+          2.344980292642159,
+          -0.2535189540459548,
+          0.0404746655125644
+        ],
+        "observed_xyz_m": [
+          0.4292103350162506,
+          0.0830347090959549,
+          0.027759617194533348
+        ],
+        "observed_yaw_rad": -0.20692645741662444
+      },
+      "raw_delta_xyz_m": [
+        0.2697417949801124,
+        -0.03628620572200867,
+        -0.0031038513748187155
+      ],
+      "limited_delta_xyz_m": [
+        0.01982145788993902,
+        -0.0026664221566312625,
+        -0.003
+      ],
+      "limited_delta_yaw_deg": 1.0,
+      "sent_xyz_m": [
+        0.4469505775245673,
+        0.08442510572260686,
+        0.02532827903330326
+      ],
+      "sent_yaw_deg": -10.847514360236454
+    },
+    {
+      "prediction": {
+        "run_id": "chair-fadfc1f2db12",
+        "request_id": 15297,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792044255.8720453,
+        "validated_stamp": 1792044256.2801247,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.694671504721902,
+          0.05518572737304895,
+          0.02587994091339525
+        ],
+        "target_yaw_rad": -0.1661850336200521,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          26.857219999600364,
+          2.344980292642159,
+          -0.2535189540459548,
+          0.0404746655125644
+        ],
+        "observed_xyz_m": [
+          0.42700234055519104,
+          0.0873437151312828,
+          0.028415130451321602
+        ],
+        "observed_yaw_rad": -0.20665969208294074
+      },
+      "raw_delta_xyz_m": [
+        0.26828607224013623,
+        -0.03481700311572821,
+        -0.0036631403850752482
+      ],
+      "limited_delta_xyz_m": [
+        0.019833680674927003,
+        -0.002573929075368468,
+        -0.003
+      ],
+      "limited_delta_yaw_deg": 1.0,
+      "sent_xyz_m": [
+        0.44621911315669277,
+        0.0874288014134087,
+        0.026543081298470498
+      ],
+      "sent_yaw_deg": -10.855624379115994
+    },
+    {
+      "prediction": {
+        "run_id": "chair-fadfc1f2db12",
+        "request_id": 15298,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792044256.258213,
+        "validated_stamp": 1792044256.6600235,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.6941360077312325,
+          0.05764097014003985,
+          0.026996408555732338
+        ],
+        "target_yaw_rad": -0.16628818902867737,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          26.857219999600364,
+          2.344980292642159,
+          -0.2535189540459548,
+          0.0404746655125644
+        ],
+        "observed_xyz_m": [
+          0.42647016048431396,
+          0.0898265689611435,
+          0.02953159809112549
+        ],
+        "observed_yaw_rad": -0.20676286288504797
+      },
+      "raw_delta_xyz_m": [
+        0.26898969620970237,
+        -0.034492924422681405,
+        -0.0010065073481935576
+      ],
+      "limited_delta_xyz_m": [
+        0.019837567559535627,
+        -0.0025437989938003353,
+        -0.0010065073481935576
+      ],
+      "limited_delta_yaw_deg": 1.0,
+      "sent_xyz_m": [
+        0.4449838790810658,
+        0.08959009556892092,
+        0.026996408555732338
+      ],
+      "sent_yaw_deg": -10.850496748844161
+    },
+    {
+      "prediction": {
+        "run_id": "chair-fadfc1f2db12",
+        "request_id": 15299,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792044256.6476843,
+        "validated_stamp": 1792044257.0092783,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.6898474518878834,
+          0.04647800820631915,
+          0.02522531985966977
+        ],
+        "target_yaw_rad": -0.23799913498763914,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          26.857219999600364,
+          0.9592841354957216,
+          -0.2535189540459548,
+          -0.031101706561432185
+        ],
+        "observed_xyz_m": [
+          0.42503249645233154,
+          0.09226106107234955,
+          0.02776050940155983
+        ],
+        "observed_yaw_rad": -0.20689742051073273
+      },
+      "raw_delta_xyz_m": [
+        0.2661749248130696,
+        -0.04575526965098447,
+        -0.0012175767150658726
+      ],
+      "limited_delta_xyz_m": [
+        0.01971089801623332,
+        -0.0033882885641056707,
+        -0.0012175767150658726
+      ],
+      "limited_delta_yaw_deg": -1.0,
+      "sent_xyz_m": [
+        0.44338342509104717,
+        0.08884498929319795,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.852562861846081
+    },
+    {
+      "prediction": {
+        "run_id": "chair-fadfc1f2db12",
+        "request_id": 15300,
+        "instruction": "fly to the chair",
+        "observation_stamp": 1792044257.332545,
+        "validated_stamp": 1792044257.5968235,
+        "target_frame": "map",
+        "target_xyz_m": [
+          0.6803645409917256,
+          0.016956334927136066,
+          0.03746907845772793
+        ],
+        "target_yaw_rad": -0.2633654736296238,
+        "coordinate_mode": "paired_estimate",
+        "physical_axes_calibrated": false,
+        "epoch": 1,
+        "latest_only": true,
+        "action_ori_cm_rad": [
+          26.688380666068216,
+          -1.8121081787971605,
+          1.0965070376709,
+          -0.056664696587859664
+        ],
+        "observed_xyz_m": [
+          0.4228808283805847,
+          0.08946478366851807,
+          0.02650400809943676
+        ],
+        "observed_yaw_rad": -0.20670077956788502
+      },
+      "raw_delta_xyz_m": [
+        0.25751282948011367,
+        -0.06795911677831971,
+        0.012755884459987182
+      ],
+      "limited_delta_xyz_m": [
+        0.01933792671595374,
+        -0.005103390081936001,
+        0.003
+      ],
+      "limited_delta_yaw_deg": -1.0,
+      "sent_xyz_m": [
+        0.4421896382275657,
+        0.07981206162351978,
+        0.027713193997740745
+      ],
+      "sent_yaw_deg": -12.855929120612657
+    }
+  ],
+  "session_token": "3f832ea196fc4a018f63db079de32e3d",
+  "initial_mode": "MANUAL",
+  "original_mode": "MANUAL",
+  "updated_unix": 1792044261.1188517,
+  "offboard_entry": "mavros_set_mode",
+  "offboard_mode_sent": true,
+  "offboard_start_monotonic": 11828.678972832,
+  "disarmed_point_verified": {
+    "prediction": {
+      "run_id": "chair-fadfc1f2db12",
+      "request_id": 15287,
+      "instruction": "fly to the chair",
+      "observation_stamp": 1792044251.4843144,
+      "validated_stamp": 1792044251.8765614,
+      "target_frame": "map",
+      "target_xyz_m": [
+        0.6914239232287844,
+        0.016243019931167432,
+        0.0407217523675709
+      ],
+      "target_yaw_rad": -0.26370642817602885,
+      "coordinate_mode": "paired_estimate",
+      "physical_axes_calibrated": false,
+      "epoch": 1,
+      "latest_only": true,
+      "action_ori_cm_rad": [
+        26.688380666068216,
+        -1.8121081787971605,
+        1.0965070376709,
+        -0.056664696587859664
+      ],
+      "observed_xyz_m": [
+        0.43396493792533875,
+        0.08883925527334213,
+        0.029756681993603706
+      ],
+      "observed_yaw_rad": -0.2070417366193892
+    },
+    "raw_delta_xyz_m": [
+      0.2577716116652926,
+      -0.07178976959720247,
+      0.010196971393778821
+    ],
+    "limited_delta_xyz_m": [
+      0.019266758237994154,
+      -0.005365820254041716,
+      0.003
+    ],
+    "limited_delta_yaw_deg": -1.0,
+    "sent_xyz_m": [
+      0.452919069801486,
+      0.08266696927432819,
+      0.03352478097379208
+    ],
+    "sent_yaw_deg": -12.864981747769816
+  },
+  "arming_response": {
+    "success": true,
+    "result": 0
+  },
+  "armed_start_monotonic": 11834.6730816,
+  "armed_command_duration_s": 5.01804255999923,
+  "matching_rule": "controller_goal_smoothing_1mm",
+  "raw_matched_model_setpoints": 116,
+  "setpoint_trace": [
+    {
+      "t": 11834.84179072,
+      "xyz_m": [
+        0.45317657482846185,
+        0.08311758737455914,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.1896113008260727,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11834.87539424,
+      "xyz_m": [
+        0.45317657482846185,
+        0.08311758737455914,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.1896113008260727,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11834.908469216,
+      "xyz_m": [
+        0.45317657482846185,
+        0.08311758737455914,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.1895921230316162,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11834.941639904,
+      "xyz_m": [
+        0.45326289314615886,
+        0.08203345116508132,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.18961167335510254,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11834.975214176,
+      "xyz_m": [
+        0.45326289314615886,
+        0.08203345116508132,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.18961167335510254,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.008499392,
+      "xyz_m": [
+        0.45326289314615886,
+        0.08203345116508132,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.1895987093448639,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.041888832,
+      "xyz_m": [
+        0.45326289314615886,
+        0.08203345116508132,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.1895744651556015,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.075118976,
+      "xyz_m": [
+        0.45326289314615886,
+        0.08203345116508132,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.18961815536022186,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.108864768,
+      "xyz_m": [
+        0.45326289314615886,
+        0.08203345116508132,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.18961815536022186,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.141811744,
+      "xyz_m": [
+        0.4532865116194856,
+        0.08099805308849303,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.18964222073554993,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.175115648,
+      "xyz_m": [
+        0.4532865116194856,
+        0.08099805308849303,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.18966203927993774,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.208367936,
+      "xyz_m": [
+        0.4532865116194856,
+        0.08099805308849303,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.18963336944580078,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.2417464,
+      "xyz_m": [
+        0.4532865116194856,
+        0.08099805308849303,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.18964783847332,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.275218752,
+      "xyz_m": [
+        0.4532865116194856,
+        0.08099805308849303,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.18964783847332,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.308778272,
+      "xyz_m": [
+        0.4532865116194856,
+        0.08099805308849303,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.18964783847332,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.341881568,
+      "xyz_m": [
+        0.4532865116194856,
+        0.08099805308849303,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.18961703777313232,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.375076608,
+      "xyz_m": [
+        0.453231800347639,
+        0.07984709527851025,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.18964360654354095,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.409036448,
+      "xyz_m": [
+        0.453231800347639,
+        0.07984709527851025,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.18964360654354095,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.441846272,
+      "xyz_m": [
+        0.453231800347639,
+        0.07984709527851025,
+        0.027874533997581566
+      ],
+      "yaw_rad": -0.1896304041147232,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.475259456,
+      "xyz_m": [
+        0.4533045226568471,
+        0.0801199317434608,
+        0.026632071437196102
+      ],
+      "yaw_rad": -0.18962715566158295,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.508341088,
+      "xyz_m": [
+        0.4533045226568471,
+        0.0801199317434608,
+        0.026632071437196102
+      ],
+      "yaw_rad": -0.1896459311246872,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.541996704,
+      "xyz_m": [
+        0.4533045226568471,
+        0.0801199317434608,
+        0.026632071437196102
+      ],
+      "yaw_rad": -0.18956395983695984,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.575015392,
+      "xyz_m": [
+        0.4533045226568471,
+        0.0801199317434608,
+        0.026632071437196102
+      ],
+      "yaw_rad": -0.18956395983695984,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.60846656,
+      "xyz_m": [
+        0.4533045226568471,
+        0.0801199317434608,
+        0.026632071437196102
+      ],
+      "yaw_rad": -0.18956132233142853,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.641851424,
+      "xyz_m": [
+        0.4533045226568471,
+        0.0801199317434608,
+        0.026632071437196102
+      ],
+      "yaw_rad": -0.1896064281463623,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.675133824,
+      "xyz_m": [
+        0.4533728258445967,
+        0.07906918900246664,
+        0.026632071437196102
+      ],
+      "yaw_rad": -0.18959209322929382,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.708449696,
+      "xyz_m": [
+        0.4533728258445967,
+        0.07906918900246664,
+        0.026632071437196102
+      ],
+      "yaw_rad": -0.18959209322929382,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.74218304,
+      "xyz_m": [
+        0.4533728258445967,
+        0.07906918900246664,
+        0.026632071437196102
+      ],
+      "yaw_rad": -0.1895834356546402,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.775263744,
+      "xyz_m": [
+        0.4533728258445967,
+        0.07906918900246664,
+        0.026632071437196102
+      ],
+      "yaw_rad": -0.18958038091659546,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.80840032,
+      "xyz_m": [
+        0.4533728258445967,
+        0.07906918900246664,
+        0.026632071437196102
+      ],
+      "yaw_rad": -0.18958018720149994,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.84187888,
+      "xyz_m": [
+        0.4533728258445967,
+        0.07906918900246664,
+        0.026632071437196102
+      ],
+      "yaw_rad": -0.18958018720149994,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.87525168,
+      "xyz_m": [
+        0.4533728258445967,
+        0.07906918900246664,
+        0.026632071437196102
+      ],
+      "yaw_rad": -0.18957212567329407,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.908462592,
+      "xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "yaw_rad": -0.22447365522384644,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.942047712,
+      "xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "yaw_rad": -0.22447054088115692,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11835.975321504,
+      "xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "yaw_rad": -0.2244776487350464,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.008364768,
+      "xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "yaw_rad": -0.2244776487350464,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.042099424,
+      "xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "yaw_rad": -0.2244889736175537,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.075138304,
+      "xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "yaw_rad": -0.2244519591331482,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.10858416,
+      "xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "yaw_rad": -0.22440896928310394,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.141752288,
+      "xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "yaw_rad": -0.22439980506896973,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.175427616,
+      "xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "yaw_rad": -0.22439980506896973,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.208435712,
+      "xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "yaw_rad": -0.22436663508415222,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.242090336,
+      "xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "yaw_rad": -0.22436663508415222,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.275098528,
+      "xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "yaw_rad": -0.22438685595989227,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.308686976,
+      "xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "yaw_rad": -0.22438685595989227,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.341950784,
+      "xyz_m": [
+        0.4535152052141227,
+        0.07719534802181623,
+        0.02543396778027829
+      ],
+      "yaw_rad": -0.18951494991779327,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.375287232,
+      "xyz_m": [
+        0.4535152052141227,
+        0.07719534802181623,
+        0.02543396778027829
+      ],
+      "yaw_rad": -0.1895345151424408,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.40845408,
+      "xyz_m": [
+        0.4535152052141227,
+        0.07719534802181623,
+        0.02543396778027829
+      ],
+      "yaw_rad": -0.18953943252563477,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.442075072,
+      "xyz_m": [
+        0.4535152052141227,
+        0.07719534802181623,
+        0.02543396778027829
+      ],
+      "yaw_rad": -0.18953943252563477,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.475758848,
+      "xyz_m": [
+        0.4535152052141227,
+        0.07719534802181623,
+        0.02543396778027829
+      ],
+      "yaw_rad": -0.18950775265693665,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.508510752,
+      "xyz_m": [
+        0.4535152052141227,
+        0.07719534802181623,
+        0.02543396778027829
+      ],
+      "yaw_rad": -0.18950319290161133,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.541964096,
+      "xyz_m": [
+        0.4535152052141227,
+        0.07719534802181623,
+        0.02543396778027829
+      ],
+      "yaw_rad": -0.18938082456588745,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.57530224,
+      "xyz_m": [
+        0.4535152052141227,
+        0.07719534802181623,
+        0.02543396778027829
+      ],
+      "yaw_rad": -0.18956272304058075,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.608781824,
+      "xyz_m": [
+        0.4535152052141227,
+        0.07719534802181623,
+        0.02543396778027829
+      ],
+      "yaw_rad": -0.18956272304058075,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.642025728,
+      "xyz_m": [
+        0.4535152052141227,
+        0.07719534802181623,
+        0.02543396778027829
+      ],
+      "yaw_rad": -0.18956272304058075,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.675278624,
+      "xyz_m": [
+        0.4535152052141227,
+        0.07719534802181623,
+        0.02543396778027829
+      ],
+      "yaw_rad": -0.189528226852417,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.708543008,
+      "xyz_m": [
+        0.4521851469971534,
+        0.07756224887888494,
+        0.025188318414644563
+      ],
+      "yaw_rad": -0.1894136220216751,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.742019072,
+      "xyz_m": [
+        0.4521851469971534,
+        0.07756224887888494,
+        0.025188318414644563
+      ],
+      "yaw_rad": -0.1894136220216751,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.77532256,
+      "xyz_m": [
+        0.4521851469971534,
+        0.07756224887888494,
+        0.025188318414644563
+      ],
+      "yaw_rad": -0.18948371708393097,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.808339648,
+      "xyz_m": [
+        0.4521851469971534,
+        0.07756224887888494,
+        0.025188318414644563
+      ],
+      "yaw_rad": -0.18946990370750427,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.841971936,
+      "xyz_m": [
+        0.4521851469971534,
+        0.07756224887888494,
+        0.025188318414644563
+      ],
+      "yaw_rad": -0.18949083983898163,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.875015232,
+      "xyz_m": [
+        0.4521851469971534,
+        0.07756224887888494,
+        0.025188318414644563
+      ],
+      "yaw_rad": -0.18949083983898163,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.9086648,
+      "xyz_m": [
+        0.45094638229976386,
+        0.07841169689906193,
+        0.025188318414644563
+      ],
+      "yaw_rad": -0.18951945006847382,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.941985728,
+      "xyz_m": [
+        0.45094638229976386,
+        0.07841169689906193,
+        0.025188318414644563
+      ],
+      "yaw_rad": -0.18946000933647156,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11836.97546224,
+      "xyz_m": [
+        0.4502164953523358,
+        0.0791491198385987,
+        0.025188318414644563
+      ],
+      "yaw_rad": -0.18944579362869263,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.008910144,
+      "xyz_m": [
+        0.4502164953523358,
+        0.0791491198385987,
+        0.025188318414644563
+      ],
+      "yaw_rad": -0.18944579362869263,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.04198448,
+      "xyz_m": [
+        0.4502164953523358,
+        0.0791491198385987,
+        0.025188318414644563
+      ],
+      "yaw_rad": -0.1894361674785614,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.075052736,
+      "xyz_m": [
+        0.4493168240820822,
+        0.08016092803310265,
+        0.025188318414644563
+      ],
+      "yaw_rad": -0.1894596666097641,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.108696512,
+      "xyz_m": [
+        0.4493168240820822,
+        0.08016092803310265,
+        0.025188318414644563
+      ],
+      "yaw_rad": -0.18947315216064453,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.141907456,
+      "xyz_m": [
+        0.4481708469565919,
+        0.07780168372565711,
+        0.030821063995361327
+      ],
+      "yaw_rad": -0.22431646287441254,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.175149056,
+      "xyz_m": [
+        0.4481708469565919,
+        0.07780168372565711,
+        0.030821063995361327
+      ],
+      "yaw_rad": -0.22431646287441254,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.208536352,
+      "xyz_m": [
+        0.4481708469565919,
+        0.07780168372565711,
+        0.030821063995361327
+      ],
+      "yaw_rad": -0.22429774701595306,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.242274144,
+      "xyz_m": [
+        0.4481708469565919,
+        0.07780168372565711,
+        0.030821063995361327
+      ],
+      "yaw_rad": -0.22429104149341583,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.275270368,
+      "xyz_m": [
+        0.4471820794458666,
+        0.07913500339642367,
+        0.030956120669841766
+      ],
+      "yaw_rad": -0.2242332398891449,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.309339136,
+      "xyz_m": [
+        0.4471820794458666,
+        0.07913500339642367,
+        0.030956120669841766
+      ],
+      "yaw_rad": -0.2242332398891449,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.341938912,
+      "xyz_m": [
+        0.4471820794458666,
+        0.07913500339642367,
+        0.030956120669841766
+      ],
+      "yaw_rad": -0.22423313558101654,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.375210752,
+      "xyz_m": [
+        0.4466452007080312,
+        0.08031216482659177,
+        0.03115789170563221
+      ],
+      "yaw_rad": -0.22417093813419342,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.409671008,
+      "xyz_m": [
+        0.4466452007080312,
+        0.08031216482659177,
+        0.03115789170563221
+      ],
+      "yaw_rad": -0.22417093813419342,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.44178,
+      "xyz_m": [
+        0.4466452007080312,
+        0.08031216482659177,
+        0.03115789170563221
+      ],
+      "yaw_rad": -0.22417093813419342,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.475285408,
+      "xyz_m": [
+        0.4466452007080312,
+        0.08031216482659177,
+        0.03115789170563221
+      ],
+      "yaw_rad": -0.22431835532188416,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.508885152,
+      "xyz_m": [
+        0.4469505775245673,
+        0.08442510572260686,
+        0.02532827903330326
+      ],
+      "yaw_rad": -0.18932484090328217,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.541895008,
+      "xyz_m": [
+        0.4469505775245673,
+        0.08442510572260686,
+        0.02532827903330326
+      ],
+      "yaw_rad": -0.18933314085006714,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.57502448,
+      "xyz_m": [
+        0.4469505775245673,
+        0.08442510572260686,
+        0.02532827903330326
+      ],
+      "yaw_rad": -0.18941107392311096,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.608547776,
+      "xyz_m": [
+        0.4469505775245673,
+        0.08442510572260686,
+        0.02532827903330326
+      ],
+      "yaw_rad": -0.18941107392311096,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.641867232,
+      "xyz_m": [
+        0.44650062564220677,
+        0.08542726559463158,
+        0.02565922637283802
+      ],
+      "yaw_rad": -0.18931005895137787,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.675120736,
+      "xyz_m": [
+        0.44650062564220677,
+        0.08542726559463158,
+        0.02565922637283802
+      ],
+      "yaw_rad": -0.18940861523151398,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.708539072,
+      "xyz_m": [
+        0.44650062564220677,
+        0.08542726559463158,
+        0.02565922637283802
+      ],
+      "yaw_rad": -0.1893191635608673,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.741879456,
+      "xyz_m": [
+        0.44650062564220677,
+        0.08542726559463158,
+        0.02565922637283802
+      ],
+      "yaw_rad": -0.1893191635608673,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.775004928,
+      "xyz_m": [
+        0.44632131955789234,
+        0.08649694654918577,
+        0.0262802881449461
+      ],
+      "yaw_rad": -0.18934132158756256,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.808448768,
+      "xyz_m": [
+        0.44632131955789234,
+        0.08649694654918577,
+        0.0262802881449461
+      ],
+      "yaw_rad": -0.18945220112800598,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.842229984,
+      "xyz_m": [
+        0.44632131955789234,
+        0.08649694654918577,
+        0.0262802881449461
+      ],
+      "yaw_rad": -0.1893722265958786,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.875405376,
+      "xyz_m": [
+        0.44632131955789234,
+        0.08649694654918577,
+        0.0262802881449461
+      ],
+      "yaw_rad": -0.1893722265958786,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.908819488,
+      "xyz_m": [
+        0.44632131955789234,
+        0.08649694654918577,
+        0.0262802881449461
+      ],
+      "yaw_rad": -0.18946638703346252,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.943072352,
+      "xyz_m": [
+        0.44632131955789234,
+        0.08649694654918577,
+        0.0262802881449461
+      ],
+      "yaw_rad": -0.18946638703346252,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11837.975076928,
+      "xyz_m": [
+        0.44609226786726186,
+        0.0877373213566451,
+        0.026559804126620293
+      ],
+      "yaw_rad": -0.18929357826709747,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.008618432,
+      "xyz_m": [
+        0.44609226786726186,
+        0.0877373213566451,
+        0.026559804126620293
+      ],
+      "yaw_rad": -0.18934978544712067,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.041845568,
+      "xyz_m": [
+        0.44609226786726186,
+        0.0877373213566451,
+        0.026559804126620293
+      ],
+      "yaw_rad": -0.18934978544712067,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.0752192,
+      "xyz_m": [
+        0.44609226786726186,
+        0.0877373213566451,
+        0.026559804126620293
+      ],
+      "yaw_rad": -0.18944968283176422,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.108538016,
+      "xyz_m": [
+        0.44609226786726186,
+        0.0877373213566451,
+        0.026559804126620293
+      ],
+      "yaw_rad": -0.18949158489704132,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.141825568,
+      "xyz_m": [
+        0.44561025192581355,
+        0.08867255130599029,
+        0.025931569308042527
+      ],
+      "yaw_rad": -0.1892809122800827,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.1752552,
+      "xyz_m": [
+        0.44561025192581355,
+        0.08867255130599029,
+        0.025931569308042527
+      ],
+      "yaw_rad": -0.1892809122800827,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.208529504,
+      "xyz_m": [
+        0.44561025192581355,
+        0.08867255130599029,
+        0.025931569308042527
+      ],
+      "yaw_rad": -0.18950964510440826,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.2420144,
+      "xyz_m": [
+        0.44561025192581355,
+        0.08867255130599029,
+        0.025931569308042527
+      ],
+      "yaw_rad": -0.18934223055839539,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.275367456,
+      "xyz_m": [
+        0.4449838790810658,
+        0.08959009556892092,
+        0.026996408555732338
+      ],
+      "yaw_rad": -0.18937689065933228,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.308883456,
+      "xyz_m": [
+        0.4449838790810658,
+        0.08959009556892092,
+        0.026996408555732338
+      ],
+      "yaw_rad": -0.18937689065933228,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.341974176,
+      "xyz_m": [
+        0.4449838790810658,
+        0.08959009556892092,
+        0.026996408555732338
+      ],
+      "yaw_rad": -0.1894364058971405,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.375095296,
+      "xyz_m": [
+        0.4449838790810658,
+        0.08959009556892092,
+        0.026996408555732338
+      ],
+      "yaw_rad": -0.18938224017620087,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.408418016,
+      "xyz_m": [
+        0.4449838790810658,
+        0.08959009556892092,
+        0.026996408555732338
+      ],
+      "yaw_rad": -0.1893821805715561,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.441747968,
+      "xyz_m": [
+        0.4449838790810658,
+        0.08959009556892092,
+        0.026996408555732338
+      ],
+      "yaw_rad": -0.18941421806812286,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.475193504,
+      "xyz_m": [
+        0.4449838790810658,
+        0.08959009556892092,
+        0.026996408555732338
+      ],
+      "yaw_rad": -0.18941421806812286,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.508568736,
+      "xyz_m": [
+        0.4441198603907817,
+        0.09010826934515452,
+        0.026996408555732338
+      ],
+      "yaw_rad": -0.18944306671619415,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.541802752,
+      "xyz_m": [
+        0.4441198603907817,
+        0.09010826934515452,
+        0.026996408555732338
+      ],
+      "yaw_rad": -0.18942400813102722,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.575375968,
+      "xyz_m": [
+        0.4441198603907817,
+        0.09010826934515452,
+        0.026996408555732338
+      ],
+      "yaw_rad": -0.18934082984924316,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.608526048,
+      "xyz_m": [
+        0.4441198603907817,
+        0.09010826934515452,
+        0.026996408555732338
+      ],
+      "yaw_rad": -0.18934082984924316,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.64180208,
+      "xyz_m": [
+        0.44338342509104717,
+        0.08884498929319795,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22431954741477966,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.675298496,
+      "xyz_m": [
+        0.44338342509104717,
+        0.08884498929319795,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22431492805480957,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.708472672,
+      "xyz_m": [
+        0.44338342509104717,
+        0.08884498929319795,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22429770231246948,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.741883744,
+      "xyz_m": [
+        0.44338342509104717,
+        0.08884498929319795,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22425496578216553,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.775209184,
+      "xyz_m": [
+        0.44338342509104717,
+        0.08884498929319795,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22425496578216553,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.808665152,
+      "xyz_m": [
+        0.4430055286079469,
+        0.0876410229273832,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22423778474330902,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.841818848,
+      "xyz_m": [
+        0.4430055286079469,
+        0.0876410229273832,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.2241809219121933,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.87532192,
+      "xyz_m": [
+        0.4430055286079469,
+        0.0876410229273832,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22429314255714417,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.90882336,
+      "xyz_m": [
+        0.4430055286079469,
+        0.0876410229273832,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22429314255714417,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.941904576,
+      "xyz_m": [
+        0.4427026704920757,
+        0.08666312311947338,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22438091039657593,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11838.975202752,
+      "xyz_m": [
+        0.4427026704920757,
+        0.08666312311947338,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22415407001972198,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.00843392,
+      "xyz_m": [
+        0.4427026704920757,
+        0.08666312311947338,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.2241741418838501,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.041964,
+      "xyz_m": [
+        0.4427026704920757,
+        0.08666312311947338,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.2241741418838501,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.075248672,
+      "xyz_m": [
+        0.44259769063615717,
+        0.08485952241149383,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22419482469558716,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.108499136,
+      "xyz_m": [
+        0.442515423043029,
+        0.08380145245730057,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22434870898723602,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.141803328,
+      "xyz_m": [
+        0.442515423043029,
+        0.08380145245730057,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22422677278518677,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.175087648,
+      "xyz_m": [
+        0.44253724554340107,
+        0.08258950985748251,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22432629764080048,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.208608512,
+      "xyz_m": [
+        0.44253724554340107,
+        0.08258950985748251,
+        0.02522531985966977
+      ],
+      "yaw_rad": -0.22432629764080048,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.24182784,
+      "xyz_m": [
+        0.4421896382275657,
+        0.07981206162351978,
+        0.027713193997740745
+      ],
+      "yaw_rad": -0.224378302693367,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.2752152,
+      "xyz_m": [
+        0.442531350682593,
+        0.07861167883310552,
+        0.02702396686375141
+      ],
+      "yaw_rad": -0.22452764213085175,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.308720096,
+      "xyz_m": [
+        0.442531350682593,
+        0.07861167883310552,
+        0.02702396686375141
+      ],
+      "yaw_rad": -0.22449399530887604,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.341822752,
+      "xyz_m": [
+        0.442531350682593,
+        0.07861167883310552,
+        0.02702396686375141
+      ],
+      "yaw_rad": -0.22449399530887604,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.375226816,
+      "xyz_m": [
+        0.4428526716705193,
+        0.07745093436752427,
+        0.026510163649916648
+      ],
+      "yaw_rad": -0.22443997859954834,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.408570048,
+      "xyz_m": [
+        0.4428526716705193,
+        0.07745093436752427,
+        0.026510163649916648
+      ],
+      "yaw_rad": -0.22433143854141235,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.441827936,
+      "xyz_m": [
+        0.4430804292735291,
+        0.0762719047705559,
+        0.02571991968154907
+      ],
+      "yaw_rad": -0.2243916392326355,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.475031488,
+      "xyz_m": [
+        0.4430804292735291,
+        0.0762719047705559,
+        0.02571991968154907
+      ],
+      "yaw_rad": -0.2243916392326355,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.508536608,
+      "xyz_m": [
+        0.4430804292735291,
+        0.0762719047705559,
+        0.02571991968154907
+      ],
+      "yaw_rad": -0.22441743314266205,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.541707552,
+      "xyz_m": [
+        0.4439854338651503,
+        0.07428175228081074,
+        0.024305741742253303
+      ],
+      "yaw_rad": -0.22443246841430664,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.57522528,
+      "xyz_m": [
+        0.4445686919495469,
+        0.07312746164417151,
+        0.023586024969816207
+      ],
+      "yaw_rad": -0.22442542016506195,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.608381888,
+      "xyz_m": [
+        0.4445686919495469,
+        0.07312746164417151,
+        0.023586024969816207
+      ],
+      "yaw_rad": -0.22439347207546234,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "t": 11839.642053952,
+      "xyz_m": [
+        0.4445686919495469,
+        0.07312746164417151,
+        0.023586024969816207
+      ],
+      "yaw_rad": -0.22439347207546234,
+      "source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    }
+  ],
+  "command_trace": [
+    {
+      "t": 11833.696459552,
+      "request_id": 15287,
+      "sent_xyz_m": [
+        0.452919069801486,
+        0.08266696927432819,
+        0.03352478097379208
+      ],
+      "sent_yaw_deg": -12.864981747769816
+    },
+    {
+      "t": 11833.736934464,
+      "request_id": 15287,
+      "sent_xyz_m": [
+        0.452919069801486,
+        0.08266696927432819,
+        0.03352478097379208
+      ],
+      "sent_yaw_deg": -12.864981747769816
+    },
+    {
+      "t": 11833.777206976,
+      "request_id": 15287,
+      "sent_xyz_m": [
+        0.452919069801486,
+        0.08266696927432819,
+        0.03352478097379208
+      ],
+      "sent_yaw_deg": -12.864981747769816
+    },
+    {
+      "t": 11833.818034944,
+      "request_id": 15287,
+      "sent_xyz_m": [
+        0.452919069801486,
+        0.08266696927432819,
+        0.03352478097379208
+      ],
+      "sent_yaw_deg": -12.864981747769816
+    },
+    {
+      "t": 11833.858444992,
+      "request_id": 15287,
+      "sent_xyz_m": [
+        0.452919069801486,
+        0.08266696927432819,
+        0.03352478097379208
+      ],
+      "sent_yaw_deg": -12.864981747769816
+    },
+    {
+      "t": 11833.898881728,
+      "request_id": 15287,
+      "sent_xyz_m": [
+        0.452919069801486,
+        0.08266696927432819,
+        0.03352478097379208
+      ],
+      "sent_yaw_deg": -12.864981747769816
+    },
+    {
+      "t": 11833.939378976,
+      "request_id": 15287,
+      "sent_xyz_m": [
+        0.452919069801486,
+        0.08266696927432819,
+        0.03352478097379208
+      ],
+      "sent_yaw_deg": -12.864981747769816
+    },
+    {
+      "t": 11833.979656896,
+      "request_id": 15287,
+      "sent_xyz_m": [
+        0.452919069801486,
+        0.08266696927432819,
+        0.03352478097379208
+      ],
+      "sent_yaw_deg": -12.864981747769816
+    },
+    {
+      "t": 11834.01998736,
+      "request_id": 15287,
+      "sent_xyz_m": [
+        0.452919069801486,
+        0.08266696927432819,
+        0.03352478097379208
+      ],
+      "sent_yaw_deg": -12.864981747769816
+    },
+    {
+      "t": 11834.06043312,
+      "request_id": 15287,
+      "sent_xyz_m": [
+        0.452919069801486,
+        0.08266696927432819,
+        0.03352478097379208
+      ],
+      "sent_yaw_deg": -12.864981747769816
+    },
+    {
+      "t": 11834.100770624,
+      "request_id": 15287,
+      "sent_xyz_m": [
+        0.452919069801486,
+        0.08266696927432819,
+        0.03352478097379208
+      ],
+      "sent_yaw_deg": -12.864981747769816
+    },
+    {
+      "t": 11834.141190432,
+      "request_id": 15287,
+      "sent_xyz_m": [
+        0.452919069801486,
+        0.08266696927432819,
+        0.03352478097379208
+      ],
+      "sent_yaw_deg": -12.864981747769816
+    },
+    {
+      "t": 11834.67813728,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.45317657482846185,
+        0.08311758737455914,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.865349104250239
+    },
+    {
+      "t": 11834.721986944,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.4531969166842296,
+        0.08297719550483827,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.86480715895767
+    },
+    {
+      "t": 11834.764898688,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.4531844693264781,
+        0.08275341606404422,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.865355025250476
+    },
+    {
+      "t": 11834.807396096,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.4532198415114618,
+        0.08263516540388906,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.863927211935499
+    },
+    {
+      "t": 11834.850420384,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.4532198415114618,
+        0.08263516540388906,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.863927211935499
+    },
+    {
+      "t": 11834.892833824,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.4532099634440152,
+        0.08230933300673429,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.862827951122245
+    },
+    {
+      "t": 11834.935838432,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.45326289314615886,
+        0.08203345116508132,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.863949031101942
+    },
+    {
+      "t": 11834.97944912,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.4532490398319423,
+        0.08179044069863146,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.863206283894462
+    },
+    {
+      "t": 11835.022381312,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.4532673416347419,
+        0.0816397958210679,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.861816493178285
+    },
+    {
+      "t": 11835.066688512,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.4532506870088811,
+        0.08136006601998709,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.864319799295364
+    },
+    {
+      "t": 11835.1101824,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.4532865116194856,
+        0.08099805308849303,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.865698670457283
+    },
+    {
+      "t": 11835.153022208,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.4532830460704601,
+        0.08082869886983517,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.866834565353201
+    },
+    {
+      "t": 11835.195829152,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.4532908475857958,
+        0.08062393060712836,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.865191764181183
+    },
+    {
+      "t": 11835.239137888,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.4532890013146201,
+        0.08047977158908531,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.86602070455432
+    },
+    {
+      "t": 11835.281792288,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.4532890013146201,
+        0.08047977158908531,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.86602070455432
+    },
+    {
+      "t": 11835.324393152,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.4532540747348097,
+        0.08015618870582734,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.864256116562064
+    },
+    {
+      "t": 11835.3679168,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.453231800347639,
+        0.07984709527851025,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.865777782963548
+    },
+    {
+      "t": 11835.41107136,
+      "request_id": 15290,
+      "sent_xyz_m": [
+        0.45322073304179006,
+        0.07968936783431049,
+        0.027874533997581566
+      ],
+      "sent_yaw_deg": -10.86502134278525
+    },
+    {
+      "t": 11835.454378464,
+      "request_id": 15291,
+      "sent_xyz_m": [
+        0.4533045226568471,
+        0.0801199317434608,
+        0.026632071437196102
+      ],
+      "sent_yaw_deg": -10.864835498312607
+    },
+    {
+      "t": 11835.496810144,
+      "request_id": 15291,
+      "sent_xyz_m": [
+        0.4532997286960722,
+        0.08003116262405875,
+        0.026632071437196102
+      ],
+      "sent_yaw_deg": -10.865911399104487
+    },
+    {
+      "t": 11835.539338464,
+      "request_id": 15291,
+      "sent_xyz_m": [
+        0.45329813782397255,
+        0.07975111685235153,
+        0.026632071437196102
+      ],
+      "sent_yaw_deg": -10.86121484177282
+    },
+    {
+      "t": 11835.582564992,
+      "request_id": 15291,
+      "sent_xyz_m": [
+        0.4533112981652644,
+        0.07939278574359374,
+        0.026632071437196102
+      ],
+      "sent_yaw_deg": -10.861063802792138
+    },
+    {
+      "t": 11835.6255984,
+      "request_id": 15291,
+      "sent_xyz_m": [
+        0.45335143850365067,
+        0.07918588668867746,
+        0.026632071437196102
+      ],
+      "sent_yaw_deg": -10.863648396790342
+    },
+    {
+      "t": 11835.66868704,
+      "request_id": 15291,
+      "sent_xyz_m": [
+        0.4533728258445967,
+        0.07906918900246664,
+        0.026632071437196102
+      ],
+      "sent_yaw_deg": -10.86282680856106
+    },
+    {
+      "t": 11835.711576192,
+      "request_id": 15291,
+      "sent_xyz_m": [
+        0.453403775624874,
+        0.0788830114000723,
+        0.026632071437196102
+      ],
+      "sent_yaw_deg": -10.862330584288165
+    },
+    {
+      "t": 11835.754492224,
+      "request_id": 15291,
+      "sent_xyz_m": [
+        0.45344395671414833,
+        0.07863338988336056,
+        0.026632071437196102
+      ],
+      "sent_yaw_deg": -10.862155976203011
+    },
+    {
+      "t": 11835.797535072,
+      "request_id": 15291,
+      "sent_xyz_m": [
+        0.4534939912643693,
+        0.07843068202438563,
+        0.026632071437196102
+      ],
+      "sent_yaw_deg": -10.862144381030015
+    },
+    {
+      "t": 11835.840860032,
+      "request_id": 15291,
+      "sent_xyz_m": [
+        0.4535361350230994,
+        0.07826170965607802,
+        0.026632071437196102
+      ],
+      "sent_yaw_deg": -10.861683245074442
+    },
+    {
+      "t": 11835.88328128,
+      "request_id": 15292,
+      "sent_xyz_m": [
+        0.4529707870366871,
+        0.07496234714844116,
+        0.031015682473778724
+      ],
+      "sent_yaw_deg": -12.861393446884131
+    },
+    {
+      "t": 11835.92595312,
+      "request_id": 15292,
+      "sent_xyz_m": [
+        0.45300292146210225,
+        0.0748899330461496,
+        0.031004288673400878
+      ],
+      "sent_yaw_deg": -12.861214938229615
+    },
+    {
+      "t": 11835.968633728,
+      "request_id": 15292,
+      "sent_xyz_m": [
+        0.453072720697477,
+        0.07471677244986938,
+        0.030934353798627853
+      ],
+      "sent_yaw_deg": -12.861621799438844
+    },
+    {
+      "t": 11836.010946272,
+      "request_id": 15292,
+      "sent_xyz_m": [
+        0.4531061648120624,
+        0.07455607890024003,
+        0.03088872644305229
+      ],
+      "sent_yaw_deg": -12.862270178180326
+    },
+    {
+      "t": 11836.053568064,
+      "request_id": 15292,
+      "sent_xyz_m": [
+        0.4531144488100345,
+        0.07452069880901815,
+        0.030873307466506957
+      ],
+      "sent_yaw_deg": -12.860149933757594
+    },
+    {
+      "t": 11836.0958976,
+      "request_id": 15292,
+      "sent_xyz_m": [
+        0.45310678705281976,
+        0.07447531698536322,
+        0.030860591188073157
+      ],
+      "sent_yaw_deg": -12.857686790042747
+    },
+    {
+      "t": 11836.139018848,
+      "request_id": 15292,
+      "sent_xyz_m": [
+        0.4530979948222509,
+        0.07443733509291951,
+        0.03081609073281288
+      ],
+      "sent_yaw_deg": -12.857161355879294
+    },
+    {
+      "t": 11836.182126816,
+      "request_id": 15292,
+      "sent_xyz_m": [
+        0.4530400754702294,
+        0.07435557071362137,
+        0.030790090069174766
+      ],
+      "sent_yaw_deg": -12.855260489834302
+    },
+    {
+      "t": 11836.22573824,
+      "request_id": 15292,
+      "sent_xyz_m": [
+        0.4530400754702294,
+        0.07435557071362137,
+        0.030790090069174766
+      ],
+      "sent_yaw_deg": -12.855260489834302
+    },
+    {
+      "t": 11836.26872944,
+      "request_id": 15292,
+      "sent_xyz_m": [
+        0.4529782066021451,
+        0.07432903161064137,
+        0.030739474549889564
+      ],
+      "sent_yaw_deg": -12.856420022630584
+    },
+    {
+      "t": 11836.312057888,
+      "request_id": 15293,
+      "sent_xyz_m": [
+        0.4535152052141227,
+        0.07719534802181623,
+        0.02543396778027829
+      ],
+      "sent_yaw_deg": -10.858406929195489
+    },
+    {
+      "t": 11836.355239136,
+      "request_id": 15293,
+      "sent_xyz_m": [
+        0.4534840511042689,
+        0.07716511847017452,
+        0.02543396778027829
+      ],
+      "sent_yaw_deg": -10.859527266174814
+    },
+    {
+      "t": 11836.397997248,
+      "request_id": 15293,
+      "sent_xyz_m": [
+        0.4533787741619626,
+        0.07711851491134392,
+        0.02543396778027829
+      ],
+      "sent_yaw_deg": -10.859809774009452
+    },
+    {
+      "t": 11836.441442048,
+      "request_id": 15293,
+      "sent_xyz_m": [
+        0.45325563684557285,
+        0.07705876904663589,
+        0.02543396778027829
+      ],
+      "sent_yaw_deg": -10.857994421871494
+    },
+    {
+      "t": 11836.484905952,
+      "request_id": 15293,
+      "sent_xyz_m": [
+        0.45314685241545627,
+        0.07709466229291835,
+        0.02543396778027829
+      ],
+      "sent_yaw_deg": -10.857732348909042
+    },
+    {
+      "t": 11836.528700928,
+      "request_id": 15293,
+      "sent_xyz_m": [
+        0.45302680592078404,
+        0.07706096676652015,
+        0.02543396778027829
+      ],
+      "sent_yaw_deg": -10.850722587593767
+    },
+    {
+      "t": 11836.571171168,
+      "request_id": 15293,
+      "sent_xyz_m": [
+        0.4529131809336769,
+        0.07711165384493639,
+        0.02543396778027829
+      ],
+      "sent_yaw_deg": -10.861144523942192
+    },
+    {
+      "t": 11836.61454448,
+      "request_id": 15293,
+      "sent_xyz_m": [
+        0.4529131809336769,
+        0.07711165384493639,
+        0.02543396778027829
+      ],
+      "sent_yaw_deg": -10.861144523942192
+    },
+    {
+      "t": 11836.659730304,
+      "request_id": 15293,
+      "sent_xyz_m": [
+        0.452558229152458,
+        0.07731439045105054,
+        0.02543396778027829
+      ],
+      "sent_yaw_deg": -10.859166642821974
+    },
+    {
+      "t": 11836.7027496,
+      "request_id": 15294,
+      "sent_xyz_m": [
+        0.4521851469971534,
+        0.07756224887888494,
+        0.025188318414644563
+      ],
+      "sent_yaw_deg": -10.852601159630522
+    },
+    {
+      "t": 11836.746039808,
+      "request_id": 15294,
+      "sent_xyz_m": [
+        0.45199866480259915,
+        0.07764520231216254,
+        0.025188318414644563
+      ],
+      "sent_yaw_deg": -10.85661682649981
+    },
+    {
+      "t": 11836.789398048,
+      "request_id": 15294,
+      "sent_xyz_m": [
+        0.45174323500076896,
+        0.07782527944601629,
+        0.025188318414644563
+      ],
+      "sent_yaw_deg": -10.855825801477568
+    },
+    {
+      "t": 11836.83354336,
+      "request_id": 15294,
+      "sent_xyz_m": [
+        0.4515094077040833,
+        0.07797175249537258,
+        0.025188318414644563
+      ],
+      "sent_yaw_deg": -10.857025155883008
+    },
+    {
+      "t": 11836.8768888,
+      "request_id": 15294,
+      "sent_xyz_m": [
+        0.45094638229976386,
+        0.07841169689906193,
+        0.025188318414644563
+      ],
+      "sent_yaw_deg": -10.85866448524733
+    },
+    {
+      "t": 11836.921727296,
+      "request_id": 15294,
+      "sent_xyz_m": [
+        0.45045689624681623,
+        0.07888378296516647,
+        0.025188318414644563
+      ],
+      "sent_yaw_deg": -10.855259396567359
+    },
+    {
+      "t": 11836.96500496,
+      "request_id": 15294,
+      "sent_xyz_m": [
+        0.4502164953523358,
+        0.0791491198385987,
+        0.025188318414644563
+      ],
+      "sent_yaw_deg": -10.854444918603866
+    },
+    {
+      "t": 11837.008670848,
+      "request_id": 15294,
+      "sent_xyz_m": [
+        0.4498848838461227,
+        0.07949252057519539,
+        0.025188318414644563
+      ],
+      "sent_yaw_deg": -10.853893183334604
+    },
+    {
+      "t": 11837.051672832,
+      "request_id": 15294,
+      "sent_xyz_m": [
+        0.4493168240820822,
+        0.08016092803310265,
+        0.025188318414644563
+      ],
+      "sent_yaw_deg": -10.855238476742473
+    },
+    {
+      "t": 11837.094078048,
+      "request_id": 15294,
+      "sent_xyz_m": [
+        0.4490401275586961,
+        0.080430994879,
+        0.025188318414644563
+      ],
+      "sent_yaw_deg": -10.856012679566131
+    },
+    {
+      "t": 11837.13717088,
+      "request_id": 15295,
+      "sent_xyz_m": [
+        0.4481708469565919,
+        0.07780168372565711,
+        0.030821063995361327
+      ],
+      "sent_yaw_deg": -12.852386691959998
+    },
+    {
+      "t": 11837.179630176,
+      "request_id": 15295,
+      "sent_xyz_m": [
+        0.4479261996470148,
+        0.07811730409711125,
+        0.030844207361340522
+      ],
+      "sent_yaw_deg": -12.851314950041523
+    },
+    {
+      "t": 11837.2232424,
+      "request_id": 15295,
+      "sent_xyz_m": [
+        0.4476324859396239,
+        0.07852288121244311,
+        0.030897855266928672
+      ],
+      "sent_yaw_deg": -12.850929927244314
+    },
+    {
+      "t": 11837.26703632,
+      "request_id": 15295,
+      "sent_xyz_m": [
+        0.4471820794458666,
+        0.07913500339642367,
+        0.030956120669841766
+      ],
+      "sent_yaw_deg": -12.847618418434203
+    },
+    {
+      "t": 11837.310591424,
+      "request_id": 15295,
+      "sent_xyz_m": [
+        0.44682337973626746,
+        0.07987913299590077,
+        0.0310988123267889
+      ],
+      "sent_yaw_deg": -12.847612169238834
+    },
+    {
+      "t": 11837.353451136,
+      "request_id": 15295,
+      "sent_xyz_m": [
+        0.4466452007080312,
+        0.08031216482659177,
+        0.03115789170563221
+      ],
+      "sent_yaw_deg": -12.844048823189254
+    },
+    {
+      "t": 11837.397657536,
+      "request_id": 15295,
+      "sent_xyz_m": [
+        0.4466452007080312,
+        0.08031216482659177,
+        0.03115789170563221
+      ],
+      "sent_yaw_deg": -12.844048823189254
+    },
+    {
+      "t": 11837.441352128,
+      "request_id": 15295,
+      "sent_xyz_m": [
+        0.44644517945477585,
+        0.08067802474209766,
+        0.031236331418156623
+      ],
+      "sent_yaw_deg": -12.852494972478894
+    },
+    {
+      "t": 11837.48426032,
+      "request_id": 15296,
+      "sent_xyz_m": [
+        0.4469505775245673,
+        0.08442510572260686,
+        0.02532827903330326
+      ],
+      "sent_yaw_deg": -10.847514360236454
+    },
+    {
+      "t": 11837.528340512,
+      "request_id": 15296,
+      "sent_xyz_m": [
+        0.4466696229951137,
+        0.08498371910924897,
+        0.025499415144324303
+      ],
+      "sent_yaw_deg": -10.8479900985003
+    },
+    {
+      "t": 11837.571417856,
+      "request_id": 15296,
+      "sent_xyz_m": [
+        0.44660126138334616,
+        0.08521365885810128,
+        0.02554728326201439
+      ],
+      "sent_yaw_deg": -10.852454780734877
+    },
+    {
+      "t": 11837.614881792,
+      "request_id": 15296,
+      "sent_xyz_m": [
+        0.44650062564220677,
+        0.08542726559463158,
+        0.02565922637283802
+      ],
+      "sent_yaw_deg": -10.846667258887562
+    },
+    {
+      "t": 11837.659506144,
+      "request_id": 15296,
+      "sent_xyz_m": [
+        0.4464838559733513,
+        0.08561150074163719,
+        0.025782567009329797
+      ],
+      "sent_yaw_deg": -10.852313757453004
+    },
+    {
+      "t": 11837.702248832,
+      "request_id": 15296,
+      "sent_xyz_m": [
+        0.4463652893032038,
+        0.08605779888504388,
+        0.026069174081087113
+      ],
+      "sent_yaw_deg": -10.847189299933994
+    },
+    {
+      "t": 11837.747809664,
+      "request_id": 15296,
+      "sent_xyz_m": [
+        0.44632131955789234,
+        0.08649694654918577,
+        0.0262802881449461
+      ],
+      "sent_yaw_deg": -10.848458135430265
+    },
+    {
+      "t": 11837.79099312,
+      "request_id": 15296,
+      "sent_xyz_m": [
+        0.44632654418331774,
+        0.08663287015796008,
+        0.02634594452381134
+      ],
+      "sent_yaw_deg": -10.854811631819642
+    },
+    {
+      "t": 11837.8347312,
+      "request_id": 15296,
+      "sent_xyz_m": [
+        0.44633091071624353,
+        0.08678931494039559,
+        0.026458966106176377
+      ],
+      "sent_yaw_deg": -10.850228937091943
+    },
+    {
+      "t": 11837.877696096,
+      "request_id": 15297,
+      "sent_xyz_m": [
+        0.44621911315669277,
+        0.0874288014134087,
+        0.026543081298470498
+      ],
+      "sent_yaw_deg": -10.855624379115994
+    },
+    {
+      "t": 11837.920532544,
+      "request_id": 15297,
+      "sent_xyz_m": [
+        0.44621911315669277,
+        0.0874288014134087,
+        0.026543081298470498
+      ],
+      "sent_yaw_deg": -10.855624379115994
+    },
+    {
+      "t": 11837.963569088,
+      "request_id": 15297,
+      "sent_xyz_m": [
+        0.44609226786726186,
+        0.0877373213566451,
+        0.026559804126620293
+      ],
+      "sent_yaw_deg": -10.845723536275042
+    },
+    {
+      "t": 11838.00627296,
+      "request_id": 15297,
+      "sent_xyz_m": [
+        0.44598294749865736,
+        0.08795766119550763,
+        0.026549743980169297
+      ],
+      "sent_yaw_deg": -10.84894394028974
+    },
+    {
+      "t": 11838.049501504,
+      "request_id": 15297,
+      "sent_xyz_m": [
+        0.445931716851652,
+        0.08806532793898887,
+        0.02645786900818348
+      ],
+      "sent_yaw_deg": -10.85466778974343
+    },
+    {
+      "t": 11838.093348352,
+      "request_id": 15297,
+      "sent_xyz_m": [
+        0.4457272850275362,
+        0.08835516546636493,
+        0.026200077056884766
+      ],
+      "sent_yaw_deg": -10.857068340975678
+    },
+    {
+      "t": 11838.138126848,
+      "request_id": 15297,
+      "sent_xyz_m": [
+        0.44561025192581355,
+        0.08867255130599029,
+        0.025931569308042527
+      ],
+      "sent_yaw_deg": -10.844997784842104
+    },
+    {
+      "t": 11838.18178704,
+      "request_id": 15297,
+      "sent_xyz_m": [
+        0.44523033856511696,
+        0.08908465734851406,
+        0.02587994091339525
+      ],
+      "sent_yaw_deg": -10.858102328868775
+    },
+    {
+      "t": 11838.224734624,
+      "request_id": 15297,
+      "sent_xyz_m": [
+        0.44513346813913834,
+        0.08922536367004624,
+        0.02587994091339525
+      ],
+      "sent_yaw_deg": -10.848510829643866
+    },
+    {
+      "t": 11838.267866944,
+      "request_id": 15298,
+      "sent_xyz_m": [
+        0.4449838790810658,
+        0.08959009556892092,
+        0.026996408555732338
+      ],
+      "sent_yaw_deg": -10.850496748844161
+    },
+    {
+      "t": 11838.310847616,
+      "request_id": 15298,
+      "sent_xyz_m": [
+        0.4447048807662957,
+        0.08982025119827294,
+        0.026996408555732338
+      ],
+      "sent_yaw_deg": -10.853906554658574
+    },
+    {
+      "t": 11838.353920768,
+      "request_id": 15298,
+      "sent_xyz_m": [
+        0.4445659520691825,
+        0.08991690007342554,
+        0.026996408555732338
+      ],
+      "sent_yaw_deg": -10.850802953051064
+    },
+    {
+      "t": 11838.396758624,
+      "request_id": 15298,
+      "sent_xyz_m": [
+        0.44448189652087083,
+        0.08999681428218885,
+        0.026996408555732338
+      ],
+      "sent_yaw_deg": -10.850799493232874
+    },
+    {
+      "t": 11838.439763104,
+      "request_id": 15298,
+      "sent_xyz_m": [
+        0.44435084846812284,
+        0.09005865315694882,
+        0.026996408555732338
+      ],
+      "sent_yaw_deg": -10.85263503229208
+    },
+    {
+      "t": 11838.482680992,
+      "request_id": 15298,
+      "sent_xyz_m": [
+        0.4441198603907817,
+        0.09010826934515452,
+        0.026996408555732338
+      ],
+      "sent_yaw_deg": -10.854288513894648
+    },
+    {
+      "t": 11838.525684448,
+      "request_id": 15298,
+      "sent_xyz_m": [
+        0.4439860196043486,
+        0.09012845066494417,
+        0.026996408555732338
+      ],
+      "sent_yaw_deg": -10.853196299123239
+    },
+    {
+      "t": 11838.568960576,
+      "request_id": 15298,
+      "sent_xyz_m": [
+        0.4437438157491529,
+        0.0900419034317202,
+        0.026996408555732338
+      ],
+      "sent_yaw_deg": -10.848430284294638
+    },
+    {
+      "t": 11838.61147744,
+      "request_id": 15299,
+      "sent_xyz_m": [
+        0.44338342509104717,
+        0.08884498929319795,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.852562861846081
+    },
+    {
+      "t": 11838.653711232,
+      "request_id": 15299,
+      "sent_xyz_m": [
+        0.44329732619428114,
+        0.08868755409544661,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.852299068639612
+    },
+    {
+      "t": 11838.696382944,
+      "request_id": 15299,
+      "sent_xyz_m": [
+        0.4432557271737639,
+        0.0885078869966109,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.851311737542874
+    },
+    {
+      "t": 11838.739256224,
+      "request_id": 15299,
+      "sent_xyz_m": [
+        0.44319650312253933,
+        0.08828605725345454,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.848862909364035
+    },
+    {
+      "t": 11838.782649696,
+      "request_id": 15299,
+      "sent_xyz_m": [
+        0.4430055286079469,
+        0.0876410229273832,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.847878242598314
+    },
+    {
+      "t": 11838.825933312,
+      "request_id": 15299,
+      "sent_xyz_m": [
+        0.4429519060622171,
+        0.08735305719726108,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.84462064860804
+    },
+    {
+      "t": 11838.870229824,
+      "request_id": 15299,
+      "sent_xyz_m": [
+        0.44281698685945586,
+        0.08708999122713545,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.851050187411474
+    },
+    {
+      "t": 11838.913006528,
+      "request_id": 15299,
+      "sent_xyz_m": [
+        0.4427026704920757,
+        0.08666312311947338,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.856079151582056
+    },
+    {
+      "t": 11838.955970304,
+      "request_id": 15299,
+      "sent_xyz_m": [
+        0.44262649140851307,
+        0.08628535107959523,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.843082291303768
+    },
+    {
+      "t": 11838.998383488,
+      "request_id": 15299,
+      "sent_xyz_m": [
+        0.4426004511055315,
+        0.08588046925876697,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.844232950042837
+    },
+    {
+      "t": 11839.041735904,
+      "request_id": 15299,
+      "sent_xyz_m": [
+        0.44259769063615717,
+        0.08485952241149383,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.845416747705627
+    },
+    {
+      "t": 11839.084875104,
+      "request_id": 15299,
+      "sent_xyz_m": [
+        0.442515423043029,
+        0.08380145245730057,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.854233311397296
+    },
+    {
+      "t": 11839.128456288,
+      "request_id": 15299,
+      "sent_xyz_m": [
+        0.4425476040114389,
+        0.08325795012716378,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.847247847525736
+    },
+    {
+      "t": 11839.171853568,
+      "request_id": 15299,
+      "sent_xyz_m": [
+        0.44253724554340107,
+        0.08258950985748251,
+        0.02522531985966977
+      ],
+      "sent_yaw_deg": -12.852950224000892
+    },
+    {
+      "t": 11839.214858144,
+      "request_id": 15300,
+      "sent_xyz_m": [
+        0.4421896382275657,
+        0.07981206162351978,
+        0.027713193997740745
+      ],
+      "sent_yaw_deg": -12.855929120612657
+    },
+    {
+      "t": 11839.260183456,
+      "request_id": 15300,
+      "sent_xyz_m": [
+        0.442531350682593,
+        0.07861167883310552,
+        0.02702396686375141
+      ],
+      "sent_yaw_deg": -12.864486562919794
+    },
+    {
+      "t": 11839.304365376,
+      "request_id": 15300,
+      "sent_xyz_m": [
+        0.44263154302865604,
+        0.07819314240297978,
+        0.02688550154864788
+      ],
+      "sent_yaw_deg": -12.862557965437826
+    },
+    {
+      "t": 11839.348058496,
+      "request_id": 15300,
+      "sent_xyz_m": [
+        0.4428526716705193,
+        0.07745093436752427,
+        0.026510163649916648
+      ],
+      "sent_yaw_deg": -12.859463641553212
+    },
+    {
+      "t": 11839.390844288,
+      "request_id": 15300,
+      "sent_xyz_m": [
+        0.4430003172019319,
+        0.07688318749360691,
+        0.026196222260594367
+      ],
+      "sent_yaw_deg": -12.8532449001475
+    },
+    {
+      "t": 11839.434332128,
+      "request_id": 15300,
+      "sent_xyz_m": [
+        0.4430804292735291,
+        0.0762719047705559,
+        0.02571991968154907
+      ],
+      "sent_yaw_deg": -12.856694269659712
+    },
+    {
+      "t": 11839.4771376,
+      "request_id": 15300,
+      "sent_xyz_m": [
+        0.4432665700864868,
+        0.0756271866439875,
+        0.025351730614900588
+      ],
+      "sent_yaw_deg": -12.858171274866931
+    },
+    {
+      "t": 11839.520632192,
+      "request_id": 15300,
+      "sent_xyz_m": [
+        0.4439854338651503,
+        0.07428175228081074,
+        0.024305741742253303
+      ],
+      "sent_yaw_deg": -12.859033367022075
+    },
+    {
+      "t": 11839.563828704,
+      "request_id": 15300,
+      "sent_xyz_m": [
+        0.4445686919495469,
+        0.07312746164417151,
+        0.023586024969816207
+      ],
+      "sent_yaw_deg": -12.858629642991119
+    },
+    {
+      "t": 11839.607720576,
+      "request_id": 15300,
+      "sent_xyz_m": [
+        0.44491957736416876,
+        0.07253192881788267,
+        0.023153043791651725
+      ],
+      "sent_yaw_deg": -12.856798757884443
+    },
+    {
+      "t": 11839.651041056,
+      "request_id": 15300,
+      "sent_xyz_m": [
+        0.4451482748920563,
+        0.07201271891813354,
+        0.022914323464035987
+      ],
+      "sent_yaw_deg": -12.85472668841684
+    }
+  ],
+  "armed_setpoints": 145,
+  "matched_model_setpoints": 145,
+  "distinct_model_predictions": 11,
+  "model_target_transport_verified": true,
+  "model_command_window_completed": true,
+  "stop_result": {
+    "normal_response": {
+      "success": true,
+      "result": 0
+    },
+    "force_disarm_used": false,
+    "manual_stop_preparation": {
+      "mode_sent": true,
+      "rc_channels": [
+        1500,
+        1500,
+        999,
+        1504,
+        999,
+        999,
+        999,
+        999,
+        999,
+        999,
+        2000,
+        1507,
+        880,
+        880,
+        2012,
+        2012
+      ],
+      "reason": "explicit fixed propeller-removed bench shutdown"
+    },
+    "normal_retry_responses": [
+      {
+        "success": false,
+        "result": 1
+      },
+      {
+        "success": true,
+        "result": 0
+      }
+    ],
+    "normal_ack_state_wait_s": 0.4,
+    "disarmed_confirmed": true
+  },
+  "final_armed": false,
+  "shutdown_sequence": "fresh_low_rc_manual_then_normal_disarm",
+  "restored_mode": "MANUAL",
+  "rc_output_samples": [],
+  "actuator_samples": [
+    {
+      "t": 11824.708043392,
+      "controls": [
+        -0.000573336670640856,
+        0.01212508324533701,
+        0.00022747078037355095,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11824.760704704,
+      "controls": [
+        -0.0011519098188728094,
+        0.010957581922411919,
+        0.000395423558074981,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11824.810106784,
+      "controls": [
+        -0.0004244387964718044,
+        0.012550465762615204,
+        0.0012396643869578838,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11824.859609696,
+      "controls": [
+        -0.0005562814767472446,
+        0.01200269814580679,
+        3.4308675367356045e-06,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11824.909204736,
+      "controls": [
+        0.00038715353002771735,
+        0.01289150770753622,
+        -0.00027253490407019854,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11824.96025936,
+      "controls": [
+        -0.0013283004518598318,
+        0.011812994256615639,
+        0.0004312501987442374,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.008167968,
+      "controls": [
+        -0.0006388862966559827,
+        0.013283589854836464,
+        0.0007846704102121294,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.060664992,
+      "controls": [
+        -0.0008274397114291787,
+        0.011871145106852055,
+        -0.00016487935499753803,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.110256896,
+      "controls": [
+        0.0014910411555320024,
+        0.012018737383186817,
+        -0.0005761922220699489,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.15967888,
+      "controls": [
+        0.00039545277832075953,
+        0.011353932321071625,
+        8.838018402457237e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.209269152,
+      "controls": [
+        0.0005946610472165048,
+        0.01214733999222517,
+        0.0006031799130141735,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.260410592,
+      "controls": [
+        0.00038194467197172344,
+        0.012136610224843025,
+        -0.00040737169911153615,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.308273024,
+      "controls": [
+        -0.00045066303573548794,
+        0.01153643149882555,
+        0.0002686392981559038,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.360752352,
+      "controls": [
+        -0.0006588857504539192,
+        0.01207257341593504,
+        -0.000430169835453853,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.409101632,
+      "controls": [
+        -0.0004642076964955777,
+        0.011664827354252338,
+        0.0009457535343244672,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.460466208,
+      "controls": [
+        -6.871637742733583e-05,
+        0.012274017557501793,
+        -0.00020259161829017103,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.508455904,
+      "controls": [
+        -0.00020932946063112468,
+        0.011908141896128654,
+        3.0207032978069037e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.560960672,
+      "controls": [
+        -0.000546519469935447,
+        0.011577455326914787,
+        -1.114926089940127e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.611171616,
+      "controls": [
+        0.0006060542655177414,
+        0.011374445632100105,
+        0.0006972084520384669,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.66067552,
+      "controls": [
+        -0.0004522594390437007,
+        0.012539229355752468,
+        0.00014266965445131063,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.70818816,
+      "controls": [
+        -0.0005877536023035645,
+        0.012030117213726044,
+        -0.00021238590124994516,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.760506816,
+      "controls": [
+        -0.00022218622325453907,
+        0.011700239032506943,
+        -0.00047447497490793467,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.81097472,
+      "controls": [
+        0.0007670699851587415,
+        0.011570002883672714,
+        6.417235272238031e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.859700736,
+      "controls": [
+        -0.0006949599483050406,
+        0.01200799085199833,
+        0.0009921116288751364,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.908214944,
+      "controls": [
+        0.00026699062436819077,
+        0.012418870814144611,
+        0.00019646955479402095,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11825.960585728,
+      "controls": [
+        0.00043407335761003196,
+        0.011145427823066711,
+        0.0004375162534415722,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.010101792,
+      "controls": [
+        -0.0006458550924435258,
+        0.01219929102808237,
+        -0.0003148020477965474,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.059672288,
+      "controls": [
+        -0.0003062159230466932,
+        0.01056880597025156,
+        0.0005856702337041497,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.109192832,
+      "controls": [
+        0.00045504330773837864,
+        0.011787953786551952,
+        -0.0008789594285190105,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.160478848,
+      "controls": [
+        3.5739358281716704e-05,
+        0.012349582277238369,
+        -0.0006057324353605509,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.208211296,
+      "controls": [
+        0.000992113258689642,
+        0.011545693501830101,
+        0.0016540481010451913,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.260565824,
+      "controls": [
+        0.0004302073211874813,
+        0.011571383103728294,
+        -0.0002339718776056543,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.310421184,
+      "controls": [
+        -0.0007883263751864433,
+        0.012304584495723248,
+        -7.915629248600453e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.35975744,
+      "controls": [
+        -0.000343810097547248,
+        0.011799430474638939,
+        -0.0007259112899191678,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.411011168,
+      "controls": [
+        -0.00022698059910908341,
+        0.012277921661734581,
+        -0.0005155316321179271,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.460248512,
+      "controls": [
+        0.0003926596837118268,
+        0.011952806264162064,
+        0.0004235710948705673,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.508275072,
+      "controls": [
+        0.00031726740417070687,
+        0.012901533395051956,
+        -0.0010138369398191571,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.560477824,
+      "controls": [
+        -0.00014657300198450685,
+        0.012053607031702995,
+        -0.00025733080110512674,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.610042336,
+      "controls": [
+        -0.0004189096507616341,
+        0.011127236299216747,
+        0.000433184060966596,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.659721952,
+      "controls": [
+        -0.0007592650945298374,
+        0.011827080510556698,
+        -0.0009620041237212718,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.71052464,
+      "controls": [
+        0.0006040068110451102,
+        0.012387513183057308,
+        -0.0003539083991199732,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.759516128,
+      "controls": [
+        -0.00035606007440946996,
+        0.01158089004456997,
+        -0.0014974973164498806,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.809047296,
+      "controls": [
+        0.0010971715673804283,
+        0.012108118273317814,
+        -0.0011264490894973278,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.859460832,
+      "controls": [
+        0.0001600098330527544,
+        0.012925419956445694,
+        5.470118412631564e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.908485568,
+      "controls": [
+        0.0004014213918708265,
+        0.011876805685460567,
+        -0.0008900585817173123,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11826.960880256,
+      "controls": [
+        -5.8842771977651864e-05,
+        0.012113924138247967,
+        0.0001678236003499478,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.010294624,
+      "controls": [
+        -0.0021826091688126326,
+        0.011738992296159267,
+        0.0005739421467296779,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.060582144,
+      "controls": [
+        0.00033874018117785454,
+        0.011594649404287338,
+        0.0011262060143053532,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.110258432,
+      "controls": [
+        -9.461543231736869e-05,
+        0.010972493328154087,
+        0.0006593542057089508,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.159538912,
+      "controls": [
+        0.0005039098905399442,
+        0.011496196500957012,
+        -3.5332737752469257e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.209089728,
+      "controls": [
+        -0.00043694738997146487,
+        0.012809189036488533,
+        0.0010732520604506135,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.259533184,
+      "controls": [
+        -0.0001058952693711035,
+        0.012864689342677593,
+        -0.00011396563786547631,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.309080864,
+      "controls": [
+        0.0006263573304750025,
+        0.010636438615620136,
+        -0.0002891121548600495,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.360258784,
+      "controls": [
+        -0.0008055464713834226,
+        0.011981960386037827,
+        0.0001553506008349359,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.4081832,
+      "controls": [
+        -0.00033115825499407947,
+        0.011926990933716297,
+        -0.0001904891978483647,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.460656096,
+      "controls": [
+        0.00022365775657817721,
+        0.011095212772488594,
+        -0.00013440760085359216,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.510367648,
+      "controls": [
+        -0.00018784550775308162,
+        0.011429207399487495,
+        0.00010735525575000793,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.559522784,
+      "controls": [
+        0.00046609921264462173,
+        0.01159815676510334,
+        0.0005539925768971443,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.609113504,
+      "controls": [
+        0.00032899275538511574,
+        0.010979747399687767,
+        0.001362929935567081,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.660458784,
+      "controls": [
+        0.0003716610372066498,
+        0.01111179031431675,
+        1.6387561117880978e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.708851776,
+      "controls": [
+        -0.0002833319013006985,
+        0.010923510417342186,
+        -0.0005951893981546164,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.760645632,
+      "controls": [
+        -3.2302268664352596e-06,
+        0.0114885363727808,
+        -0.00016391370445489883,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.810168768,
+      "controls": [
+        0.0003543263301253319,
+        0.011966938152909279,
+        -0.00017228862270712852,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.859890112,
+      "controls": [
+        0.0007415199652314186,
+        0.01162040513008833,
+        0.0008837539353407919,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.909203072,
+      "controls": [
+        -0.0018023253651335835,
+        0.011181090027093887,
+        -0.0008108097244985402,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11827.960504416,
+      "controls": [
+        0.0002936076489277184,
+        0.012895898893475533,
+        -0.0010198618983849883,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.008267488,
+      "controls": [
+        -0.0016939208144322038,
+        0.012396145612001419,
+        0.00043103040661662817,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.060712064,
+      "controls": [
+        0.0004852516285609454,
+        0.010245384648442268,
+        -0.0016258914256468415,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.11030528,
+      "controls": [
+        -0.001138976658694446,
+        0.012170670554041862,
+        -0.00029360788175836205,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.159832448,
+      "controls": [
+        -0.00033669202821329236,
+        0.012435495853424072,
+        8.884376438800246e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.209080832,
+      "controls": [
+        -0.0002233677078038454,
+        0.012563212774693966,
+        -0.0007402076153084636,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.26044064,
+      "controls": [
+        -0.00027942704036831856,
+        0.01113033015280962,
+        0.0007591084577143192,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.308253664,
+      "controls": [
+        -6.9208035711199045e-06,
+        0.011646042577922344,
+        -0.00031675840727984905,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.360733152,
+      "controls": [
+        -0.00021387507149484009,
+        0.0125032439827919,
+        -0.0016776613192632794,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.410135392,
+      "controls": [
+        -0.0006694199983030558,
+        0.012296965345740318,
+        -0.00032676587579771876,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.459871712,
+      "controls": [
+        -1.9889343093382195e-05,
+        0.012512504123151302,
+        -0.0003497558063827455,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.509252704,
+      "controls": [
+        0.0002492305648047477,
+        0.012294053100049496,
+        0.0009949044324457645,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.560269888,
+      "controls": [
+        -0.0005416595377027988,
+        0.01188057940453291,
+        -0.00044007599353790283,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.608351584,
+      "controls": [
+        -9.8028001957573e-05,
+        0.011471538804471493,
+        0.0010005127405747771,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.660699488,
+      "controls": [
+        0.0003182194195687771,
+        0.01161183137446642,
+        0.0009011175716295838,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.710228896,
+      "controls": [
+        0.00040123012149706483,
+        0.011479072272777557,
+        -0.001095001702196896,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.759729248,
+      "controls": [
+        -0.0008037364459596574,
+        0.012146441265940666,
+        0.0002142981975339353,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.809121984,
+      "controls": [
+        0.0003649200371000916,
+        0.01169898547232151,
+        -0.0021691988222301006,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.86043824,
+      "controls": [
+        -0.0007574651972390711,
+        0.012041304260492325,
+        -0.0005880085518583655,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.910223872,
+      "controls": [
+        0.0009208365227095783,
+        0.011662723496556282,
+        -0.0001662582508288324,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11828.9594776,
+      "controls": [
+        9.956808935385197e-05,
+        0.012392585165798664,
+        0.0006445202743634582,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.009215456,
+      "controls": [
+        -0.0009842881700024009,
+        0.01222770195454359,
+        0.0008045119466260076,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.059595328,
+      "controls": [
+        0.00010371815733378753,
+        0.010891716927289963,
+        -0.0006760841351933777,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.109169312,
+      "controls": [
+        -0.0008985400199890137,
+        0.01267250720411539,
+        -0.0001922538212966174,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.160478848,
+      "controls": [
+        -0.0005051068146713078,
+        0.013570236973464489,
+        0.00022932799765840173,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.208078752,
+      "controls": [
+        -0.0010537882335484028,
+        0.012348459102213383,
+        0.0004100520454812795,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.260467008,
+      "controls": [
+        0.0006759623647667468,
+        0.011750019155442715,
+        -0.000297475402476266,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.310327808,
+      "controls": [
+        -0.00037726538721472025,
+        0.012150323949754238,
+        0.0012885694159194827,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.359518144,
+      "controls": [
+        0.0010072559816762805,
+        0.01195492036640644,
+        0.0001630232436582446,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.40932288,
+      "controls": [
+        -0.00024687821860425174,
+        0.01163324061781168,
+        0.0007080218638293445,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.460465856,
+      "controls": [
+        0.0003869634529110044,
+        0.013058130629360676,
+        -0.0011926020961254835,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.509553312,
+      "controls": [
+        -0.001640379661694169,
+        0.01138871069997549,
+        0.0009470538352616131,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.559611008,
+      "controls": [
+        -4.541486850939691e-05,
+        0.01249744277447462,
+        0.0004568927106447518,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.609532,
+      "controls": [
+        -0.0006865495815873146,
+        0.011323905549943447,
+        0.0008629158837720752,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.660433152,
+      "controls": [
+        -0.0005195870180614293,
+        0.012097167782485485,
+        -0.0002813449245877564,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.70818544,
+      "controls": [
+        -0.00013244411093182862,
+        0.012540776282548904,
+        -0.00037424793117679656,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.761715488,
+      "controls": [
+        -0.0008515167864970863,
+        0.011441299691796303,
+        0.0009174275328405201,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.80920816,
+      "controls": [
+        0.0003118295280728489,
+        0.011828391812741756,
+        -0.000650478876195848,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.860466976,
+      "controls": [
+        0.00025664581335149705,
+        0.012131127528846264,
+        0.0003503286570776254,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.908382208,
+      "controls": [
+        -0.00016857834998518229,
+        0.010967087000608444,
+        -0.0008392144227400422,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11829.960677792,
+      "controls": [
+        -0.0008240003371611238,
+        0.012313295155763626,
+        -0.0002546737960074097,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.010916896,
+      "controls": [
+        0.00010439485049573705,
+        0.011544356122612953,
+        -0.00027884519658982754,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.06049328,
+      "controls": [
+        -0.0009027752676047385,
+        0.01307591237127781,
+        0.0014352328144013882,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.1104544,
+      "controls": [
+        -0.00018354621715843678,
+        0.011928613297641277,
+        0.0007820126484148204,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.160509152,
+      "controls": [
+        0.0006031602388247848,
+        0.010704685002565384,
+        -0.00022183988767210394,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.210203872,
+      "controls": [
+        2.8329232009127736e-05,
+        0.011866265907883644,
+        0.00031821796437725425,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.259744224,
+      "controls": [
+        0.00018772226758301258,
+        0.010890396311879158,
+        -0.0007334128604270518,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.309157888,
+      "controls": [
+        -0.0011555785313248634,
+        0.012450273148715496,
+        0.0005035517970100045,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.360330912,
+      "controls": [
+        -2.2438909581978805e-05,
+        0.011252987198531628,
+        -0.0012619650224223733,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.408295616,
+      "controls": [
+        -2.8577554985531606e-05,
+        0.010375612415373325,
+        0.0004350174858700484,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.45926176,
+      "controls": [
+        -0.0002767335972748697,
+        0.012467409484088421,
+        -0.00027090354706160724,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.510389632,
+      "controls": [
+        -0.0001533790200483054,
+        0.012448932975530624,
+        -0.0008818937931209803,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.559635072,
+      "controls": [
+        0.001756034092977643,
+        0.010880694724619389,
+        -0.00045353814493864775,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.608345728,
+      "controls": [
+        0.0003295767237432301,
+        0.012538868002593517,
+        7.424226350849494e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.660796576,
+      "controls": [
+        0.000674870447255671,
+        0.011644936166703701,
+        9.823159780353308e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.710322912,
+      "controls": [
+        0.00030554982367902994,
+        0.011716860346496105,
+        0.0004825547803193331,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.76074416,
+      "controls": [
+        -0.0007148561417125165,
+        0.012687427923083305,
+        -0.0005339477211236954,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.810266112,
+      "controls": [
+        -0.0010328321950510144,
+        0.012726874090731144,
+        -0.0007956281187944114,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.859836896,
+      "controls": [
+        0.0004943463136442006,
+        0.010977637954056263,
+        0.0013364529004320502,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.909221376,
+      "controls": [
+        0.0010459874756634235,
+        0.011735469102859497,
+        0.00019476955640129745,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11830.960305184,
+      "controls": [
+        -3.997639214503579e-05,
+        0.01164611428976059,
+        0.0003162363136652857,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.00829552,
+      "controls": [
+        0.000352123926859349,
+        0.0123647665604949,
+        1.0542366908339318e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.06079552,
+      "controls": [
+        0.0009599467157386243,
+        0.011910703964531422,
+        0.0008167001069523394,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.108483552,
+      "controls": [
+        0.0006031952216289937,
+        0.012399377301335335,
+        -0.0010917710606008768,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.161346304,
+      "controls": [
+        -0.00028639606898650527,
+        0.012410138733685017,
+        0.0012283660471439362,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.21109424,
+      "controls": [
+        0.0009542921907268465,
+        0.013116497546434402,
+        -0.0005727231618948281,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.260588384,
+      "controls": [
+        0.0001792422990547493,
+        0.012738894671201706,
+        0.00041870714630931616,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.308126848,
+      "controls": [
+        4.378620724310167e-05,
+        0.011707243509590626,
+        -0.00018476859258953482,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.360384544,
+      "controls": [
+        0.0010295883985236287,
+        0.012006369419395924,
+        0.0007585824932903051,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.410280256,
+      "controls": [
+        -8.039175736485049e-05,
+        0.010828335769474506,
+        0.0002706018858589232,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.459666944,
+      "controls": [
+        0.00029711166280321777,
+        0.01076758373528719,
+        -0.0004815046559087932,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.50912064,
+      "controls": [
+        0.00045033011701889336,
+        0.01241838838905096,
+        0.0006374480435624719,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.560367104,
+      "controls": [
+        0.00011599175923038274,
+        0.01228304859250784,
+        0.0006107364897616208,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.608129056,
+      "controls": [
+        9.981800394598395e-05,
+        0.01087126974016428,
+        0.0005141898291185498,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.660371648,
+      "controls": [
+        -0.0010017743334174156,
+        0.013148910365998745,
+        -0.0001946241536643356,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.709086848,
+      "controls": [
+        -0.001258846023119986,
+        0.011336365714669228,
+        -0.00045015953946858644,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.760449184,
+      "controls": [
+        -5.047118611400947e-05,
+        0.011816210113465786,
+        -0.0002580131113063544,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.809181504,
+      "controls": [
+        -0.0005193116958253086,
+        0.011972978711128235,
+        6.244651012821123e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.860353312,
+      "controls": [
+        0.0021613247226923704,
+        0.013171365484595299,
+        7.610195461893454e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.908499168,
+      "controls": [
+        0.0011281522456556559,
+        0.012019563466310501,
+        0.0008247872465290129,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11831.960728736,
+      "controls": [
+        0.00016965524991974235,
+        0.010658856481313705,
+        -0.0005499209510162473,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.010139776,
+      "controls": [
+        0.0006621167995035648,
+        0.011666341684758663,
+        -0.001242626691237092,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.060750944,
+      "controls": [
+        -0.00037976031308062375,
+        0.011540086008608341,
+        -0.0007931384607218206,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.108603008,
+      "controls": [
+        -0.00024391601618845016,
+        0.011560414917767048,
+        -0.0009876132244244218,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.160823712,
+      "controls": [
+        -0.0004688373883254826,
+        0.012112225405871868,
+        -0.0006625548703595996,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.21023568,
+      "controls": [
+        0.0005530507187359035,
+        0.012982433661818504,
+        -0.000637071265373379,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.259630624,
+      "controls": [
+        0.0003595156886149198,
+        0.012938178144395351,
+        0.0004247813194524497,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.310068064,
+      "controls": [
+        0.0008836195920594037,
+        0.012715421617031097,
+        0.0006155386799946427,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.35954656,
+      "controls": [
+        -0.0011348540429025888,
+        0.011811991222202778,
+        -0.0008192058303393424,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.409078528,
+      "controls": [
+        0.0005124224117025733,
+        0.01134613249450922,
+        -0.000413273781305179,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.460300384,
+      "controls": [
+        -0.00019163389515597373,
+        0.01068149134516716,
+        0.0016444246284663677,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.509400672,
+      "controls": [
+        0.0006920031737536192,
+        0.012388777919113636,
+        7.226152229122818e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.560565824,
+      "controls": [
+        0.0004992317408323288,
+        0.01121809333562851,
+        0.0001553585461806506,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.610354752,
+      "controls": [
+        0.00055741798132658,
+        0.011421655304729939,
+        -0.000547380477655679,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.6597064,
+      "controls": [
+        -0.00038246699841693044,
+        0.013045176863670349,
+        1.5741130482638255e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.70913264,
+      "controls": [
+        0.00018641585484147072,
+        0.011377506889402866,
+        -0.00029930094024166465,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.76029072,
+      "controls": [
+        0.0006167565588839352,
+        0.012205297127366066,
+        -0.0008147351909428835,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.808265824,
+      "controls": [
+        0.0005066044395789504,
+        0.011032734997570515,
+        -0.0003506972861941904,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.8606632,
+      "controls": [
+        -0.00023175303067546338,
+        0.01194316428154707,
+        0.0005110840429551899,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.910805952,
+      "controls": [
+        -0.00022027574595995247,
+        0.01173328049480915,
+        -0.0005685981595888734,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11832.959504768,
+      "controls": [
+        -0.00012100239837309346,
+        0.01249743439257145,
+        -0.0001068685160134919,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.009259552,
+      "controls": [
+        -0.0008932239725254476,
+        0.011339389719069004,
+        0.0013513874728232622,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.060301888,
+      "controls": [
+        0.0003125410294160247,
+        0.012293051928281784,
+        0.0008198868599720299,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.108150272,
+      "controls": [
+        0.0006206307443790138,
+        0.012650463730096817,
+        -6.291094177868217e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.160740256,
+      "controls": [
+        0.0002583799359854311,
+        0.012282077223062515,
+        -5.433415208244696e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.210044448,
+      "controls": [
+        -0.00032484778785146773,
+        0.011567777954041958,
+        -0.000896877609193325,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.259763488,
+      "controls": [
+        0.00029048442956991494,
+        0.01208309642970562,
+        -0.0002594621619209647,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.309296064,
+      "controls": [
+        -0.00018750099116005003,
+        0.01167945098131895,
+        -0.0011545888846740127,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.360524064,
+      "controls": [
+        -0.00020100633264519274,
+        0.011087730526924133,
+        -0.0004297389823477715,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.408292544,
+      "controls": [
+        0.0006223072996363044,
+        0.012053030543029308,
+        0.00029867986449971795,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.461307872,
+      "controls": [
+        -0.00021024448506068438,
+        0.011523404158651829,
+        7.065616955514997e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.50868768,
+      "controls": [
+        0.0004907638649456203,
+        0.011679294519126415,
+        8.859752415446565e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.561121568,
+      "controls": [
+        -0.0009156998712569475,
+        0.011386451311409473,
+        7.053562057990348e-06,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.6081648,
+      "controls": [
+        0.0004968127468600869,
+        0.011750842444598675,
+        -0.0007251704810187221,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.660643392,
+      "controls": [
+        0.0005129010532982647,
+        0.012112060561776161,
+        -2.892073280236218e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.70838416,
+      "controls": [
+        -0.00015722360694780946,
+        0.013548281043767929,
+        -0.0009455757099203765,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.760810048,
+      "controls": [
+        -0.0009490034426562488,
+        0.012589159421622753,
+        -0.00023899036750663072,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.810676544,
+      "controls": [
+        0.00083978904876858,
+        0.012684949673712254,
+        0.0006715240888297558,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.859548352,
+      "controls": [
+        0.00016445363871753216,
+        0.012051158584654331,
+        0.0004337003920227289,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.910526752,
+      "controls": [
+        -0.00015215150779113173,
+        0.012727594934403896,
+        -0.0009341798722743988,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11833.959649184,
+      "controls": [
+        -0.0004951033042743802,
+        0.018754368647933006,
+        -0.0007254364318214357,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.009034368,
+      "controls": [
+        -0.001035140361636877,
+        0.011243489570915699,
+        -0.0002992225345224142,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.060672608,
+      "controls": [
+        -0.0005692355334758759,
+        0.007235354743897915,
+        -0.000582636334002018,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.109132832,
+      "controls": [
+        0.001347053679637611,
+        0.009933317080140114,
+        0.0009715848718769848,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.160215168,
+      "controls": [
+        -0.0005373202729970217,
+        0.013649863190948963,
+        0.0007954823086038232,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.208092288,
+      "controls": [
+        0.0010459809564054012,
+        0.012194146402180195,
+        0.00037571555003523827,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.260304448,
+      "controls": [
+        -0.0013021122431382537,
+        0.014358751475811005,
+        -0.0008867025026120245,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.308309536,
+      "controls": [
+        0.0019193264888599515,
+        0.010326629504561424,
+        3.9008413295960054e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.360588224,
+      "controls": [
+        -0.005102542694658041,
+        0.01679745502769947,
+        0.006640495732426643,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.410072672,
+      "controls": [
+        -0.000594305107370019,
+        0.010469349101185799,
+        0.0006757237133570015,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.46024704,
+      "controls": [
+        0.0010177665390074253,
+        0.011493366211652756,
+        -0.0013814350822940469,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.50819472,
+      "controls": [
+        -0.0007031052955426276,
+        0.01245290320366621,
+        -0.0010284088784828782,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.560406944,
+      "controls": [
+        7.912564615253359e-05,
+        0.013071711175143719,
+        0.0009634022135287523,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.609023168,
+      "controls": [
+        -0.002028249902650714,
+        0.01198213454335928,
+        0.0019591825548559427,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.660285248,
+      "controls": [
+        0.001257740193977952,
+        0.012394458055496216,
+        -0.0011376988841220737,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.708217184,
+      "controls": [
+        -0.0004768568032886833,
+        0.01090179942548275,
+        0.00016793838585726917,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.760707424,
+      "controls": [
+        0.002089989371597767,
+        0.012005511671304703,
+        -0.00011978526890743524,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.810268928,
+      "controls": [
+        -0.0006336519727483392,
+        0.012481464073061943,
+        -0.001560877775773406,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.860655488,
+      "controls": [
+        -0.000955679570324719,
+        0.012904510833323002,
+        0.00035469370777718723,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.910184576,
+      "controls": [
+        -0.00010054209269583225,
+        0.010555562563240528,
+        0.0007218500250019133,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11834.959500832,
+      "controls": [
+        0.0007500793435610831,
+        0.012586817145347595,
+        -0.0004408219247125089,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.0091072,
+      "controls": [
+        -0.00078956427751109,
+        0.011138109490275383,
+        -0.0008990505593828857,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.060321216,
+      "controls": [
+        0.002923993393778801,
+        0.012076189741492271,
+        -0.0002180050069000572,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.109174944,
+      "controls": [
+        -0.0003839341807179153,
+        0.012822220101952553,
+        -3.5992077755508944e-05,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.160186528,
+      "controls": [
+        -0.0003793430223595351,
+        0.011704000644385815,
+        0.0002999273710884154,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.208250176,
+      "controls": [
+        -0.0006143897771835327,
+        0.013053559698164463,
+        -0.00016699646948836744,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.260640576,
+      "controls": [
+        0.0016100675566121936,
+        0.012366647832095623,
+        -0.00016132376913446933,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.31142528,
+      "controls": [
+        -0.0008818689966574311,
+        0.010623329319059849,
+        -0.0003420298744458705,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.359610304,
+      "controls": [
+        0.0009915782138705254,
+        0.012013599276542664,
+        -0.00022515704040415585,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.40927648,
+      "controls": [
+        0.0004544348921626806,
+        0.011975518427789211,
+        0.0003383727453183383,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.460374432,
+      "controls": [
+        -0.0006584686925634742,
+        0.013363883830606937,
+        -0.00032877339981496334,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.508128416,
+      "controls": [
+        0.0013319036224856973,
+        0.011874589137732983,
+        -0.0003091552061960101,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.560709344,
+      "controls": [
+        -0.0021569065283983946,
+        0.013064450584352016,
+        0.0008886830764822662,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.60860816,
+      "controls": [
+        7.691510108998045e-05,
+        0.011521679349243641,
+        0.0004004637885373086,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.660656896,
+      "controls": [
+        -0.00037359981797635555,
+        0.01204716321080923,
+        -0.0018123751506209373,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.710544448,
+      "controls": [
+        -0.0003930639068130404,
+        0.011141166090965271,
+        0.0010996682103723288,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.760292192,
+      "controls": [
+        -0.0021038197446614504,
+        0.011405887082219124,
+        0.0005861703539267182,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.808034848,
+      "controls": [
+        0.0008283755159936845,
+        0.010222334414720535,
+        -0.0011909171007573605,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.860643808,
+      "controls": [
+        -0.0004611532494891435,
+        0.012449182569980621,
+        -0.0005957846879027784,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.908158848,
+      "controls": [
+        0.0003976737498305738,
+        0.013025135733187199,
+        0.0020335393492132425,
+        0.0010000000474974513,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11835.960580384,
+      "controls": [
+        0.00020314924768172204,
+        0.0101189399138093,
+        0.012349443510174751,
+        0.0034905923530459404,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.01012096,
+      "controls": [
+        -0.00028687436133623123,
+        0.01116079930216074,
+        0.012584756128489971,
+        0.005141949746757746,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.059829184,
+      "controls": [
+        -0.00043016771087422967,
+        0.01073475368320942,
+        0.010608800686895847,
+        0.006837690714746714,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.10912352,
+      "controls": [
+        -0.0021167017985135317,
+        0.01066337339580059,
+        0.011987599544227123,
+        0.009233498945832253,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.160209056,
+      "controls": [
+        -0.0013542317319661379,
+        0.009549806825816631,
+        0.011275885626673698,
+        0.012209195643663406,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.208141344,
+      "controls": [
+        0.0021331931930035353,
+        0.009323597885668278,
+        0.009889821521937847,
+        0.014004171825945377,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.2606184,
+      "controls": [
+        -0.00093692762311548,
+        0.010201556608080864,
+        0.00975627638399601,
+        0.016698170453310013,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.310619136,
+      "controls": [
+        0.0006646353867836297,
+        0.01025958452373743,
+        0.010020444169640541,
+        0.020507022738456726,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.359655904,
+      "controls": [
+        -0.0020841360092163086,
+        0.01082672644406557,
+        -0.006454146932810545,
+        0.02404697611927986,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.40906624,
+      "controls": [
+        -0.003232455113902688,
+        0.010387868620455265,
+        -0.01502937637269497,
+        0.02730620838701725,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.460326144,
+      "controls": [
+        -0.005307105369865894,
+        0.01038025226444006,
+        -0.009569617919623852,
+        0.03295604884624481,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.509086624,
+      "controls": [
+        -0.005035013891756535,
+        0.016728272661566734,
+        -0.011919721961021423,
+        0.03627555072307587,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.560300512,
+      "controls": [
+        -0.00013885115913581103,
+        0.012256619520485401,
+        -0.012634734623134136,
+        0.04303622990846634,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.608199616,
+      "controls": [
+        0.004975074902176857,
+        0.008322362788021564,
+        -0.011018442921340466,
+        0.04772220551967621,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.660502912,
+      "controls": [
+        0.001854565693065524,
+        0.006860901601612568,
+        -0.006752148736268282,
+        0.05336420238018036,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.708127584,
+      "controls": [
+        0.002681801561266184,
+        0.007571649271994829,
+        -0.015668177977204323,
+        0.05930488929152489,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.760671296,
+      "controls": [
+        -0.001346422708593309,
+        0.010061479173600674,
+        -0.01245654933154583,
+        0.06586072593927383,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.808069312,
+      "controls": [
+        0.0037403341848403215,
+        0.010707010515034199,
+        -0.01176400575786829,
+        0.07379572838544846,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.860637728,
+      "controls": [
+        0.001663009519688785,
+        0.009145651943981647,
+        -0.01578942872583866,
+        0.07947754114866257,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.910595776,
+      "controls": [
+        -0.002388077788054943,
+        0.012430571019649506,
+        -0.014710204675793648,
+        0.08751050382852554,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11836.959437472,
+      "controls": [
+        -0.005488966125994921,
+        0.00933909509330988,
+        -0.008700154721736908,
+        0.09472037106752396,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.009306112,
+      "controls": [
+        -0.0025684728752821684,
+        0.01010922621935606,
+        -0.012459519319236279,
+        0.10273091495037079,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.060281088,
+      "controls": [
+        0.002161894692108035,
+        0.019458653405308723,
+        -0.012388968840241432,
+        0.11112435162067413,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.108090624,
+      "controls": [
+        0.002103963866829872,
+        0.012242081575095654,
+        -0.009247959591448307,
+        0.12187107652425766,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.160738016,
+      "controls": [
+        0.008319919928908348,
+        0.0026849890127778053,
+        -0.0036768661811947823,
+        0.1286974996328354,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.21057904,
+      "controls": [
+        0.0037543673533946276,
+        0.015136265195906162,
+        0.012743041850626469,
+        0.13913822174072266,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.262191328,
+      "controls": [
+        0.00474535534158349,
+        0.0062898448668420315,
+        0.005677345208823681,
+        0.14834830164909363,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.310856064,
+      "controls": [
+        -0.0008891260367818177,
+        0.009807146154344082,
+        0.00970770139247179,
+        0.16034312546253204,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.360716032,
+      "controls": [
+        -0.0025897189043462276,
+        0.01591455563902855,
+        0.006305417511612177,
+        0.1670560985803604,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.410152224,
+      "controls": [
+        0.0023408089764416218,
+        0.0187954381108284,
+        0.012214884161949158,
+        0.17987757921218872,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.459633664,
+      "controls": [
+        -0.002257074462249875,
+        0.010986696928739548,
+        0.023466920480132103,
+        0.18984459340572357,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.509305216,
+      "controls": [
+        0.0038118402007967234,
+        0.011636684648692608,
+        0.011181619949638844,
+        0.20359696447849274,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.560268288,
+      "controls": [
+        0.004885820671916008,
+        0.0022231340408325195,
+        -0.01718173734843731,
+        0.2121242731809616,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.608305152,
+      "controls": [
+        0.002118493663147092,
+        0.01173938438296318,
+        -0.013274403288960457,
+        0.2245679795742035,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.660475872,
+      "controls": [
+        -0.0038552889600396156,
+        0.00190332205966115,
+        -0.009870268404483795,
+        0.23929235339164734,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.708138432,
+      "controls": [
+        0.004490334540605545,
+        0.0009142881026491523,
+        -0.011121181771159172,
+        0.24978581070899963,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.760509568,
+      "controls": [
+        0.007022636476904154,
+        -0.007483198307454586,
+        -0.005116421729326248,
+        0.26354867219924927,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.810088736,
+      "controls": [
+        0.0022747719194740057,
+        0.0016921156784519553,
+        -0.009977332316339016,
+        0.2673015296459198,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.85971184,
+      "controls": [
+        0.009254314936697483,
+        -0.009559864178299904,
+        -0.011752991937100887,
+        0.2682327330112457,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.91093168,
+      "controls": [
+        0.012665767222642899,
+        -0.005617332644760609,
+        -0.014214925467967987,
+        0.26875460147857666,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11837.959687392,
+      "controls": [
+        -0.011508062481880188,
+        0.030955759808421135,
+        -0.019641492515802383,
+        0.2680768370628357,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.010559648,
+      "controls": [
+        -0.017979077994823456,
+        0.038542553782463074,
+        -0.02087496593594551,
+        0.26956263184547424,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.05973648,
+      "controls": [
+        -0.01810361258685589,
+        0.02614174596965313,
+        -0.011474967934191227,
+        0.26861095428466797,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.109094112,
+      "controls": [
+        0.018074028193950653,
+        0.0025320134591311216,
+        -0.005461663007736206,
+        0.26963528990745544,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.160137792,
+      "controls": [
+        -0.005738843232393265,
+        0.02677965722978115,
+        -0.007912937551736832,
+        0.26908859610557556,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.208129056,
+      "controls": [
+        -0.008386468514800072,
+        0.04951109737157822,
+        -0.01350698247551918,
+        0.26943010091781616,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.26063424,
+      "controls": [
+        0.007992534898221493,
+        -0.0036211831029504538,
+        -0.01881287433207035,
+        0.27038246393203735,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.311047424,
+      "controls": [
+        0.0137486532330513,
+        0.007288899272680283,
+        -0.013966923579573631,
+        0.2684533894062042,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.36050096,
+      "controls": [
+        0.02060120925307274,
+        0.003936114255338907,
+        -0.015162060968577862,
+        0.2707692086696625,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.410073344,
+      "controls": [
+        -0.03061281517148018,
+        0.05251838639378548,
+        -0.014512679539620876,
+        0.26866379380226135,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.459621632,
+      "controls": [
+        -0.026870448142290115,
+        0.046416785567998886,
+        -0.014651695266366005,
+        0.2714919447898865,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.509063296,
+      "controls": [
+        -0.010347247123718262,
+        0.03836643695831299,
+        -0.018743028864264488,
+        0.2689754068851471,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.560292416,
+      "controls": [
+        0.02054314874112606,
+        0.005021782126277685,
+        -0.01794232428073883,
+        0.2698460817337036,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.608081376,
+      "controls": [
+        0.01561956387013197,
+        0.01899114064872265,
+        -0.01754649169743061,
+        0.26853781938552856,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.66072368,
+      "controls": [
+        0.030047569423913956,
+        0.001629906240850687,
+        0.0018244859529659152,
+        0.26844197511672974,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.71011824,
+      "controls": [
+        0.000251092977123335,
+        0.029784157872200012,
+        0.0051417602226138115,
+        0.26822468638420105,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.759910464,
+      "controls": [
+        -0.0015428246697410941,
+        0.006505933124572039,
+        0.0067572519183158875,
+        0.26757264137268066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.809108512,
+      "controls": [
+        0.005403691902756691,
+        0.026197344064712524,
+        0.016186440363526344,
+        0.2700984477996826,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.859776576,
+      "controls": [
+        -0.007690730504691601,
+        0.047139182686805725,
+        0.014396936632692814,
+        0.27045539021492004,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.909156352,
+      "controls": [
+        -0.0056687877513468266,
+        0.02806125208735466,
+        0.008946985006332397,
+        0.2698426842689514,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11838.960190016,
+      "controls": [
+        -0.01209383923560381,
+        0.008176250383257866,
+        0.005450875964015722,
+        0.26970961689949036,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.00825184,
+      "controls": [
+        -0.01809098944067955,
+        0.031751301139593124,
+        0.001096420339308679,
+        0.26951053738594055,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.060670464,
+      "controls": [
+        0.011614619754254818,
+        0.0528811439871788,
+        0.0011897857766598463,
+        0.2700168788433075,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.110094688,
+      "controls": [
+        -0.012962388806045055,
+        0.04945823922753334,
+        0.0029789218679070473,
+        0.27131590247154236,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.1595088,
+      "controls": [
+        -0.005674273706972599,
+        0.021530495956540108,
+        0.016986198723316193,
+        0.27196741104125977,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.21031104,
+      "controls": [
+        0.01741100661456585,
+        0.03329169750213623,
+        0.021878743544220924,
+        0.2719380259513855,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.26062928,
+      "controls": [
+        0.01645657792687416,
+        0.058104176074266434,
+        0.012409867718815804,
+        0.2718326151371002,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.310278528,
+      "controls": [
+        -0.015397138893604279,
+        0.005799241829663515,
+        0.012294252403080463,
+        0.27199995517730713,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.359659104,
+      "controls": [
+        -0.010623385198414326,
+        0.052217159420251846,
+        0.007059302181005478,
+        0.27425894141197205,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.409269408,
+      "controls": [
+        -0.007847112603485584,
+        0.06106537953019142,
+        0.009982330724596977,
+        0.2732030749320984,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.460391904,
+      "controls": [
+        -0.002556990133598447,
+        0.010294071398675442,
+        0.007358464412391186,
+        0.27528202533721924,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.50819648,
+      "controls": [
+        -0.01493919175118208,
+        0.0688820630311966,
+        0.015223739668726921,
+        0.2742358446121216,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.560620384,
+      "controls": [
+        0.004666287451982498,
+        0.050509508699178696,
+        0.013665481470525265,
+        0.27496957778930664,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.608045504,
+      "controls": [
+        -0.011441592127084732,
+        0.030883315950632095,
+        0.012533072382211685,
+        0.2727488875389099,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.660746336,
+      "controls": [
+        0.001344921882264316,
+        0.07123444974422455,
+        0.0071142190136015415,
+        0.274403840303421,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.710384256,
+      "controls": [
+        0.0012741985265165567,
+        0.05039367452263832,
+        0.009089876897633076,
+        0.2740984857082367,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.760584864,
+      "controls": [
+        -0.001241340534761548,
+        0.07108788192272186,
+        0.0005863461410626769,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.810398432,
+      "controls": [
+        -0.000855152087751776,
+        0.0423252247273922,
+        0.0017080469988286495,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.85969392,
+      "controls": [
+        -0.004801751580089331,
+        0.04825620725750923,
+        0.0019002484623342752,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.909131136,
+      "controls": [
+        -0.004424598533660173,
+        0.04879145324230194,
+        0.0027898612897843122,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11839.960264032,
+      "controls": [
+        -0.00707118958234787,
+        0.05368977040052414,
+        -0.003186378860846162,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.008034496,
+      "controls": [
+        -0.004162561614066362,
+        0.04465869814157486,
+        0.004514105152338743,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.06063376,
+      "controls": [
+        -0.005400192923843861,
+        0.053241755813360214,
+        0.0011562573490664363,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.11009296,
+      "controls": [
+        -0.0024113089311867952,
+        0.058668553829193115,
+        -0.0015840139240026474,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.159611872,
+      "controls": [
+        -0.0019781801383942366,
+        0.04792342334985733,
+        0.005846010521054268,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.209071744,
+      "controls": [
+        -0.002862097229808569,
+        0.05711444839835167,
+        -0.0023536421358585358,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.260462912,
+      "controls": [
+        -0.005033138208091259,
+        0.05420989170670509,
+        -0.0010440562618896365,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.308172896,
+      "controls": [
+        -0.002078515710309148,
+        0.0565616749227047,
+        0.00021961690799798816,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.360537696,
+      "controls": [
+        -0.005425199866294861,
+        0.05527803674340248,
+        0.0007079606293700635,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.410618912,
+      "controls": [
+        -0.0037862949538975954,
+        0.06241219490766525,
+        -0.00411826791241765,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.459544832,
+      "controls": [
+        -0.006031654309481382,
+        0.0588940866291523,
+        0.005568274296820164,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.509112544,
+      "controls": [
+        -0.00437610549852252,
+        0.05394258350133896,
+        0.00543805630877614,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.56021392,
+      "controls": [
+        -0.0055799116380512714,
+        0.06212722137570381,
+        0.0021779281087219715,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.608358208,
+      "controls": [
+        0.0005972771905362606,
+        0.05533081293106079,
+        0.0027201909106224775,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.660514944,
+      "controls": [
+        -0.004480686970055103,
+        0.05490245670080185,
+        0.007099033799022436,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.708819968,
+      "controls": [
+        0.004495646338909864,
+        0.008057309314608574,
+        0.0010243032593280077,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.760868448,
+      "controls": [
+        -0.001963688526302576,
+        0.011299539357423782,
+        0.0022879408206790686,
+        0.07999999821186066,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.809049472,
+      "controls": [
+        -0.0015027467161417007,
+        0.013321143575012684,
+        0.0011750994017347693,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.86038272,
+      "controls": [
+        -0.0002940359408967197,
+        0.011575661599636078,
+        -0.0008587653865106404,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.908230016,
+      "controls": [
+        -0.0006394804222509265,
+        0.011795838363468647,
+        0.0003953988489229232,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11840.960592416,
+      "controls": [
+        0.00020661808957811445,
+        0.01409963145852089,
+        0.0004551364399958402,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.010859328,
+      "controls": [
+        -0.0008238916634581983,
+        0.013454167172312737,
+        -0.0007957696216180921,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.0597888,
+      "controls": [
+        -0.0013524431269615889,
+        0.010983428917825222,
+        -0.0004307567432988435,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.109248032,
+      "controls": [
+        -0.0014898887602612376,
+        0.012764832004904747,
+        -0.0010172799229621887,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.160384288,
+      "controls": [
+        0.00020644243340939283,
+        0.01212263572961092,
+        5.728091855417006e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.208136032,
+      "controls": [
+        -0.00040857595740817487,
+        0.012525278143584728,
+        -0.0001571905449964106,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.260651232,
+      "controls": [
+        0.00018911311053670943,
+        0.011779464781284332,
+        -0.00021421255951281637,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.310294144,
+      "controls": [
+        -0.0016497679753229022,
+        0.013349000364542007,
+        0.0004352355026639998,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.359550208,
+      "controls": [
+        -0.0014673873083665967,
+        0.01261818315833807,
+        0.0006958469748497009,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.409361216,
+      "controls": [
+        -0.0010403601918369532,
+        0.013562816195189953,
+        -0.0009472622768953443,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.460082752,
+      "controls": [
+        -0.00029682123567909,
+        0.011579645797610283,
+        0.0010445356601849198,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.507794528,
+      "controls": [
+        -0.0007260198472067714,
+        0.012345995754003525,
+        -0.000219486522837542,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.560563936,
+      "controls": [
+        3.841994475806132e-05,
+        0.012722168117761612,
+        -0.0007048509432934225,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.608599008,
+      "controls": [
+        -0.00016297242837026715,
+        0.01224945392459631,
+        0.0007404023199342191,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.661012352,
+      "controls": [
+        -0.0001698718115221709,
+        0.011661924421787262,
+        0.00018590220133773983,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.709933632,
+      "controls": [
+        -0.00043515427387319505,
+        0.012604216113686562,
+        0.000898447004146874,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.761086784,
+      "controls": [
+        0.0003223285311833024,
+        0.012392311356961727,
+        0.00016130515723489225,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.810602016,
+      "controls": [
+        -0.00014943003770895302,
+        0.013234976679086685,
+        -4.0683480619918555e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.861147872,
+      "controls": [
+        0.0009717155480757356,
+        0.012256748043000698,
+        0.00030719503411091864,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.911052704,
+      "controls": [
+        -0.0001852904533734545,
+        0.013024627231061459,
+        -7.264187297550961e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11841.959954976,
+      "controls": [
+        -0.000678300391882658,
+        0.012028664350509644,
+        -0.00014671336975879967,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.009545376,
+      "controls": [
+        -0.0003449977666605264,
+        0.011883771978318691,
+        4.77264475193806e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.060829888,
+      "controls": [
+        0.000139227879117243,
+        0.011993343941867352,
+        -0.0004117331118322909,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.108605632,
+      "controls": [
+        4.687508408096619e-05,
+        0.01304079033434391,
+        -0.0007420273032039404,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.161144256,
+      "controls": [
+        -0.0004146866558585316,
+        0.013123279437422752,
+        0.0002366915432503447,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.211017952,
+      "controls": [
+        -0.001289277570322156,
+        0.011583695188164711,
+        0.00040559947956353426,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.260286912,
+      "controls": [
+        0.00048064481234177947,
+        0.012005611322820187,
+        -0.0008196373819373548,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.309589792,
+      "controls": [
+        0.000206556505872868,
+        0.012495464645326138,
+        -0.000611290626693517,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.360673792,
+      "controls": [
+        -0.00041644874727353454,
+        0.013664850033819675,
+        0.0007730371435172856,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.408625632,
+      "controls": [
+        0.00021687716071028262,
+        0.011748826131224632,
+        0.0008222286705859005,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.460766752,
+      "controls": [
+        0.00035862118238583207,
+        0.011679397895932198,
+        -0.0007720511639490724,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.50866672,
+      "controls": [
+        -0.0003184835659340024,
+        0.012176252901554108,
+        -0.000705402810126543,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.56004752,
+      "controls": [
+        -0.0007389897364191711,
+        0.012221680022776127,
+        0.0002112134243361652,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.60964144,
+      "controls": [
+        0.0005485961446538568,
+        0.011522823944687843,
+        -0.0005939139518886805,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.660394944,
+      "controls": [
+        0.0004568193689920008,
+        0.012427086010575294,
+        -0.00016997961211018264,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    },
+    {
+      "t": 11842.713685152,
+      "controls": [
+        -0.0007021035999059677,
+        0.01317516528069973,
+        0.000347427383530885,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.0
+      ]
+    }
+  ],
+  "esc_rpm_samples": [],
+  "landed_state_samples": [
+    {
+      "t": 11824.871138048,
+      "landed_state": 1
+    },
+    {
+      "t": 11825.0659896,
+      "landed_state": 1
+    },
+    {
+      "t": 11825.269971328,
+      "landed_state": 1
+    },
+    {
+      "t": 11825.470033696,
+      "landed_state": 1
+    },
+    {
+      "t": 11825.66677648,
+      "landed_state": 1
+    },
+    {
+      "t": 11825.871487936,
+      "landed_state": 1
+    },
+    {
+      "t": 11826.071119488,
+      "landed_state": 1
+    },
+    {
+      "t": 11826.265900448,
+      "landed_state": 1
+    },
+    {
+      "t": 11826.469843328,
+      "landed_state": 1
+    },
+    {
+      "t": 11826.673508768,
+      "landed_state": 1
+    },
+    {
+      "t": 11826.869950944,
+      "landed_state": 1
+    },
+    {
+      "t": 11827.06594816,
+      "landed_state": 1
+    },
+    {
+      "t": 11827.271205696,
+      "landed_state": 1
+    },
+    {
+      "t": 11827.466093952,
+      "landed_state": 1
+    },
+    {
+      "t": 11827.671135584,
+      "landed_state": 1
+    },
+    {
+      "t": 11827.871406432,
+      "landed_state": 1
+    },
+    {
+      "t": 11828.066112,
+      "landed_state": 1
+    },
+    {
+      "t": 11828.270473952,
+      "landed_state": 1
+    },
+    {
+      "t": 11828.471257664,
+      "landed_state": 1
+    },
+    {
+      "t": 11828.667602496,
+      "landed_state": 1
+    },
+    {
+      "t": 11828.869988544,
+      "landed_state": 1
+    },
+    {
+      "t": 11829.072350592,
+      "landed_state": 1
+    },
+    {
+      "t": 11829.266408608,
+      "landed_state": 1
+    },
+    {
+      "t": 11829.4700768,
+      "landed_state": 1
+    },
+    {
+      "t": 11829.670943808,
+      "landed_state": 1
+    },
+    {
+      "t": 11829.87019168,
+      "landed_state": 1
+    },
+    {
+      "t": 11830.071432672,
+      "landed_state": 1
+    },
+    {
+      "t": 11830.271171424,
+      "landed_state": 1
+    },
+    {
+      "t": 11830.46603056,
+      "landed_state": 1
+    },
+    {
+      "t": 11830.671174784,
+      "landed_state": 1
+    },
+    {
+      "t": 11830.871162848,
+      "landed_state": 1
+    },
+    {
+      "t": 11831.069009152,
+      "landed_state": 1
+    },
+    {
+      "t": 11831.266033568,
+      "landed_state": 1
+    },
+    {
+      "t": 11831.47192896,
+      "landed_state": 1
+    },
+    {
+      "t": 11831.671602272,
+      "landed_state": 1
+    },
+    {
+      "t": 11831.869910656,
+      "landed_state": 1
+    },
+    {
+      "t": 11832.066098016,
+      "landed_state": 1
+    },
+    {
+      "t": 11832.271191168,
+      "landed_state": 1
+    },
+    {
+      "t": 11832.469822816,
+      "landed_state": 1
+    },
+    {
+      "t": 11832.673408992,
+      "landed_state": 1
+    },
+    {
+      "t": 11832.866194784,
+      "landed_state": 1
+    },
+    {
+      "t": 11833.07052784,
+      "landed_state": 1
+    },
+    {
+      "t": 11833.271295488,
+      "landed_state": 1
+    },
+    {
+      "t": 11833.468735488,
+      "landed_state": 1
+    },
+    {
+      "t": 11833.669940096,
+      "landed_state": 1
+    },
+    {
+      "t": 11833.871283424,
+      "landed_state": 1
+    },
+    {
+      "t": 11834.071419552,
+      "landed_state": 1
+    },
+    {
+      "t": 11834.26998992,
+      "landed_state": 1
+    },
+    {
+      "t": 11834.469861504,
+      "landed_state": 1
+    },
+    {
+      "t": 11834.671591392,
+      "landed_state": 1
+    },
+    {
+      "t": 11834.868327616,
+      "landed_state": 1
+    },
+    {
+      "t": 11835.0693896,
+      "landed_state": 1
+    },
+    {
+      "t": 11835.265447936,
+      "landed_state": 1
+    },
+    {
+      "t": 11835.469799136,
+      "landed_state": 1
+    },
+    {
+      "t": 11835.666294208,
+      "landed_state": 1
+    },
+    {
+      "t": 11835.865605216,
+      "landed_state": 1
+    },
+    {
+      "t": 11836.070771616,
+      "landed_state": 1
+    },
+    {
+      "t": 11836.265468768,
+      "landed_state": 1
+    },
+    {
+      "t": 11836.469932096,
+      "landed_state": 1
+    },
+    {
+      "t": 11836.666822144,
+      "landed_state": 1
+    },
+    {
+      "t": 11836.865001024,
+      "landed_state": 1
+    },
+    {
+      "t": 11837.06964224,
+      "landed_state": 1
+    },
+    {
+      "t": 11837.26580448,
+      "landed_state": 1
+    },
+    {
+      "t": 11837.47070416,
+      "landed_state": 2
+    },
+    {
+      "t": 11837.666188448,
+      "landed_state": 2
+    },
+    {
+      "t": 11837.8699752,
+      "landed_state": 2
+    },
+    {
+      "t": 11838.070689056,
+      "landed_state": 2
+    },
+    {
+      "t": 11838.265269312,
+      "landed_state": 2
+    },
+    {
+      "t": 11838.47070096,
+      "landed_state": 2
+    },
+    {
+      "t": 11838.666343328,
+      "landed_state": 2
+    },
+    {
+      "t": 11838.870915488,
+      "landed_state": 2
+    },
+    {
+      "t": 11839.06499536,
+      "landed_state": 2
+    },
+    {
+      "t": 11839.268230976,
+      "landed_state": 2
+    },
+    {
+      "t": 11839.469512064,
+      "landed_state": 2
+    },
+    {
+      "t": 11839.666464992,
+      "landed_state": 2
+    },
+    {
+      "t": 11839.87073088,
+      "landed_state": 2
+    },
+    {
+      "t": 11840.06826032,
+      "landed_state": 2
+    },
+    {
+      "t": 11840.269924832,
+      "landed_state": 2
+    },
+    {
+      "t": 11840.470785056,
+      "landed_state": 2
+    },
+    {
+      "t": 11840.670391168,
+      "landed_state": 2
+    },
+    {
+      "t": 11840.86945904,
+      "landed_state": 1
+    },
+    {
+      "t": 11841.07075952,
+      "landed_state": 1
+    },
+    {
+      "t": 11841.26820528,
+      "landed_state": 1
+    },
+    {
+      "t": 11841.471417344,
+      "landed_state": 1
+    },
+    {
+      "t": 11841.669608352,
+      "landed_state": 1
+    },
+    {
+      "t": 11841.86862512,
+      "landed_state": 1
+    },
+    {
+      "t": 11842.06974992,
+      "landed_state": 1
+    },
+    {
+      "t": 11842.27127312,
+      "landed_state": 1
+    },
+    {
+      "t": 11842.470521216,
+      "landed_state": 1
+    },
+    {
+      "t": 11842.67340496,
+      "landed_state": 1
+    }
+  ],
+  "fcu_statustext": []
+}
+PASS: model-to-controller motor transport and final disarm. Visual motor rotation still requires human observation.

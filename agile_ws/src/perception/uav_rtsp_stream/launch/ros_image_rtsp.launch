@@ -1,0 +1,24 @@
+<launch>
+  <!-- ROS Image → 低延迟 RTSP（多机 uav_id） -->
+  <arg name="uav_id" default="1"/>
+  <arg name="config_file" default="$(find uav_rtsp_stream)/config/rtsp_stream.yaml"/>
+  <arg name="image_topic" default="/image_raw"/>
+  <arg name="encoder" default="auto"/>
+  <arg name="width" default="640"/>
+  <arg name="height" default="480"/>
+  <arg name="fps" default="30"/>
+
+  <rosparam file="$(arg config_file)" command="load" ns="uav$(arg uav_id)/rtsp_server"/>
+
+  <node pkg="uav_rtsp_stream" type="rtsp_server_node" name="rtsp_server" output="screen" ns="uav$(arg uav_id)">
+    <param name="uav_id" value="$(arg uav_id)"/>
+    <param name="source_type" value="ros"/>
+    <param name="subscribe_image_topic" value="$(arg image_topic)"/>
+    <param name="encoder" value="$(arg encoder)"/>
+    <param name="width" value="$(arg width)"/>
+    <param name="height" value="$(arg height)"/>
+    <param name="fps" value="$(arg fps)"/>
+    <param name="publish_rtsp_stream" value="true"/>
+    <param name="publish_ros_image" value="false"/>
+  </node>
+</launch>

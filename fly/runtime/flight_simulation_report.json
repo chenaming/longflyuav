@@ -1,0 +1,94 @@
+{
+  "passed": true,
+  "kind": "software policy simulation, not PX4 SITL",
+  "events": [
+    {
+      "t": 0.05,
+      "phase": "WAIT_INITIAL",
+      "reason": "waiting for a fresh model response"
+    },
+    {
+      "t": 0.25,
+      "phase": "PRESTREAM",
+      "reason": "fresh initial prediction received; holding ground position"
+    },
+    {
+      "t": 2.25,
+      "phase": "ENTER_OFFBOARD",
+      "reason": "requesting OFFBOARD"
+    },
+    {
+      "t": 2.3,
+      "rpc": [
+        "mode",
+        "OFFBOARD"
+      ]
+    },
+    {
+      "t": 2.35,
+      "phase": "ARM",
+      "reason": "OFFBOARD observed; requesting normal arm"
+    },
+    {
+      "t": 2.4,
+      "rpc": [
+        "arm",
+        true
+      ]
+    },
+    {
+      "t": 2.45,
+      "phase": "TAKEOFF",
+      "reason": "climbing 1 m relative to starting position"
+    },
+    {
+      "t": 9.6,
+      "phase": "WAIT_NEW_IMAGE",
+      "reason": "hover settled; discarding all pre-hover images/results"
+    },
+    {
+      "t": 9.75,
+      "phase": "NAVIGATE",
+      "reason": "following fresh model targets"
+    },
+    {
+      "t": 20.0,
+      "phase": "LAND_REQUEST",
+      "reason": "consecutive small actions + stable aircraft (heuristic arrival)"
+    },
+    {
+      "t": 20.05,
+      "rpc": [
+        "mode",
+        "AUTO.LAND"
+      ]
+    },
+    {
+      "t": 20.1,
+      "phase": "LANDING",
+      "reason": "consecutive small actions + stable aircraft (heuristic arrival)"
+    },
+    {
+      "t": 27.05,
+      "rpc": [
+        "arm",
+        false
+      ]
+    },
+    {
+      "t": 27.1,
+      "phase": "DONE",
+      "reason": "consecutive small actions + stable aircraft (heuristic arrival)"
+    }
+  ],
+  "final_state": {
+    "fresh": true,
+    "connected": true,
+    "armed": false,
+    "mode": "AUTO.LAND",
+    "landed": true
+  },
+  "accepted_predictions": 42,
+  "arrival_is_heuristic": true,
+  "physical_flight_validated": false
+}

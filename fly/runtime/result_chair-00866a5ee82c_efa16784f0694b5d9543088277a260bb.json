@@ -1,0 +1,105 @@
+{
+  "instruction": "输入指令 > Fly to the chair.",
+  "run_id": "chair-00866a5ee82c",
+  "request_id": 9838,
+  "target_frame": "map",
+  "position_unit": "m",
+  "yaw_unit": "deg",
+  "target": {
+    "x": 0.1842885249430281,
+    "y": -0.2010989596021348,
+    "z": 0.030321640837886896,
+    "yaw": -6.555756785317435
+  },
+  "relative_to_observation": {
+    "dx": 0.258101620631848,
+    "dy": 0.03858435555575551,
+    "dz": 0.00346492597828206,
+    "dyaw": 0.2685154947246341
+  },
+  "bridge_check": "passed",
+  "rejection": null,
+  "control_published_by_fly": false,
+  "physical_axes_calibrated": false,
+  "physical_target_reached": false,
+  "trace": {
+    "request_id": 9838,
+    "epoch": 18,
+    "run_id": "chair-00866a5ee82c",
+    "instruction": "输入指令 > Fly to the chair.",
+    "image_stamp": 2772.214124192,
+    "elapsed_s": 0.2607950400001755,
+    "observation_age_s": 0.37942345500005104,
+    "preview_pair_alignment": true,
+    "control_publishing_configured": false,
+    "source_frame": "odom",
+    "target_frame": "map",
+    "origin_odin_xyz_m": [
+      -0.078602,
+      -0.241295,
+      0.023262
+    ],
+    "origin_odin_yaw_deg": -6.836527413000753,
+    "input_proprio_cm_deg": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "server_action_ori_cm_rad": [
+      25.168826664278892,
+      6.8979819518376075,
+      0.3464925978282061,
+      0.004686479475566219
+    ],
+    "server_composition_max_error": 0.0,
+    "server_action_cm_rad": [
+      25.168826664278892,
+      6.8979819518376075,
+      0.3464925978282061,
+      0.004686479475566219
+    ],
+    "converted_action_m_rad": [
+      0.2516882666427889,
+      0.06897981951837608,
+      0.0034649259782820606,
+      0.004686479475566219
+    ],
+    "paired_mavros_xyz_m": [
+      -0.07381309568881989,
+      -0.23968331515789032,
+      0.026856714859604836
+    ],
+    "paired_mavros_yaw_deg": -6.824272280042057,
+    "target_mavros_xyz_m": [
+      0.1842885249430281,
+      -0.2010989596021348,
+      0.030321640837886896
+    ],
+    "target_mavros_yaw_deg": -6.555756785317435,
+    "target_minus_paired_mavros_m": [
+      0.258101620631848,
+      0.03858435555575551,
+      0.00346492597828206
+    ],
+    "target_minus_paired_mavros_yaw_deg": 0.2685154947246341
+  },
+  "validated_prediction": {
+    "run_id": "chair-00866a5ee82c",
+    "request_id": 9838,
+    "instruction": "输入指令 > Fly to the chair.",
+    "observation_stamp": 2772.214124192,
+    "validated_stamp": 2772.604059071,
+    "target_frame": "map",
+    "target_xyz_m": [
+      0.1842885249430281,
+      -0.2010989596021348,
+      0.030321640837886896
+    ],
+    "target_yaw_rad": -0.11441954086374828,
+    "coordinate_mode": "paired_estimate",
+    "physical_axes_calibrated": false
+  },
+  "client_wait_s": 0.44515142399995966,
+  "client_result_id": "efa16784f0694b5d9543088277a260bb"
+}

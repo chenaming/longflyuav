@@ -1,0 +1,62 @@
+# USB 摄像头 / ROS 图像 RTSP 推流默认参数（launch 中 uav_id 决定端口与路径）
+
+# 源类型: camera | ros
+source_type: camera
+
+# V4L2 设备，可用 v4l2-ctl --list-devices 查看
+device: /dev/video0
+
+# 摄像头采集格式（须与设备实际支持项一致）
+# 怎么选：v4l2-ctl -d /dev/video0 --list-formats-ext，看列表里看到什么格式，根据格式选择
+#   列表里看到          应设
+#   MJPG               input_format: mjpg
+#   YUYV / UYVY        input_format: raw
+#   H264               input_format: h264
+# 可选值说明：
+#   raw  — 未压缩 YUYV/UYVY 等，CPU 编码压力较大
+#   mjpg — MJPEG 压缩（多数 USB 摄像头默认），推荐
+#   h264 — 摄像头直接输出 H.264，不再二次编码
+input_format: mjpg
+
+# 分辨率与帧率（若设备不支持会启动失败，请按 v4l2-ctl --list-formats-ext 调整）
+width: 640
+height: 480
+fps: 30
+
+# H.264 编码码率 kbps；input_format 为 h264 时无效
+bitrate: 2500
+
+# 关键帧间隔；越小端到端延迟越低（1 = 每帧关键帧）
+gop_size: 1
+
+# 编码器: auto | nvh264enc | vaapih264enc | x264enc
+encoder: auto
+
+# JPEG 解码: jpegdec (cpu) | nvjpegdec (gpu) | auto（WSL/USB 建议 jpegdec）
+jpeg_decoder: jpegdec
+
+# v4l2src io-mode
+io_mode: 2
+
+# 多机端口：实际端口 = base_port + uav_id - 1
+base_port: 8554
+
+# RTSP 路径后缀由 uav_id 自动生成：/uav{N}/live
+
+# 宏开关：是否发布 RTSP 视频流
+#   true  — 本机 RTSP Server，客户端拉 rtsp://<IP>:8554/uav{N}/live
+#   false — 不启动 RTSP（可与 publish_ros_image 组合）
+publish_rtsp_stream: true
+
+# 宏开关：是否发布 ROS 图像话题（仅 source_type=camera）
+#   true  — 发布 sensor_msgs/Image（话题见 image_topic）
+#   false — 不发布 ROS 图像
+# 至少一项 publish_rtsp_stream / publish_ros_image 为 true
+publish_ros_image: true
+
+# publish_ros_image=true 时生效（相对 /uav{N}/ 命名空间）
+image_topic: camera/image_raw
+frame_id: camera_link
+
+# source_type=ros 时订阅的图像话题（绝对或相对均可）
+subscribe_image_topic: /image_raw

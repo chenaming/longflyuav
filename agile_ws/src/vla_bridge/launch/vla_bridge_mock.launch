@@ -1,0 +1,25 @@
+<launch>
+  <!-- Fake Odin JPEG/odom -> vla_image_node -> optional local mock /predict.
+       Does not publish /uav1/move_command.
+       For HTTP: start mock_inference_server.py on server_host:server_port first. -->
+  <arg name="server_host" default="127.0.0.1"/>
+  <arg name="server_port" default="5007"/>
+  <arg name="inject_fake_obs" default="true"/>
+  <arg name="fake_instruction" default="move forward"/>
+  <arg name="fake_source_mode" default="odin"/>
+  <arg name="fake_rate_hz" default="10.0"/>
+
+  <include file="$(find vla_bridge)/launch/vla_bridge.launch">
+    <arg name="enable_publish" value="false"/>
+    <arg name="server_host" value="$(arg server_host)"/>
+    <arg name="server_port" value="$(arg server_port)"/>
+  </include>
+
+  <node if="$(arg inject_fake_obs)"
+        pkg="vla_bridge" type="publish_fake_observation.py"
+        name="vla_fake_observation" output="screen">
+    <param name="instruction" value="$(arg fake_instruction)"/>
+    <param name="source_mode" value="$(arg fake_source_mode)"/>
+    <param name="rate_hz" value="$(arg fake_rate_hz)"/>
+  </node>
+</launch>

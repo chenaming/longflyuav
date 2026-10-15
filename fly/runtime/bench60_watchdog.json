@@ -1,0 +1,56 @@
+{
+  "token": "9846f13447824945821f04c1460ccde1",
+  "armed_seen": true,
+  "triggers": [
+    {
+      "t": 17619.713046496,
+      "reasons": [
+        "parent requested stop"
+      ],
+      "rc_channels": [
+        1500,
+        1500,
+        1409,
+        1504,
+        999,
+        999,
+        999,
+        999,
+        999,
+        999,
+        2000,
+        1507,
+        880,
+        880,
+        2012,
+        2012
+      ],
+      "rc_age_s": 0.031809280000743456,
+      "initial_ch6": 999,
+      "state_age_s": 0.048096319998876425,
+      "armed": true,
+      "mode": "OFFBOARD"
+    }
+  ],
+  "stop_results": [
+    {
+      "normal_response": {
+        "success": false,
+        "result": 1
+      },
+      "force_disarm_used": true,
+      "manual_stop_preparation": {
+        "mode_sent": false,
+        "reason": "RC not fresh and low"
+      },
+      "force_response": {
+        "success": true,
+        "result": 0
+      },
+      "disarmed_confirmed": true
+    }
+  ],
+  "status": "stopped",
+  "updated_unix": 1792050041.164617,
+  "final_armed": false
+}

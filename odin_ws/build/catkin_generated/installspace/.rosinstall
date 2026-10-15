@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/nvidia/agile/odin_ws/install/setup.sh

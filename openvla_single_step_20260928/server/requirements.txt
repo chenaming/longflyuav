@@ -1,0 +1,5 @@
+Flask>=2.2,<4
+Pillow>=9.0
+requests>=2.28,<3
+# Native backend additionally uses the SAME torch/transformers/numpy/
+# flash-attn environment as your existing openvla_act.py. Do not replace it.

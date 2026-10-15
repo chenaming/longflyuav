@@ -1,0 +1,8 @@
+prefix=/home/nvidia/agile/odin_ws/devel
+
+Name: odin_ros_driver
+Description: Description of odin_ros_driver
+Version: 0.0.1
+Cflags: -I/home/nvidia/agile/odin_ws/devel/include -I/home/nvidia/agile/odin_ws/src/odin_ros_driver/include
+Libs: -L${prefix}/lib 
+Requires: roscpp std_msgs sensor_msgs nav_msgs cv_bridge image_transport message_runtime

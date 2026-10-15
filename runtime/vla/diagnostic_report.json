@@ -1,0 +1,212 @@
+{
+  "kind": "disarmed_diagnostic_targets",
+  "status": "passed",
+  "model_predictions_used": false,
+  "cases": [
+    {
+      "name": "world_X_plus_5cm",
+      "expected_acceptance": true,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 19,
+      "expected_xyz_m": [
+        0.0657130379229784,
+        -0.0038125363644212484,
+        -0.005162081681191921
+      ],
+      "actual_xyz_m": [
+        0.0657130379229784,
+        -0.0038125363644212484,
+        -0.005162081681191921
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 2.358205729686781e-08,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "name": "world_Y_plus_5cm",
+      "expected_acceptance": true,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 18,
+      "expected_xyz_m": [
+        0.01619955524802208,
+        0.0471217776183039,
+        -0.006989289540797472
+      ],
+      "actual_xyz_m": [
+        0.01619955524802208,
+        0.0471217776183039,
+        -0.006989289540797472
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 3.2984463935085164e-08,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "name": "world_Z_plus_1cm",
+      "expected_acceptance": true,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 18,
+      "expected_xyz_m": [
+        0.012559251859784126,
+        -0.007702673319727182,
+        0.0019254332780838015
+      ],
+      "actual_xyz_m": [
+        0.012559251859784126,
+        -0.007702673319727182,
+        0.0019254332780838015
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 2.9483156675105413e-08,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "name": "yaw_plus_3deg",
+      "expected_acceptance": true,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 19,
+      "expected_xyz_m": [
+        0.006378988269716501,
+        -0.019015194848179817,
+        -0.010803994722664356
+      ],
+      "actual_xyz_m": [
+        0.006378988269716501,
+        -0.019015194848179817,
+        -0.010803994722664356
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 2.0562973015472832e-07,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2496
+    },
+    {
+      "name": "reject_wrong_frame",
+      "expected_acceptance": false,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 18,
+      "expected_xyz_m": [
+        0.0011996299726888537,
+        -0.011699201539158821,
+        -0.01013596449047327
+      ],
+      "actual_xyz_m": [
+        0.0010612518526613712,
+        -0.012918075546622276,
+        -0.010223817080259323
+      ],
+      "position_max_error_m": 0.0012188740074634552,
+      "yaw_error_deg": 4.11938415607308e-05,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2552
+    },
+    {
+      "name": "reject_stale_stamp",
+      "expected_acceptance": false,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 19,
+      "expected_xyz_m": [
+        -0.005432929843664169,
+        -0.021841280162334442,
+        -0.011013472452759743
+      ],
+      "actual_xyz_m": [
+        -0.005432929843664169,
+        -0.021841280162334442,
+        -0.011013472452759743
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 3.012789327569424e-08,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2552
+    },
+    {
+      "name": "reject_large_XY",
+      "expected_acceptance": false,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 18,
+      "expected_xyz_m": [
+        -0.0062331040389835835,
+        -0.04883824661374092,
+        -0.009114443324506283
+      ],
+      "actual_xyz_m": [
+        -0.0066749583929777145,
+        -0.04871249198913574,
+        -0.009183337911963463
+      ],
+      "position_max_error_m": 0.0004418543539941311,
+      "yaw_error_deg": 0.0003508213732947242,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2552
+    },
+    {
+      "name": "reject_large_Z",
+      "expected_acceptance": false,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 18,
+      "expected_xyz_m": [
+        0.006153100170195103,
+        -0.04141441732645035,
+        -0.008264689706265926
+      ],
+      "actual_xyz_m": [
+        0.006153100170195103,
+        -0.04141441732645035,
+        -0.008264689706265926
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 2.5990856745983566e-08,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2552
+    },
+    {
+      "name": "reject_large_yaw",
+      "expected_acceptance": false,
+      "passed": true,
+      "command_count": 18,
+      "setpoint_count": 19,
+      "expected_xyz_m": [
+        0.0054755862802267075,
+        -0.028825387358665466,
+        -0.010823504067957401
+      ],
+      "actual_xyz_m": [
+        0.0054755862802267075,
+        -0.028825387358665466,
+        -0.010823504067957401
+      ],
+      "position_max_error_m": 0.0,
+      "yaw_error_deg": 3.1295767510290194e-08,
+      "setpoint_source": "/uav1/uav_control_fsm",
+      "coordinate_frame": 1,
+      "type_mask": 2552
+    }
+  ],
+  "armed_ever": false,
+  "run_id": "chair-b2a2beeeeab3",
+  "instruction": "飞到椅子上",
+  "original_mode": "MANUAL",
+  "updated_unix": 1791625680.370511,
+  "offboard_mode_sent": true,
+  "restored_mode": "MANUAL"
+}

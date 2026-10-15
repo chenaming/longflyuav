@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find uav_control_fsm)/launch/exp_single_uav_control_fsm.launch"/>
+  <!-- Loaded before any node starts. The normal automatic-takeoff branch is disabled. -->
+  <param name="/uav1/uav_control_fsm/bench_disarmed" value="true"/>
+  <param name="/uav1/uav_control_fsm/bench_allow_armed" value="false"/>
+</launch>

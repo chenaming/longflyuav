@@ -1,0 +1,25 @@
+(cl:defpackage odin_ros_driver-srv
+  (:use )
+  (:export
+   "GETAE"
+   "<GETAE-REQUEST>"
+   "GETAE-REQUEST"
+   "<GETAE-RESPONSE>"
+   "GETAE-RESPONSE"
+   "GETAWB"
+   "<GETAWB-REQUEST>"
+   "GETAWB-REQUEST"
+   "<GETAWB-RESPONSE>"
+   "GETAWB-RESPONSE"
+   "SETAE"
+   "<SETAE-REQUEST>"
+   "SETAE-REQUEST"
+   "<SETAE-RESPONSE>"
+   "SETAE-RESPONSE"
+   "SETAWB"
+   "<SETAWB-REQUEST>"
+   "SETAWB-REQUEST"
+   "<SETAWB-RESPONSE>"
+   "SETAWB-RESPONSE"
+  ))
+

@@ -1,0 +1,261 @@
+#!/usr/bin/env python3
+"""Explicit 60s ground-only motor/phase rehearsal. No one-metre climb command."""
+import argparse,bisect,fcntl,json,math,os,subprocess,time,uuid
+from pathlib import Path
+from types import SimpleNamespace
+import rospy
+from std_msgs.msg import String
+from mavros_msgs.msg import PositionTarget
+from mavros_msgs.srv import CommandLong
+from closed_loop_flight import Runtime,FSM,TOPIC
+from motor_stop import bench_disarm
+from bench60_policy import Bench60,wrap
+
+BASE=Path(__file__).resolve().parent
+
+
+class TimedBench(Runtime):
+    def receive(self,key,message):
+        if key=='rc' and hasattr(self,'rc_history'):
+            row={'t':time.monotonic(),'channels':list(message.channels),'rssi':message.rssi}
+            previous=self.rc_history[-1] if self.rc_history else None
+            if previous is None or row['channels']!=previous['channels'] or row['t']-previous['t']>.5:
+                self.rc_history.append(row)
+                if len(self.rc_history)>3000:self.rc_history.pop(0)
+        super().receive(key,message)
+
+    def __init__(self):
+        self.rc_history=[]
+        super().__init__(SimpleNamespace(execute=True,allow_paired_estimate=True,instruction=''))
+        self.token=uuid.uuid4().hex;self.done=False;self.stopping=False
+        self.watchdog=None;self.ready_token=None;self.points=[];self.last_pulse=0.
+        self.lease_pub=rospy.Publisher('/vla/bench60/lease',String,queue_size=1,latch=True)
+        rospy.Subscriber('/vla/bench60/watchdog_ready',String,lambda m:setattr(self,'ready_token',m.data),queue_size=1)
+        rospy.Subscriber(TOPIC,PositionTarget,self.record_point,queue_size=100)
+        self.report_data={'kind':'60s_ground_timed_motor_bench','token':self.token,
+            'started_unix':time.time(),'status':'preparing','height_1m_verified':False,
+            'takeoff_is_simulated':True,'hover_is_simulated':True,
+            'real_flight_entry_exercised':False,'physical_navigation_verified':False,
+            'arrival_verified':False,'motor_rotation_observed_by_user':False,
+            'limits':{'xy_m':.02,'z_m':.003,'yaw_deg':1},'events':self.events}
+
+    def record_point(self,m):
+        if self.owner:
+            self.points.append({'t':time.monotonic(),'xyz_yaw':[m.position.x,m.position.y,m.position.z,m.yaw],
+                                'source':m._connection_header.get('callerid')})
+
+    def lease(self):
+        self.lease_pub.publish(String(data=json.dumps({'token':self.token,'stop':self.stopping,
+            'done':self.done,'rpc_busy':self.rpc_busy})))
+
+    def pulse(self,check=True):
+        if self.stop and not self.stopping:raise RuntimeError('现场请求停止')
+        data=self.snapshot();s,p,_,_,fault=self.telemetry(data)
+        if check and fault:
+            r,received=data.get('rc',(None,0))
+            self.report_data['fault_snapshot']={'fault':fault,'t':time.monotonic(),
+                'rc_channels':list(r.channels) if r else None,'rc_age_s':time.monotonic()-received,
+                'rc_reference':self.rc_reference,'state':s}
+            raise RuntimeError(fault)
+        if check and self.watchdog is not None and self.watchdog.poll() is not None:
+            raise RuntimeError('独立看门狗已退出')
+        if self.owner:
+            with self.lock:self.policy_at=time.monotonic()
+        self.lease();self.last_pulse=time.monotonic()
+        return data,s,p
+
+    def wait(self,condition,seconds):
+        end=time.monotonic()+seconds
+        while time.monotonic()<end and not rospy.is_shutdown():
+            data,s,p=self.pulse()
+            if condition(data,s,p):return data,s,p
+            time.sleep(.025)
+        raise RuntimeError('等待状态超时')
+
+    def prepare_stop(self):
+        data=self.snapshot();s,t=data.get('state',(None,0));r,rt=data.get('rc',(None,0))
+        if not r or time.monotonic()-rt>.75 or len(r.channels)<9 or r.channels[2]>=1100 or r.channels[8]>=1300:
+            return {'mode_sent':False,'reason':'RC not fresh and low'}
+        if not s or not s.connected or time.monotonic()-t>1.5:return {'mode_sent':False,'reason':'state stale'}
+        return {'mode_sent':self.mode(base_mode=0,custom_mode='MANUAL').mode_sent,
+                'reason':'explicit fixed propeller-removed 60s bench shutdown'}
+
+    def actual_armed(self):
+        s,t=self.snapshot().get('state',(None,0))
+        return s.armed if s and s.connected and time.monotonic()-t<1.5 else None
+
+    def save(self):
+        self.report_data['rc_history']=list(self.rc_history)
+        self.report_data['updated_unix']=time.time()
+        p=BASE/'runtime'/'bench60_report.json';tmp=p.with_suffix('.tmp')
+        tmp.write_text(json.dumps(self.report_data,ensure_ascii=False,indent=2,allow_nan=False));tmp.replace(p)
+
+    def run_bench(self):
+        home=self.preflight()
+        self.report_data['initial_rc_channels']=list(self.rc_reference)
+        p=self.snapshot()['prediction'][0]
+        self.args.instruction=p['instruction']
+        identity=(p['run_id'],p['epoch'],p['instruction'])
+        plan=Bench60(home,identity);self.plan=plan
+        plan.accept(p,time.monotonic(),rospy.Time.now().to_sec())
+        self.report_data.update(instruction=p['instruction'],identity=identity,home_xyz_yaw=home)
+        self.claim();self.sp=list(home);self.policy_at=time.monotonic()
+        self.mission=SimpleNamespace(phase='ARM')  # Reuse the guarded single RPC dispatcher.
+        self.mission.transition=lambda phase,*_:setattr(self.mission,'phase',phase)
+        log=(BASE/'runtime'/'bench60_watchdog.log').open('ab')
+        self.watchdog_log=log
+        self.watchdog=subprocess.Popen(['python3',str(BASE/'bench60_watchdog.py'),
+            '_token:='+self.token,'_parent_pid:='+str(os.getpid())],stdout=log,stderr=log,start_new_session=True)
+        self.wait(lambda *_:self.ready_token==self.token,6)
+        begin=time.monotonic()
+        self.wait(lambda *_:time.monotonic()-begin>=2.2 and self.publish_count>=60,5)
+        self.submit(('mode','OFFBOARD'))
+        self.wait(lambda d,s,p:s['mode']=='OFFBOARD' and not self.rpc_busy,5)
+        # Recheck live prediction/RC immediately before the single normal arm RPC.
+        d,s,p=self.pulse();plan.accept(d['prediction'][0],time.monotonic(),rospy.Time.now().to_sec())
+        if s['armed']:raise RuntimeError('解锁前状态发生变化')
+        self.submit(('arm',True))
+        self.wait(lambda d,s,p:s['armed'] and s['mode']=='OFFBOARD' and not self.rpc_busy,4)
+        start=time.monotonic();plan.begin(start)
+        self.report_data.update(armed_start_monotonic=start,status='running')
+        print('已正常解锁；60 秒台架开始：0–10 秒模拟起飞，10–12 秒模拟悬停，随后循环更新受限目标。',flush=True)
+        last_phase=None;last_audit=0.;last_saved=0.;last_new=None;last_print=0.
+        while not rospy.is_shutdown():
+            now=time.monotonic();d,s,pose=self.pulse()
+            if not s['armed'] or s['mode']!='OFFBOARD':raise RuntimeError('60 秒窗口内退出已解锁 OFFBOARD')
+            if math.dist(pose[:3],home[:3])>.10 or abs(wrap(pose[3]-home[3]))>math.radians(10):
+                raise RuntimeError('机体位姿超出台架固定范围')
+            phase=plan.step(now,rospy.Time.now().to_sec())
+            if phase!=last_phase:
+                print('%5.1fs  %s'%(now-start,phase),flush=True)
+                self.events.append({'t':now,'elapsed_s':now-start,'phase':phase})
+                if phase=='MODEL_LOOP':last_new=now
+                last_phase=phase
+            if phase=='STOPPING':break
+            pred,received=d.get('prediction',({},0))
+            if now-received>2:raise RuntimeError('推理结果接收中断超过 2 秒')
+            accepted=plan.accept(pred,now,rospy.Time.now().to_sec())
+            if accepted:last_new=now
+            if phase=='MODEL_LOOP' and now-last_new>2:raise RuntimeError('悬停结束后新图像推理中断超过 2 秒')
+            with self.lock:self.sp=list(plan.sp)
+            if now-last_audit>=1:
+                pubs=dict(self.master.getSystemState()[0]);allowed={FSM,rospy.get_name()}
+                if set(pubs.get(TOPIC,[]))-allowed or pubs.get('/uav1/move_command'):
+                    raise RuntimeError('出现其他控制发布者')
+                if not rospy.get_param(FSM+'/external_setpoint_control_active',False):raise RuntimeError('控制权交接失效')
+                active=(rospy.get_param('/vla_direct_bridge/run_id',''),rospy.get_param('/vla_direct_bridge/active_instruction',''))
+                if active!=(identity[0],identity[2]):raise RuntimeError('活动指令改变')
+                last_audit=now
+            if now-last_print>=10:
+                print('  已运行 %.1fs；新图像目标=%d；setpoint累计=%d'%(now-start,len(plan.samples),self.publish_count),flush=True)
+                last_print=now
+            if now-last_saved>=1:
+                self.report_data.update(elapsed_s=now-start,phase=phase,model_samples=plan.samples)
+                self.save();last_saved=now
+            time.sleep(.025)
+        if rospy.is_shutdown():raise RuntimeError('ROS shutdown')
+        self.report_data.update(elapsed_s=time.monotonic()-start,window_completed=True,
+                                status='completed_pending_cleanup',model_samples=plan.samples)
+
+    def stop_and_verify(self):
+        if not self.owner and not self.rpc_log and not self.rpc_busy:
+            self.closed=True
+            self.report_data.update(status='failed',no_control_acquired=True,final_armed=self.actual_armed())
+            self.save();return False
+        self.stopping=True;self.stop=True;self.lease()
+        # Keep the independent watchdog alive across a possibly late arm RPC.
+        wait_start=time.monotonic()
+        while self.rpc_busy or (self.rpc_log and time.monotonic()-self.rpc_finished<1.5):
+            self.lease()
+            if time.monotonic()-wait_start>8:raise RuntimeError('服务仍未返回；保留独立看门狗，请现场停止')
+            time.sleep(.04)
+        force=rospy.ServiceProxy('/uav1/mavros/cmd/command',CommandLong)
+        result=bench_disarm(self.arm,force,self.actual_armed,propellers_removed_bench=True,
+                            prepare_manual_stop=self.prepare_stop)
+        self.report_data['stop_result']=result
+        if not result.get('disarmed_confirmed'):raise RuntimeError('未确认上锁；独立看门狗继续运行，请现场停止')
+        response=self.mode(base_mode=0,custom_mode='MANUAL')
+        end=time.monotonic()+3
+        while time.monotonic()<end:
+            self.lease();s,st=self.snapshot().get('state',(None,0))
+            if s and s.connected and time.monotonic()-st<1.5 and not s.armed and s.mode=='MANUAL':break
+            time.sleep(.04)
+        else:raise RuntimeError('上锁后未确认 MANUAL')
+        self.sp=None;self.closed=True
+        if self.publisher:self.publisher.unregister();self.publisher=None
+        if self.owner:
+            released=self.ownership(value=False)
+            if not released.success:raise RuntimeError('原控制器发布权恢复失败')
+            self.owner=False
+        self.done=True;self.lease();time.sleep(.15)
+        if self.watchdog:
+            try:self.watchdog.wait(timeout=5)
+            except subprocess.TimeoutExpired:raise RuntimeError('看门狗尚未确认结束')
+        self.report_data.update(final_armed=self.actual_armed(),final_mode=s.mode,
+            ownership_restored=not bool(rospy.get_param(FSM+'/external_setpoint_control_active',True)),
+            bench_allow_armed=rospy.get_param(FSM+'/bench_allow_armed',None))
+        start=self.report_data.get('armed_start_monotonic',float('inf'))
+        elapsed=self.report_data.get('elapsed_s',0)
+        points=[p for p in self.points if start<=p['t']<=start+elapsed]
+        gaps=[b['t']-a['t'] for a,b in zip(points,points[1:])]
+        self.report_data.update(setpoint_trace=points,setpoint_count=len(points),
+            setpoint_hz=(len(points)-1)/(points[-1]['t']-points[0]['t']) if len(points)>1 else 0,
+            max_setpoint_gap_s=max(gaps) if gaps else None,rpc=self.rpc_log)
+        home=self.report_data.get('home_xyz_yaw',[0]*4)
+        safe=all(math.dist(p['xyz_yaw'][:2],home[:2])<=.020001
+            and abs(p['xyz_yaw'][2]-home[2])<=.003001
+            and abs(wrap(p['xyz_yaw'][3]-home[3]))<=math.radians(1)+1e-6 for p in points)
+        source_ok=bool(points) and all(p['source']==rospy.get_name() for p in points)
+        samples=self.report_data.get('model_samples',[])
+        commands=[{'t':start,'sent_xyz_yaw':home}]+samples
+        command_times=[x['t'] for x in commands]
+        matched=0
+        for point in points:
+            index=bisect.bisect_right(command_times,point['t'])-1
+            candidates=commands[max(0,index-2):index+1]
+            if any(max(abs(a-b) for a,b in zip(point['xyz_yaw'],c['sent_xyz_yaw']))<1e-6 for c in candidates):
+                matched+=1
+        normal=not result.get('force_disarm_used') and not result.get('normal_error')
+        watchdog_path=BASE/'runtime'/'bench60_watchdog.json'
+        watchdog=json.loads(watchdog_path.read_text()) if watchdog_path.exists() else {}
+        watchdog_ok=watchdog.get('token')==self.token and watchdog.get('final_armed') is False and not watchdog.get('release_error')
+        watchdog_ok=watchdog_ok and all(not r.get('force_disarm_used') and not r.get('normal_error') for r in watchdog.get('stop_results',[]))
+        self.report_data.update(all_setpoints_bounded=safe,setpoint_source_verified=source_ok,
+            matched_setpoints=matched,normal_stop=normal,watchdog=watchdog,watchdog_ok=watchdog_ok)
+        ok=(self.report_data.get('window_completed') and len(points)>1500 and max(gaps,default=99)<.15
+            and len(samples)>=30 and matched/len(points)>.98 and safe and source_ok and normal and watchdog_ok
+            and self.report_data['ownership_restored'] and self.report_data['bench_allow_armed'] is False
+            and self.report_data['final_armed'] is False and not self.report_data.get('error'))
+        self.report_data['status']='passed_timed_bench' if ok else 'failed'
+        self.save()
+        print('结果：%s；模型新图像=%d，setpoint=%d，频率=%.2fHz，最大间隔=%s；最终未解锁 MANUAL。'%(
+            self.report_data['status'],len(samples),len(points),self.report_data['setpoint_hz'],self.report_data['max_setpoint_gap_s']),flush=True)
+        print('报告：'+str(BASE/'runtime'/'bench60_report.json'),flush=True)
+        return ok
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--props-removed',action='store_true');parser.add_argument('--fixed',action='store_true')
+    args=parser.parse_args()
+    if not args.props_removed or not args.fixed:parser.error('requires --props-removed --fixed')
+    locks=[]
+    for path in [BASE/'runtime'/'closed_loop_flight.lock',Path('/home/nvidia/agile/runtime/vla/test.lock')]:
+        lock=path.open('w');locks.append(lock)
+        try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+        except BlockingIOError:raise SystemExit('已有控制/测试任务运行')
+    runtime=TimedBench()
+    try:runtime.run_bench()
+    except BaseException as exc:
+        runtime.report_data.update(status='failed',error=str(exc))
+        if hasattr(runtime,'plan') and runtime.plan.started is not None:
+            runtime.report_data.update(elapsed_s=time.monotonic()-runtime.plan.started,model_samples=runtime.plan.samples)
+        print('台架停止：'+str(exc),flush=True)
+    finally:
+        try:ok=runtime.stop_and_verify()
+        except BaseException as exc:
+            runtime.report_data['cleanup_error']=str(exc);runtime.save();raise
+    raise SystemExit(0 if ok else 1)
+
+
+if __name__=='__main__':main()

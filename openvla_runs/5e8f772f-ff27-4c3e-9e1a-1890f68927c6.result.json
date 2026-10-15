@@ -1,0 +1,49 @@
+{
+  "action": [
+    [
+      16.244520847000004,
+      0.12703615066666885,
+      0.0,
+      0.0
+    ]
+  ],
+  "action_ori": [
+    [
+      16.244520847000004,
+      0.12703615066666885,
+      0.0,
+      0.0
+    ]
+  ],
+  "convention": "mission_fru_cm_yaw_deg",
+  "inference_seconds": 0.7437609070329927,
+  "mission_id": "d89c45a6-b9ab-4d18-b6f7-9d96c9d565b6",
+  "observation_stamp": 1790588293.772368,
+  "position_unit": "cm",
+  "request_id": "5e8f772f-ff27-4c3e-9e1a-1890f68927c6",
+  "schema": "openvla-agile/v1",
+  "status": "success",
+  "yaw_unit": "rad",
+  "goal_validation_error": "goal altitude outside allowed map range",
+  "goal_map_m": [
+    -1.4766794841959427,
+    0.015959465921067187,
+    0.003444408066570759
+  ],
+  "goal_body_yaw_rad": 0.6868364532503692,
+  "yaw_sent_to_ego": false,
+  "planner_frame": "map",
+  "sent_to_ego": false,
+  "instruction": "fly forward",
+  "observation_map_m": [
+    -1.6030967235565186,
+    -0.08606377243995667,
+    0.003444408066570759
+  ],
+  "proprio_sent": [
+    0.0,
+    -0.0,
+    0.0,
+    -0.0
+  ]
+}

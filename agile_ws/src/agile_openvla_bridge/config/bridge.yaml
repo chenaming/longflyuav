@@ -1,0 +1,53 @@
+# Defaults from the available Agile source snapshot: ROS Noetic, UAV 1, GoalSet XYZ.
+# Recheck live topics/frame_ids against the actual deployment before enabling.
+image_topic: /uav1/odin1/image/compressed
+image_transport: compressed
+odom_topic: /uav1/mavros/local_position/odom
+goal_topic: /uav1/goal_point
+state_topic: /uav1/mavros/state
+stop_topic: /uav1/mandatory_stop_to_planner
+planner_frame: map
+body_frame: base_link
+server_url: http://127.0.0.1:15008/predict
+instruction: "fly forward 1 meter"
+
+# Commissioning: preview topics work while live goals remain disabled.
+dry_run: true
+enabled: false
+require_offboard: true
+# Odin image has no frame_id in the existing driver. Fixed forward mounting
+# must be verified; use measured camera yaw relative to base_link, CCW degrees.
+camera_yaw_offset_deg: 0.0
+camera_alignment_confirmed: true
+# Only this sim checkpoint convention is implemented; do not infer it from shape.
+model_convention_confirmed: true
+
+request_period: 3.0
+http_timeout: 10.0
+sync_slop: 0.15
+max_sensor_age: 0.75
+max_response_age: 8.0
+max_position_drift: 0.25
+max_yaw_drift_deg: 15.0
+max_tilt_deg: 20.0
+jpeg_quality: 85
+image_max_width: 960
+
+max_goal_step: 1.0
+max_vertical_step: 0.30
+max_mission_radius: 6.0
+min_goal_z: 0.2
+max_goal_z: 2.5
+min_goal_step: 0.03
+goal_reached_distance: 0.04
+goal_timeout: 15.0
+max_goals: 100
+max_mission_seconds: 300.0
+small_action_stop_count: 3
+
+# Each ~step call produces at most one goal. No automatic next frame request.
+hover_topic: /uav1/hover_command
+goal_reached_speed: 0.10
+hover_dwell_seconds: 1.0
+record_dir: ~/agile/openvla_runs
+planner_node: /uav1_planner_node

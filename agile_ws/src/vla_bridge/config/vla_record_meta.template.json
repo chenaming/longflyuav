@@ -1,0 +1,15 @@
+{
+  "id": "",
+  "instruction": "",
+  "instruction_zh": "",
+  "instruction_unified": "",
+  "site": "",
+  "lighting": "",
+  "pilot": "",
+  "success": null,
+  "safety_events": [],
+  "enable_publish": false,
+  "bag": "",
+  "topics": [],
+  "notes": ""
+}

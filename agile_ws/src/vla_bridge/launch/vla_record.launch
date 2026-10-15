@@ -1,0 +1,42 @@
+<launch>
+  <!-- Manual demo recording. Does not run VLA control. enable_publish stays false. -->
+  <arg name="instruction" default="move forward"/>
+  <arg name="instruction_zh" default=""/>
+  <arg name="instr_id" default="episode"/>
+  <arg name="bag_dir" default="$(env HOME)/vla_bags"/>
+  <arg name="site" default="unknown"/>
+  <arg name="lighting" default="unknown"/>
+  <arg name="pilot" default="unknown"/>
+  <arg name="notes" default=""/>
+  <arg name="inject_fake_obs" default="false"/>
+  <arg name="start_bridge" default="false"/>
+  <arg name="server_host" default="127.0.0.1"/>
+  <arg name="server_port" default="5007"/>
+
+  <param name="control/enable_publish" value="false"/>
+
+  <include if="$(arg start_bridge)" file="$(find vla_bridge)/launch/vla_bridge.launch">
+    <arg name="enable_publish" value="false"/>
+    <arg name="server_host" value="$(arg server_host)"/>
+    <arg name="server_port" value="$(arg server_port)"/>
+  </include>
+
+  <node if="$(arg inject_fake_obs)"
+        pkg="vla_bridge" type="publish_fake_observation.py"
+        name="vla_fake_observation" output="screen">
+    <param name="instruction" value="$(arg instruction)"/>
+    <param name="source_mode" value="odin"/>
+    <param name="rate_hz" value="10.0"/>
+  </node>
+
+  <node pkg="vla_bridge" type="vla_record_session.py" name="vla_record_session" output="screen">
+    <param name="instruction" value="$(arg instruction)"/>
+    <param name="instruction_zh" value="$(arg instruction_zh)"/>
+    <param name="instr_id" value="$(arg instr_id)"/>
+    <param name="bag_dir" value="$(arg bag_dir)"/>
+    <param name="site" value="$(arg site)"/>
+    <param name="lighting" value="$(arg lighting)"/>
+    <param name="pilot" value="$(arg pilot)"/>
+    <param name="notes" value="$(arg notes)"/>
+  </node>
+</launch>

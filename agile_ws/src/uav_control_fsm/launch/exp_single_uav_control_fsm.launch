@@ -1,0 +1,41 @@
+<launch>
+	<env name="LANG" value="zh_CN.UTF-8" />
+	<env name="LC_ALL" value="zh_CN.UTF-8" />
+
+	<arg name="uav_id" default="1"/><!-- 无人机 ID，决定命名空间 /uavX 与节点 param uav_id -->
+	<arg name="no_RC" default="false"/><!-- 是否没有遥控器；实飞 false -->
+	<arg name="loop_hz" default="30"/><!-- FSM 主循环频率 Hz -->
+	<arg name="takeoff_height" default="1.0"/><!-- 自动起飞目标高度 m -->
+	<arg name="cmd_timeout_sec" default="0.5"/><!-- 控制指令超时：CMD_CTRL -> AUTO_HOVER -->
+	<arg name="odom_timeout_sec" default="1.0"/><!-- 里程计超时：退出 Offboard -> MANUAL -->
+	<arg name="vision_pose_pub_rate_hz" default="0.0"/><!-- 视觉位姿转发频率；0=与 视觉里程计同频，>0=定时重复发最新位姿 -->
+	<arg name="pos_smooth_enable" default="true"/><!-- Move_mode=0 惯性系位置软件平滑开关 -->
+	<arg name="enable_world_map" default="true"/><!-- 是否发布 world -> uavX_map 静态 TF -->
+	<arg name="world_map_transform" default="[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"/><!-- uavX_map 在 world 中的位姿 [x,y,z,roll,pitch,yaw]（米、弧度） -->
+	<arg name="enable_odom_remap" default="true"/><!-- 是否 remap 外部里程计到 OdometryBridge 订阅名 -->
+	<arg name="odom_remap_topic" default="fast_lio_odometry"/><!-- remap 源话题后缀，完整路径 /uavX/<本项> 雷达:fast_lio_odometry / gazebo:gazebo_odometry / 视觉:vins_odometry-->
+	<arg name="odom_remap_to_topic" default="odin1/odometry"/><!-- remap 目标话题后缀完整路径 /uavX/<本项> 雷达:Odometry / 视觉:vins_fusion/imu_propagate -->
+	<arg name="path_recorder_save_to_file" default="false"/><!-- true: 解锁后写宽表 CSV（实际轨迹+move_command）到 ~/flight_logs；false: 仅 RViz /flight_path -->
+
+	<include file="$(find uav_control_fsm)/launch/uav_control_fsm_unit.launch">
+		<arg name="uav_id" value="$(arg uav_id)" />
+		<arg name="no_RC" value="$(arg no_RC)" />
+		<arg name="loop_hz" value="$(arg loop_hz)" />
+		<arg name="takeoff_height" value="$(arg takeoff_height)" />
+		<arg name="cmd_timeout_sec" value="$(arg cmd_timeout_sec)" />
+		<arg name="odom_timeout_sec" value="$(arg odom_timeout_sec)" />
+		<arg name="vision_pose_pub_rate_hz" value="$(arg vision_pose_pub_rate_hz)" />
+		<arg name="pos_smooth_enable" value="$(arg pos_smooth_enable)" />
+		<arg name="load_pos_smooth_yaml" value="true" />
+		<arg name="enable_world_map" value="$(arg enable_world_map)" />
+		<arg name="world_map_transform" value="$(arg world_map_transform)" />
+		<arg name="enable_odom_remap" value="$(arg enable_odom_remap)" />
+		<arg name="odom_remap_topic" value="$(arg odom_remap_topic)" />
+		<arg name="odom_remap_to_topic" value="$(arg odom_remap_to_topic)" />
+		<arg name="path_recorder_save_to_file" value="$(arg path_recorder_save_to_file)" />
+		<!-- 遥控器 Offboard 三档：与真机 PX4 一致用通道 6 -->
+		<arg name="rc_offboard_channel" value="6" /><!-- 真机 Offboard 拨杆：通道 6 -->
+		<arg name="rc_offboard_enter_threshold" value="0.3" /><!-- 高档进入：norm>0.3 ≈ PWM>1650（你侧约 1800） -->
+		<arg name="rc_offboard_exit_threshold" value="-0.3" /><!-- 中档退出；低档保持 Offboard -->
+	</include>
+</launch>

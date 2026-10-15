@@ -1,0 +1,52 @@
+state {"armed": false, "mode": "MANUAL", "connected": true, "system_status": 3}
+只读记录已开始；本脚本不会解锁、切模式或发目标。请在另一终端执行拆桨台架测试。
+原始记录：/home/nvidia/agile/fly/runtime/takeover_records/takeover_1792049969959859872.jsonl
+extended {"landed_state": 1}
+state {"armed": false, "mode": "OFFBOARD", "connected": true, "system_status": 3}
+state {"armed": true, "mode": "OFFBOARD", "connected": true, "system_status": 4}
+extended {"landed_state": 2}
+state {"armed": false, "mode": "POSCTL", "connected": true, "system_status": 3}
+extended {"landed_state": 1}
+state {"armed": false, "mode": "MANUAL", "connected": true, "system_status": 3}
+{
+  "status": "no_armed_offboard_takeover_observed",
+  "parameters": {
+    "COM_DISARM_LAND": {
+      "success": true,
+      "integer": 0,
+      "real": 2.0
+    },
+    "COM_DISARM_PRFLT": {
+      "success": true,
+      "integer": 0,
+      "real": 10.0
+    },
+    "COM_RC_OVERRIDE": {
+      "success": true,
+      "integer": 1,
+      "real": 0.0
+    },
+    "RC_MAP_FLTMODE": {
+      "success": true,
+      "integer": 6,
+      "real": 0.0
+    },
+    "RC_MAP_ARM_SW": {
+      "success": true,
+      "integer": 9,
+      "real": 0.0
+    },
+    "RC_MAP_KILL_SW": {
+      "success": true,
+      "integer": 10,
+      "real": 0.0
+    }
+  },
+  "confirmed_disarm_reason": null,
+  "motor_rotation_or_hover_verified": false,
+  "updated_unix": 1792050046.3050056,
+  "raw_record": "/home/nvidia/agile/fly/runtime/takeover_records/takeover_1792049969959859872.jsonl",
+  "arming_service_called": false,
+  "flight_mode_service_called": false
+}
+诊断报告：/home/nvidia/agile/fly/runtime/takeover_records/takeover_1792049969959859872.json

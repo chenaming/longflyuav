@@ -1,0 +1,92 @@
+# uav_group.yaml — 单机 /uavX group 命名空间下的合并配置
+# 加载方式：<group ns="uavX"><rosparam file="uav_group.yaml" subst_value="true"/></group>
+# 需在 group 内定义 arg：uav_id、enable_world_map、world_map_transform
+
+# ========== 第一层 PX4 参数 ==========
+default_location_source: Fast_Lio
+# 所有定位源共享的通用 PX4 参数
+px4_params_common:
+  int:
+    COM_ARM_WO_GPS: 1       # 无GPS解锁 0:不允许 1:允许
+    NAV_RCL_ACT: 0          # RC丢失动作 0:悬停 1:返航 2:降落
+    GF_PREDICT: 1           # 地理围栏是否启用 0:否 1:是
+    GF_ACTION: 2            # 超出围栏动作 0:无 1:警告 2:悬停 3:返航 5:降落
+  float:
+    MPC_XY_VEL_MAX: 5.0       # 水平最大速度 m/s
+    MPC_Z_VEL_MAX_UP: 1.5     # 最大上升速度 m/s
+    MPC_Z_VEL_MAX_DN: 1.5     # 最大下降速度 m/s
+    COM_RC_LOSS_T: 3.0        # RC 丢失判定时间 秒
+    GF_MAX_HOR_DIST: 100.0    # 地理围栏水平最大距离 m
+    GF_MAX_VER_DIST: 50.0     # 地理围栏垂直最大高度 m
+# 不同定位源的PX4参数
+location_profiles:
+  GPS:
+    px4_params:
+      int:
+        EKF2_AID_MASK: 1
+        EKF2_HGT_MODE: 0
+      float:
+        MC_YAWRATE_MAX: 70.0
+
+  Fast_Lio:
+    px4_params:
+      int:
+        EKF2_AID_MASK: 24
+        EKF2_HGT_MODE: 3
+      float:
+        MC_YAWRATE_MAX: 70.0
+
+  Vins:
+    px4_params:
+      int:
+        EKF2_AID_MASK: 24
+        EKF2_HGT_MODE: 3
+      float:
+        MC_YAWRATE_MAX: 70.0
+
+  Gazebo:
+    px4_params:
+      int:
+        EKF2_AID_MASK: 24
+        EKF2_HGT_MODE: 3
+      float:
+        MC_YAWRATE_MAX: 70.0
+
+# ========== 第二层 TF 树 ==========
+world_frame: "world"
+map_frame: "uav$(arg uav_id)_map"
+base_link_frame: "uav$(arg uav_id)/base_link"
+
+enable_world_to_map: $(arg enable_world_map)
+world_to_map:
+  static: true
+  transform: $(arg world_map_transform)
+
+enable_map_to_base_link: true
+
+sensors:
+  camera_link:
+    enabled: true
+    static: true
+    transform: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    D435i_link:
+      enabled: true
+      static: true
+      transform: [0.1, 0.0, -0.05, 0.0, 0.524, 0.0]
+    336_link:
+      enabled: false
+      static: true
+      transform: [0.12, 0.0, -0.05, 0.0, 0.524, 0.0]
+
+  lidar_link:
+    enabled: true
+    static: true
+    transform: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+    mid360_link:
+      enabled: true
+      static: true
+      transform: [0.0, 0.0, 0.1, 0.0, 0.0, 0.0]
+    odin_link:
+      enabled: false
+      static: true
+      transform: [0.0, 0.0, 0.08, 0.0, 0.0, 0.0]

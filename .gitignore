@@ -1,0 +1,3 @@
+# Local data (large datasets, logs, archives)
+/date/
+runtime/vla/bridge.log

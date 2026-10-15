@@ -1,0 +1,12 @@
+{
+  "updated_unix": 1792047593.6467745,
+  "final_armed": false,
+  "mode": "MANUAL",
+  "ownership_restored": true,
+  "bench_allow_armed": false,
+  "setpoint_publishers": [
+    "/uav1/uav_control_fsm"
+  ],
+  "arming_service_called": false,
+  "flight_mode_service_called": false
+}

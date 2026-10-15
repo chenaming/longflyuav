@@ -1,0 +1,46 @@
+<launch>
+  <!-- 无人机编号 -->
+  <arg name="uav_id" default="1"/>
+  <!-- The experiment launch overrides this existing simulation input. -->
+  <arg name="lidar_topic" default="/airsim_node_lite/uav1/lidarPointCloud2/LidarSensor1"/>
+
+  <!-- 点云 stamp 与匹配 pose 的最大时间差 (s)；转向重影时保持较小值 -->
+  <arg name="max_pose_age" default="0.1"/>
+  <!-- pose 历史缓冲时长 (s)，用于按点云时间戳插值 -->
+  <arg name="pose_buffer_duration" default="1.0"/>
+
+  <!-- 雷达到 base_link 外参，默认与 tf_tree_config.yaml 中 mid360_lidar_link 一致 -->
+  <arg name="lidar_ext_x" default="0.0"/>
+  <arg name="lidar_ext_y" default="0.0"/>
+  <arg name="lidar_ext_z" default="0.1"/>
+  <arg name="lidar_ext_roll" default="0.0"/>
+  <arg name="lidar_ext_pitch" default="0.0"/>
+  <arg name="lidar_ext_yaw" default="0.0"/>
+
+  <!-- 屏蔽 base_link 原点附近半径内的点（米），用于去除机身/桨叶回波 -->
+  <arg name="self_filter_enable" default="true"/>
+  <arg name="self_filter_radius" default="0.55"/>
+
+  <node pkg="plan_env" type="body_to_world" name="body_to_world" output="screen">
+    <param name="uav_id" value="$(arg uav_id)"/>
+    <param name="max_pose_age" value="$(arg max_pose_age)"/>
+    <param name="pose_buffer_duration" value="$(arg pose_buffer_duration)"/>
+
+    <!-- 默认 topic / frame（随 uav_id 变化） -->
+    <param name="map_frame" value="$(eval 'uav' + str(arg('uav_id')) + '_map')"/>
+    <param name="lidar_topic" value="$(arg lidar_topic)"/>
+    <!-- <param name="lidar_topic" value="$(eval '/uav' + str(arg('uav_id')) + '/livox/lidar')"/> -->
+    <param name="pose_topic" value="$(eval '/uav' + str(arg('uav_id')) + '/mavros/local_position/pose')"/>
+    <param name="output_topic" value="$(eval '/uav' + str(arg('uav_id')) + '/livox/lidar_map')"/>
+
+    <param name="lidar_extrinsic/x" value="$(arg lidar_ext_x)"/>
+    <param name="lidar_extrinsic/y" value="$(arg lidar_ext_y)"/>
+    <param name="lidar_extrinsic/z" value="$(arg lidar_ext_z)"/>
+    <param name="lidar_extrinsic/roll" value="$(arg lidar_ext_roll)"/>
+    <param name="lidar_extrinsic/pitch" value="$(arg lidar_ext_pitch)"/>
+    <param name="lidar_extrinsic/yaw" value="$(arg lidar_ext_yaw)"/>
+
+    <param name="self_filter/enable" value="$(arg self_filter_enable)"/>
+    <param name="self_filter/radius" value="$(arg self_filter_radius)"/>
+  </node>
+</launch>

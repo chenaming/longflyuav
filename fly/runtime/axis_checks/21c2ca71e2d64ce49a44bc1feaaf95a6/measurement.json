@@ -1,0 +1,7 @@
+{
+  "motion": "left",
+  "operator_distance_m": 0.2,
+  "scope": "read-only translation experiment; not complete extrinsic calibration",
+  "status": "aborted",
+  "error": "两路配对里程计不足或已过期。"
+}

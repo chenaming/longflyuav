@@ -1,0 +1,23 @@
+{
+  "files_verified": {
+    "latest_observation.py": "0ae9bf4c380a611a219b83db3a208ceff59285c66d27ad878a9cbad655bbc610",
+    "flight_core.py": "f47e91555207a46a03abd339a642781a96412bf4b8fdec04427f1cba854fafba",
+    "closed_loop_flight.py": "5da7aba4e0b54ead92f673d9cbb3207099c6a9a7626fc12c5543e2ec0cf8c5f4",
+    "start_closed_loop.sh": "d5c72a81cf0cab823edad750c1e5e744455583a19212b683aff34ca595504bac",
+    "test_closed_loop.py": "5715e8fa034a28d0599e21709257fcbcaed06fa5ad8d0ff6a972500cdcd6cbc1",
+    "simulate_closed_loop.py": "ba8dc6fb8df3f901f0a8f1a0dfd9c279fb3eac409214bb6ed7303f4e70cb2780",
+    "test_flight_adapter.py": "1d253d2e78227faaf790d207c2720d4a27884ab7f221fba43d584611100f6e85",
+    "CLOSED_LOOP_FLIGHT.md": "8dffdf3d28015a22316788158f50d9fbf462156ca81dae3b9e8614e7901210fc"
+  },
+  "policy_tests": 21,
+  "adapter_tests": 5,
+  "cpp_build_passed": true,
+  "software_simulation_passed": true,
+  "unarmed_handoff_passed": true,
+  "flight_executed": false,
+  "full_preflight_passed": false,
+  "preflight_blocker": "CH9 high: 2000",
+  "mode": "MANUAL",
+  "armed": false,
+  "backup": "/home/nvidia/agile/fly/runtime/closed_loop_backup_1792036460"
+}

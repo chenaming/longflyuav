@@ -1,0 +1,159 @@
+<launch>
+    <!-- grid_map 深度图路径：depth 绝对 remap；cloud 指向 unused，避免点云双写 -->
+    <arg name="odometry_topic"/>
+    <arg name="cloud_topic" default="/unused_cloud"/>
+    <arg name="pose_topic" default="/unused_pose"/>
+    <arg name="depth_topic" default="/airsim_node_lite/uav1/front_right_DepthPlanar/image"/>
+    <arg name="max_vel"/>
+    <arg name="max_acc"/>
+    <arg name="max_jer"/>
+    <arg name="planning_horizon"/>
+    <arg name="point_num"/>
+    <arg name="point0_x"/>
+    <arg name="point0_y"/>
+    <arg name="point0_z"/>
+    <arg name="point1_x"/>
+    <arg name="point1_y"/>
+    <arg name="point1_z"/>
+    <arg name="point2_x"/>
+    <arg name="point2_y"/>
+    <arg name="point2_z"/>
+    <arg name="point3_x"/>
+    <arg name="point3_y"/>
+    <arg name="point3_z"/>
+    <arg name="point4_x"/>
+    <arg name="point4_y"/>
+    <arg name="point4_z"/>
+    <arg name="flight_type"/>
+    <arg name="use_multitopology_trajs"/>
+    <arg name="uav_id"/>
+    <arg name="local_update_range_x" default="8.0"/>
+    <arg name="local_update_range_y" default="8.0"/>
+    <arg name="local_update_range_z" default="2.0"/>
+    <arg name="enable_virtual_wall" default="true"/>
+    <arg name="obstacles_inflation" default="0.2"/>
+    <arg name="obstacles_inflation_z" default="0.2"/><!-- Z 向膨胀半径 (m) -->
+    <arg name="fail_safe" default="true"/>
+    <arg name="virtual_ceil" default="3.0"/>
+    <arg name="virtual_ground" default="-5.0"/>
+    <!-- 320x240 FOV80°：fx=W/(2*tan(FOV/2))≈190.7 -->
+    <arg name="cam_fx" default="190.7"/>
+    <arg name="cam_fy" default="190.7"/>
+    <arg name="cam_cx" default="160.0"/>
+    <arg name="cam_cy" default="120.0"/>
+    <arg name="k_depth_scaling_factor" default="1000.0"/>
+    <arg name="skip_pixel" default="2"/>
+    <arg name="depth_filter_mindist" default="0.3"/>
+    <arg name="depth_filter_margin" default="2"/>
+
+    <node pkg="ego_planner" name="uav$(arg uav_id)_planner_node" type="ego_planner_node" output="screen">
+        <remap from="~mandatory_stop" to="/uav$(arg uav_id)/mandatory_stop_to_planner"/>
+        <remap from="~resume_planning" to="/uav$(arg uav_id)/resume_planning"/>
+        <remap from="/goal" to="/uav$(arg uav_id)/goal_point"/>
+        <remap from="~odom_world" to="/uav$(arg uav_id)$(arg odometry_topic)"/>
+        <remap from="~planning/trajectory" to="/uav$(arg uav_id)_planning/trajectory"/>
+        <remap from="~planning/data_display" to="/uav$(arg uav_id)_planning/data_display"/>
+        <remap from="~planning/broadcast_traj_send" to="/broadcast_traj_from_planner"/>
+        <remap from="~planning/broadcast_traj_recv" to="/broadcast_traj_to_planner"/>
+        <remap from="~planning/yaw_align_active" to="/uav$(arg uav_id)_planning/yaw_align_active"/>
+        <remap from="~grid_map/odom" to="/uav$(arg uav_id)$(arg odometry_topic)"/>
+        <!-- cloud / pose：保持 /uav{id} 前缀，默认 unused -->
+        <remap from="~grid_map/cloud" to="/uav$(arg uav_id)$(arg cloud_topic)"/>
+        <remap from="~grid_map/pose" to="/uav$(arg uav_id)$(arg pose_topic)"/>
+        <!-- depth：绝对话题，兼容 AirSim / 机载摄像头完整名 -->
+        <remap from="~grid_map/depth" to="$(arg depth_topic)"/>
+
+        <!-- FSM -->
+        <param name="fsm/flight_type" value="$(arg flight_type)" type="int"/>
+        <param name="fsm/thresh_replan_time" value="1.0" type="double"/>
+        <param name="fsm/planning_horizon" value="$(arg planning_horizon)" type="double"/>
+        <param name="fsm/emergency_time" value="1.0" type="double"/>
+        <param name="fsm/realworld_experiment" value="true"/>
+        <param name="fsm/fail_safe" value="$(arg fail_safe)"/>
+        <param name="fsm/enable_yaw_align" value="true" type="bool"/>
+        <param name="fsm/yaw_align_threshold_deg" value="20.0" type="double"/>
+        <param name="fsm/yaw_align_tolerance_deg" value="10.0" type="double"/>
+        <param name="fsm/yaw_align_hold_sec" value="0.5" type="double"/>
+        <param name="fsm/waypoint_num" value="$(arg point_num)" type="int"/>
+        <param name="fsm/waypoint0_x" value="$(arg point0_x)" type="double"/>
+        <param name="fsm/waypoint0_y" value="$(arg point0_y)" type="double"/>
+        <param name="fsm/waypoint0_z" value="$(arg point0_z)" type="double"/>
+        <param name="fsm/waypoint1_x" value="$(arg point1_x)" type="double"/>
+        <param name="fsm/waypoint1_y" value="$(arg point1_y)" type="double"/>
+        <param name="fsm/waypoint1_z" value="$(arg point1_z)" type="double"/>
+        <param name="fsm/waypoint2_x" value="$(arg point2_x)" type="double"/>
+        <param name="fsm/waypoint2_y" value="$(arg point2_y)" type="double"/>
+        <param name="fsm/waypoint2_z" value="$(arg point2_z)" type="double"/>
+        <param name="fsm/waypoint3_x" value="$(arg point3_x)" type="double"/>
+        <param name="fsm/waypoint3_y" value="$(arg point3_y)" type="double"/>
+        <param name="fsm/waypoint3_z" value="$(arg point3_z)" type="double"/>
+        <param name="fsm/waypoint4_x" value="$(arg point4_x)" type="double"/>
+        <param name="fsm/waypoint4_y" value="$(arg point4_y)" type="double"/>
+        <param name="fsm/waypoint4_z" value="$(arg point4_z)" type="double"/>
+
+        <!-- grid_map：深度同步位姿 + raycast -->
+        <param name="grid_map/resolution" value="0.1"/>
+        <param name="grid_map/local_update_range_x" value="$(arg local_update_range_x)"/>
+        <param name="grid_map/local_update_range_y" value="$(arg local_update_range_y)"/>
+        <param name="grid_map/local_update_range_z" value="$(arg local_update_range_z)"/>
+        <param name="grid_map/obstacles_inflation" value="$(arg obstacles_inflation)"/>
+        <param name="grid_map/obstacles_inflation_z" value="$(arg obstacles_inflation_z)"/>
+        <param name="grid_map/enable_virtual_wall" value="$(arg enable_virtual_wall)"/>
+        <param name="grid_map/virtual_ceil" value="$(arg virtual_ceil)"/>
+        <param name="grid_map/virtual_ground" value="$(arg virtual_ground)"/>
+        <param name="grid_map/pose_type" value="2"/>
+        <param name="grid_map/frame_id" value="uav$(arg uav_id)_map"/>
+        <param name="grid_map/odom_depth_timeout" value="1.5"/>
+
+        <!-- 相机内参（AirSim front_right 320x240 FOV80 默认；可按实机改） -->
+        <param name="grid_map/fx" value="$(arg cam_fx)"/>
+        <param name="grid_map/fy" value="$(arg cam_fy)"/>
+        <param name="grid_map/cx" value="$(arg cam_cx)"/>
+        <param name="grid_map/cy" value="$(arg cam_cy)"/>
+        <param name="grid_map/k_depth_scaling_factor" value="$(arg k_depth_scaling_factor)"/>
+        <param name="grid_map/skip_pixel" value="$(arg skip_pixel)"/>
+        <param name="grid_map/use_depth_filter" value="true"/>
+        <param name="grid_map/depth_filter_mindist" value="$(arg depth_filter_mindist)"/>
+        <param name="grid_map/depth_filter_margin" value="$(arg depth_filter_margin)"/>
+        <param name="grid_map/depth_filter_tolerance" value="0.15"/>
+
+        <param name="grid_map/p_hit" value="0.65"/>
+        <param name="grid_map/p_miss" value="0.35"/>
+        <param name="grid_map/p_min" value="0.12"/>
+        <param name="grid_map/p_max" value="0.90"/>
+        <param name="grid_map/p_occ" value="0.80"/>
+        <!-- 深度有 raycast 清除，衰减可短于纯点云 -->
+        <param name="grid_map/fading_time" value="1.0"/><!-- 激光点衰减时间 3s，影响地图更新速度 -->
+        <param name="grid_map/min_ray_length" value="0.1"/>
+        <param name="grid_map/show_occ_time" value="false"/>
+        <param name="grid_map/visualization_angle_threshold" value="-1.0"/>
+
+        <!-- planner manager -->
+        <param name="manager/max_vel" value="$(arg max_vel)" type="double"/>
+        <param name="manager/max_acc" value="$(arg max_acc)" type="double"/>
+        <param name="manager/polyTraj_piece_length" value="1.5" type="double"/>
+        <param name="manager/feasibility_tolerance" value="0.05" type="double"/>
+        <param name="manager/planning_horizon" value="$(arg planning_horizon)" type="double"/>
+        <param name="manager/random_init_vertical_scale" value="0.2" type="double"/>
+        <param name="manager/use_multitopology_trajs" value="$(arg use_multitopology_trajs)" type="bool"/>
+        <param name="manager/uav_id" value="$(arg uav_id)"/>
+
+        <!-- trajectory optimization -->
+        <param name="optimization/constraint_points_perPiece" value="5" type="int"/>
+        <param name="optimization/weight_obstacle" value="10000.0" type="double"/>
+        <param name="optimization/weight_obstacle_soft" value="5000.0" type="double"/>
+        <param name="optimization/weight_swarm" value="10000.0" type="double"/>
+        <param name="optimization/weight_feasibility" value="10000.0" type="double"/>
+        <param name="optimization/weight_sqrvariance" value="10000.0" type="double"/>
+        <param name="optimization/weight_time" value="10.0" type="double"/>
+        <param name="optimization/weight_height" value="300.0" type="double"/>
+        <param name="optimization/astar_z_penalty" value="2.0" type="double"/>
+        <param name="optimization/obstacle_clearance" value="0.2" type="double"/>
+        <param name="optimization/obstacle_clearance_soft" value="0.5" type="double"/>
+        <param name="optimization/swarm_clearance" value="0.50" type="double"/>
+        <param name="optimization/max_vel" value="$(arg max_vel)" type="double"/>
+        <param name="optimization/max_acc" value="$(arg max_acc)" type="double"/>
+        <param name="optimization/max_jer" value="$(arg max_jer)" type="double"/>
+        <param name="optimization/record_opt" value="true"/>
+    </node>
+</launch>

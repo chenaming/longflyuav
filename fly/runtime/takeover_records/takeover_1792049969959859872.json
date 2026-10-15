@@ -1,0 +1,41 @@
+{
+  "status": "no_armed_offboard_takeover_observed",
+  "parameters": {
+    "COM_DISARM_LAND": {
+      "success": true,
+      "integer": 0,
+      "real": 2.0
+    },
+    "COM_DISARM_PRFLT": {
+      "success": true,
+      "integer": 0,
+      "real": 10.0
+    },
+    "COM_RC_OVERRIDE": {
+      "success": true,
+      "integer": 1,
+      "real": 0.0
+    },
+    "RC_MAP_FLTMODE": {
+      "success": true,
+      "integer": 6,
+      "real": 0.0
+    },
+    "RC_MAP_ARM_SW": {
+      "success": true,
+      "integer": 9,
+      "real": 0.0
+    },
+    "RC_MAP_KILL_SW": {
+      "success": true,
+      "integer": 10,
+      "real": 0.0
+    }
+  },
+  "confirmed_disarm_reason": null,
+  "motor_rotation_or_hover_verified": false,
+  "updated_unix": 1792050046.3050056,
+  "raw_record": "/home/nvidia/agile/fly/runtime/takeover_records/takeover_1792049969959859872.jsonl",
+  "arming_service_called": false,
+  "flight_mode_service_called": false
+}

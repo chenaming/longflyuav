@@ -1,0 +1,8 @@
+<launch>
+  <!-- 参数以 config/traj_params.yaml 为准 -->
+  <arg name="config_file" default="$(find traj_tracking_demo)/config/traj_params.yaml"/>
+
+  <node pkg="traj_tracking_demo" type="traj_tracking_node" name="traj_tracking_node" output="screen">
+    <rosparam file="$(arg config_file)" command="load"/>
+  </node>
+</launch>

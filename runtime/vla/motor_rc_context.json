@@ -1,0 +1,24 @@
+{
+  "rc_arm_switch_override": false,
+  "normal_mavros_arming": true,
+  "initial_rc_channels": [
+    1500,
+    1500,
+    999,
+    1502,
+    999,
+    999,
+    999,
+    999,
+    999,
+    999,
+    2000,
+    1507,
+    880,
+    880,
+    2012,
+    2012
+  ],
+  "updated_unix": 1792044238.6648998,
+  "px4_parameters_changed": false
+}

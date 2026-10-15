@@ -1,0 +1,18 @@
+{
+  "run_id": "chair-b2a2beeeeab3",
+  "http_results_with_coordinate_trace": 440,
+  "within_step_bounds": 85,
+  "xy_bound_exceeded": 3,
+  "z_bound_exceeded": 194,
+  "yaw_bound_exceeded": 184,
+  "latency_s_median": 0.3502846410010534,
+  "latency_s_p95": 0.6166465710011835,
+  "composition_error_max_cm": 8.234607129509186e-07,
+  "yaw_delta_deg_p05_p95": [
+    -10.862835418694656,
+    28.68275343691635
+  ],
+  "limits_unchanged": true,
+  "physical_navigation_verified": false,
+  "note": "Different live observations; this is not a repeated-identical-input determinism test. Within step bounds alone does not prove all freshness/other checks passed."
+}

@@ -1,0 +1,19 @@
+{
+  "hz": 50.00295379865041,
+  "count": 150,
+  "unique_stamps": 150,
+  "paired_count": 150,
+  "max_copy_error_m": 0.0,
+  "source_age_s": 0.016416549682617188,
+  "publishers": [
+    "/uav1/uav_control_fsm"
+  ],
+  "relative_position_valid": true,
+  "vertical_position_valid": true,
+  "armed": false,
+  "mode": "POSCTL",
+  "fcu_odin_difference_m": 0.0034441608818531143,
+  "actual_position_mode_switch_tested": false,
+  "updated_unix": 1792060973.1569045,
+  "passed": true
+}

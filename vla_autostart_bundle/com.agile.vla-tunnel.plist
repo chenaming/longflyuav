@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>KeepAlive</key>
+	<true/>
+	<key>Label</key>
+	<string>com.agile.vla-tunnel</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/bin/python3</string>
+		<string>/Users/lxjk/Library/Application Support/AgileVLA/vla_mac_tunnel.py</string>
+		<string>--identity</string>
+		<string>/Users/lxjk/Library/Application Support/AgileVLA/identity_ed25519</string>
+		<string>--known-hosts</string>
+		<string>/Users/lxjk/Library/Application Support/AgileVLA/known_hosts</string>
+		<string>--state</string>
+		<string>/Users/lxjk/Library/Application Support/AgileVLA/state</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>StandardErrorPath</key>
+	<string>/Users/lxjk/Library/Application Support/AgileVLA/launchagent.log</string>
+	<key>StandardOutPath</key>
+	<string>/Users/lxjk/Library/Application Support/AgileVLA/launchagent.log</string>
+	<key>ThrottleInterval</key>
+	<integer>10</integer>
+</dict>
+</plist>

@@ -1,0 +1,13 @@
+{
+  "states": [
+    {
+      "t": 1791625269.9489224,
+      "mode": "MANUAL",
+      "armed": false
+    }
+  ],
+  "texts": [],
+  "estimator": "header: \n  seq: 67\n  stamp: \n    secs: 1791625279\n    nsecs: 204978041\n  frame_id: ''\nattitude_status_flag: True\nvelocity_horiz_status_flag: True\nvelocity_vert_status_flag: True\npos_horiz_rel_status_flag: True\npos_horiz_abs_status_flag: True\npos_vert_abs_status_flag: True\npos_vert_agl_status_flag: True\nconst_pos_mode_status_flag: False\npred_pos_horiz_rel_status_flag: True\npred_pos_horiz_abs_status_flag: True\ngps_glitch_status_flag: False\naccel_error_status_flag: False",
+  "offboard_request": "mode_sent: True",
+  "manual_request": "mode_sent: True"
+}

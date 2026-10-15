@@ -1,0 +1,5 @@
+{
+  "instruction": "Hover in place",
+  "inference_url": "http://127.0.0.1:15017/predict",
+  "fcu_url": "/dev/ttyTHS0:921600"
+}

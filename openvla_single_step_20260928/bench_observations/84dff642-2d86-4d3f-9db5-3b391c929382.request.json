@@ -1,0 +1,27 @@
+{
+  "schema": "openvla-agile/v1",
+  "convention": "mission_fru_cm_yaw_deg",
+  "request_id": "84dff642-2d86-4d3f-9db5-3b391c929382",
+  "mission_id": "c58ca201-95aa-4c6a-a778-1824d5c142a2",
+  "observation_stamp": 1790590728.9070873,
+  "instr": "fly forward",
+  "proprio": [
+    0.0,
+    -0.0,
+    0.0,
+    -0.0
+  ],
+  "image_file": "84dff642-2d86-4d3f-9db5-3b391c929382.jpg",
+  "observation_map_m": [
+    10.0,
+    20.0,
+    1.0
+  ],
+  "observation_yaw_rad": 1.5707963267948963,
+  "mission_origin_map_m": [
+    10.0,
+    20.0,
+    1.0
+  ],
+  "camera_yaw_offset_rad": 0.0
+}

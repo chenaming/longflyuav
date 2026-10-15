@@ -1,0 +1,28 @@
+{
+  "run_id": "chair-b79eb62a6d92",
+  "instruction": "fly to the chair",
+  "mode": "MANUAL",
+  "armed": false,
+  "prearm": "Ok",
+  "rc_channels": [
+    1500,
+    1500,
+    1548,
+    1504,
+    999,
+    999,
+    999,
+    999,
+    999,
+    999,
+    2000,
+    1507,
+    880,
+    880,
+    2012,
+    2012
+  ],
+  "request_id": 65,
+  "updated_unix": 1792057843.0770483,
+  "scope": "read-only checks; physical prop removal/restraint must be confirmed by operator"
+}

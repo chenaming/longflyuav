@@ -1,0 +1,116 @@
+{
+  "phase": "TAKEOVER",
+  "reason": "PX4 confirmed POSCTL; no automatic re-entry or disarm",
+  "instruction": "fly to the chair",
+  "arrival_inferred": false,
+  "semantic_goal_verified": false,
+  "physical_flight_validated": false,
+  "run_and_epoch": [
+    "chair-e2f954c9f5b6",
+    2,
+    "fly to the chair",
+    "map"
+  ],
+  "last_request_id": 100,
+  "accepted_predictions": 41,
+  "rejected_predictions": 0,
+  "small_action_count": 0,
+  "home_xyz_m": [
+    -0.0011683172779157758,
+    0.0015246635302901268,
+    -0.0012237607734277844
+  ],
+  "setpoint_xyz_yaw": [
+    2.243151760012569,
+    -0.0848240202764336,
+    1.1199538999402274,
+    0.04922620405846079
+  ],
+  "target_xyz_yaw": [
+    2.3268809858700847,
+    -0.08597453400937961,
+    1.1305825690318565,
+    0.04922620405846079
+  ],
+  "fcu": {
+    "fresh": true,
+    "connected": true,
+    "armed": true,
+    "mode": "POSCTL",
+    "landed": false
+  },
+  "setpoint_count": 1147,
+  "rpc": [
+    {
+      "t": 1191.196378216,
+      "action": [
+        "mode",
+        "OFFBOARD"
+      ],
+      "response": "mode_sent: True"
+    },
+    {
+      "t": 1191.425786444,
+      "action": [
+        "arm",
+        true
+      ],
+      "response": "success: True\nresult: 0"
+    }
+  ],
+  "events": [
+    {
+      "t": 1188.053072072,
+      "phase": "WAIT_INITIAL",
+      "reason": "waiting for a fresh model response"
+    },
+    {
+      "t": 1189.149654937,
+      "event": "exclusive_setpoint_handoff"
+    },
+    {
+      "t": 1188.974147196,
+      "phase": "PRESTREAM",
+      "reason": "fresh initial prediction received; holding ground position"
+    },
+    {
+      "t": 1191.164855866,
+      "phase": "ENTER_OFFBOARD",
+      "reason": "requesting OFFBOARD"
+    },
+    {
+      "t": 1191.394186586,
+      "phase": "ARM",
+      "reason": "OFFBOARD observed; requesting normal arm"
+    },
+    {
+      "t": 1192.371093117,
+      "phase": "TAKEOFF",
+      "reason": "climbing 1 m relative to starting position"
+    },
+    {
+      "t": 1207.584391148,
+      "phase": "WAIT_NEW_IMAGE",
+      "reason": "hover settled; discarding all pre-hover images/results"
+    },
+    {
+      "t": 1208.026961503,
+      "phase": "NAVIGATE",
+      "reason": "following fresh model targets"
+    },
+    {
+      "t": 1227.371078024,
+      "event": "pilot_or_px4_mode_takeover",
+      "mode": "POSCTL"
+    },
+    {
+      "t": 1227.390593157,
+      "phase": "TAKEOVER",
+      "reason": "PX4 confirmed POSCTL; no automatic re-entry or disarm"
+    }
+  ],
+  "updated_unix": 1792061014.0859659,
+  "rc_takeover_policy": "PX4_actual_mode_only",
+  "release_mode": "POSCTL",
+  "control_released": true
+}

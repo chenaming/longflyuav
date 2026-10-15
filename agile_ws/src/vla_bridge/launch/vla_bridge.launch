@@ -1,0 +1,23 @@
+<launch>
+  <!-- Step 1 skeleton: start four vla_bridge nodes. enable_publish stays false. -->
+  <arg name="enable_publish" default="false"/>
+  <arg name="server_host" default="10.62.25.215"/>
+  <arg name="server_port" default="5007"/>
+  <arg name="config_file" default="$(find vla_bridge)/config/vla_bridge.yaml"/>
+
+  <rosparam command="load" file="$(arg config_file)"/>
+  <param name="control/enable_publish" value="$(arg enable_publish)"/>
+  <param name="ground/host" value="$(arg server_host)"/>
+  <param name="ground/port" value="$(arg server_port)"/>
+
+  <group ns="vla">
+    <node pkg="vla_bridge" type="vla_watchdog_node.py" name="vla_watchdog_node"
+          output="screen" required="false"/>
+    <node pkg="vla_bridge" type="vla_image_node.py" name="vla_image_node"
+          output="screen" required="false"/>
+    <node pkg="vla_bridge" type="vla_infer_client_node.py" name="vla_infer_client_node"
+          output="screen" required="false"/>
+    <node pkg="vla_bridge" type="vla_cmd_node.py" name="vla_cmd_node"
+          output="screen" required="false"/>
+  </group>
+</launch>

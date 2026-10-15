@@ -1,0 +1,192 @@
+{
+  "token": "943aa0f7a247460ca93881abf71605f0",
+  "status": "passed_timed_bench",
+  "duration_s": 30.0,
+  "elapsed_s": 30.023361504001514,
+  "window_completed": true,
+  "setpoint_count": 900,
+  "matched_setpoints": 900,
+  "setpoint_hz": 29.9998806785626,
+  "max_setpoint_gap_s": 0.04322332800074946,
+  "normal_stop": true,
+  "watchdog_ok": true,
+  "final_armed": false,
+  "final_mode": "MANUAL",
+  "ownership_restored": true,
+  "bench_allow_armed": false,
+  "error": null,
+  "rpc": [
+    {
+      "t": 18429.088814368,
+      "action": [
+        "mode",
+        "OFFBOARD"
+      ],
+      "response": "mode_sent: True"
+    },
+    {
+      "t": 18429.68440256,
+      "action": [
+        "arm",
+        true
+      ],
+      "response": "success: True\nresult: 0"
+    },
+    {
+      "t": 18460.745276608,
+      "action": [
+        "mode",
+        "AUTO.LAND"
+      ],
+      "response": "mode_sent: True"
+    },
+    {
+      "t": 18464.291508704,
+      "action": [
+        "arm",
+        false
+      ],
+      "response": "success: True\nresult: 0"
+    }
+  ],
+  "stop_result": {
+    "disarmed_confirmed": true,
+    "force_disarm_used": false,
+    "normal_landing_confirmed": true,
+    "auto_disarmed": false,
+    "ordinary_disarm_requests": 1,
+    "rpc": [
+      {
+        "t": 18460.745276608,
+        "action": [
+          "mode",
+          "AUTO.LAND"
+        ],
+        "response": "mode_sent: True"
+      },
+      {
+        "t": 18464.291508704,
+        "action": [
+          "arm",
+          false
+        ],
+        "response": "success: True\nresult: 0"
+      }
+    ]
+  },
+  "normal_shutdown_trace_states": [
+    {
+      "phase": "LAND_REQUEST",
+      "state": {
+        "fresh": true,
+        "connected": true,
+        "armed": true,
+        "mode": "OFFBOARD",
+        "land_fresh": true,
+        "landed": false
+      },
+      "keep_setpoints": true,
+      "t": 18460.744613632
+    },
+    {
+      "phase": "WAIT_GROUND",
+      "state": {
+        "fresh": true,
+        "connected": true,
+        "armed": true,
+        "mode": "AUTO.LAND",
+        "land_fresh": true,
+        "landed": false
+      },
+      "keep_setpoints": false,
+      "t": 18461.691197664
+    },
+    {
+      "phase": "WAIT_DISARM",
+      "state": {
+        "fresh": true,
+        "connected": true,
+        "armed": true,
+        "mode": "AUTO.LAND",
+        "land_fresh": true,
+        "landed": true
+      },
+      "keep_setpoints": false,
+      "t": 18464.290772832
+    },
+    {
+      "phase": "DONE",
+      "state": {
+        "fresh": true,
+        "connected": true,
+        "armed": false,
+        "mode": "AUTO.LAND",
+        "land_fresh": true,
+        "landed": true
+      },
+      "keep_setpoints": false,
+      "t": 18464.687778624
+    }
+  ],
+  "accepted_new_images": 38,
+  "max_accepted_image_age_s": 0.8836812973022461,
+  "throttle_range": [
+    1407,
+    1409
+  ],
+  "watchdog": {
+    "token": "943aa0f7a247460ca93881abf71605f0",
+    "armed_seen": true,
+    "triggers": [],
+    "stop_results": [],
+    "status": "stopped",
+    "updated_unix": 1792050884.1541576,
+    "normal_cleanup_acknowledged": true,
+    "final_armed": false
+  },
+  "current_state": {
+    "armed": false,
+    "mode": "MANUAL",
+    "connected": true,
+    "bench_disarmed": true,
+    "bench_allow_armed": false,
+    "external_owner": 0,
+    "setpoint_publishers": [
+      "/uav1/uav_control_fsm"
+    ]
+  },
+  "actuator_command_bands": {
+    "(-2, 0)": {
+      "count": 40,
+      "thrust_mean": 0.27999671176075935,
+      "min": 0.27898913621902466,
+      "max": 0.28109535574913025
+    },
+    "(0, 1)": {
+      "count": 20,
+      "thrust_mean": 0.16767468824982643,
+      "min": 0.11999999731779099,
+      "max": 0.2795296609401703
+    },
+    "(1, 2)": {
+      "count": 20,
+      "thrust_mean": 0.054549998819129544,
+      "min": 0.0010000000474974513,
+      "max": 0.11999999731779099
+    },
+    "(2, 3)": {
+      "count": 20,
+      "thrust_mean": 0.0010000000474974513,
+      "min": 0.0010000000474974513,
+      "max": 0.0010000000474974513
+    },
+    "(3, 5)": {
+      "count": 40,
+      "thrust_mean": 0.00047500002256128937,
+      "min": 0.0,
+      "max": 0.0010000000474974513
+    }
+  },
+  "esc_rpm_message_count": 0,
+  "verified_unix": 1792050938.9183142
+}

@@ -1,0 +1,166 @@
+{
+  "rc": {
+    "channels": [
+      1487,
+      1500,
+      999,
+      1502,
+      999,
+      999,
+      999,
+      999,
+      2000,
+      999,
+      2000,
+      1507,
+      880,
+      880,
+      2012,
+      2012
+    ],
+    "rssi": 255
+  },
+  "predictions": [
+    {
+      "request_id": 583,
+      "epoch": 1,
+      "latest_only": true,
+      "age_s": 0.3518495559692383,
+      "observation_stamp": 1792036930.4826944,
+      "raw": [
+        24.99998733074675,
+        0.5633709477395925,
+        0.04648682189112918,
+        -0.02598910855614678
+      ],
+      "instruction": "fly to the chair"
+    },
+    {
+      "request_id": 584,
+      "epoch": 1,
+      "latest_only": true,
+      "age_s": 0.625511884689331,
+      "observation_stamp": 1792036930.8750198,
+      "raw": [
+        24.99998733074675,
+        -1.218238397162974,
+        0.04648682189112918,
+        -0.031101706561432185
+      ],
+      "instruction": "fly to the chair"
+    },
+    {
+      "request_id": 585,
+      "epoch": 1,
+      "latest_only": true,
+      "age_s": 0.43157100677490234,
+      "observation_stamp": 1792036931.4612765,
+      "raw": [
+        24.99998733074675,
+        -5.3753268686022935,
+        0.7965012617338232,
+        0.02002427349142255
+      ],
+      "instruction": "fly to the chair"
+    },
+    {
+      "request_id": 586,
+      "epoch": 1,
+      "latest_only": true,
+      "age_s": 0.36383748054504395,
+      "observation_stamp": 1792036931.846807,
+      "raw": [
+        25.168826664278892,
+        -1.614151584919096,
+        0.7965012617338232,
+        0.0404746655125644
+      ],
+      "instruction": "fly to the chair"
+    },
+    {
+      "request_id": 595,
+      "epoch": 1,
+      "latest_only": true,
+      "age_s": 0.3377237319946289,
+      "observation_stamp": 1792036936.3378623,
+      "raw": [
+        24.99998733074675,
+        -1.614151584919096,
+        0.7965012617338232,
+        -0.0362143045667177
+      ],
+      "instruction": "fly to the chair"
+    },
+    {
+      "request_id": 596,
+      "epoch": 1,
+      "latest_only": true,
+      "age_s": 0.3450343608856201,
+      "observation_stamp": 1792036936.7230005,
+      "raw": [
+        24.99998733074675,
+        -5.3753268686022935,
+        0.7965012617338232,
+        0.02002427349142255
+      ],
+      "instruction": "fly to the chair"
+    },
+    {
+      "request_id": 597,
+      "epoch": 1,
+      "latest_only": true,
+      "age_s": 0.3605031967163086,
+      "observation_stamp": 1792036937.1144874,
+      "raw": [
+        24.99998733074675,
+        -1.614151584919096,
+        0.7965012617338232,
+        -0.031101706561432185
+      ],
+      "instruction": "fly to the chair"
+    },
+    {
+      "request_id": 599,
+      "epoch": 1,
+      "latest_only": true,
+      "age_s": 0.32459068298339844,
+      "observation_stamp": 1792036937.8906088,
+      "raw": [
+        24.99998733074675,
+        -5.3753268686022935,
+        0.04648682189112918,
+        0.02513687149670807
+      ],
+      "instruction": "fly to the chair"
+    }
+  ],
+  "failsafes": {
+    "COM_OF_LOSS_T": {
+      "success": true,
+      "integer": 0,
+      "real": 1.0
+    },
+    "COM_OBL_ACT": {
+      "success": true,
+      "integer": 0,
+      "real": 0.0
+    },
+    "COM_OBL_RC_ACT": {
+      "success": true,
+      "integer": 0,
+      "real": 0.0
+    }
+  },
+  "fcu": {
+    "armed": false,
+    "mode": "MANUAL",
+    "connected": true
+  },
+  "external_owner": 0,
+  "control_publishing": false,
+  "summary": {
+    "valid_count": 8,
+    "unique_images": 8,
+    "max_age_s": 0.625511884689331
+  }
+}

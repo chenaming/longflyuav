@@ -1,0 +1,101 @@
+[  0%] Built target actionlib_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target _uav_control_fsm_generate_messages_check_deps_uav_command
+[  0%] Built target geometry_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target tf_generate_messages_nodejs
+[  0%] Built target tf_generate_messages_cpp
+[  0%] Built target trajectory_msgs_generate_messages_nodejs
+[  0%] Built target trajectory_msgs_generate_messages_lisp
+[  0%] Built target trajectory_msgs_generate_messages_cpp
+[  0%] Built target tf2_msgs_generate_messages_nodejs
+[  0%] Built target tf2_msgs_generate_messages_lisp
+[  0%] Built target tf2_msgs_generate_messages_cpp
+[  0%] Built target actionlib_generate_messages_nodejs
+[  0%] Built target actionlib_generate_messages_cpp
+[  0%] Built target tf_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_lisp
+[  0%] Built target actionlib_msgs_generate_messages_eus
+[  0%] Built target nav_msgs_generate_messages_cpp
+[  0%] Built target trajectory_msgs_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_py
+[  0%] Built target actionlib_generate_messages_py
+[  0%] Built target diagnostic_msgs_generate_messages_lisp
+[  0%] Built target nav_msgs_generate_messages_eus
+[  0%] Built target diagnostic_msgs_generate_messages_eus
+[  0%] Built target roscpp_generate_messages_cpp
+[  0%] Built target tf2_msgs_generate_messages_eus
+[  0%] Built target sensor_msgs_generate_messages_py
+[  0%] Built target tf_generate_messages_lisp
+[  0%] Built target nav_msgs_generate_messages_py
+[  0%] Built target actionlib_generate_messages_lisp
+[  0%] Built target roscpp_generate_messages_lisp
+[  0%] Built target mavros_msgs_generate_messages_eus
+[  0%] Built target diagnostic_msgs_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_py
+[  0%] Built target trajectory_msgs_generate_messages_py
+[  0%] Built target actionlib_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_cpp
+[  0%] Built target diagnostic_msgs_generate_messages_nodejs
+[  0%] Built target uuid_msgs_generate_messages_lisp
+[  0%] Built target roscpp_generate_messages_nodejs
+[  0%] Built target mavros_msgs_generate_messages_py
+[  0%] Built target roscpp_generate_messages_eus
+[  0%] Built target uuid_msgs_generate_messages_eus
+[  0%] Built target uuid_msgs_generate_messages_cpp
+[  0%] Built target rosgraph_msgs_generate_messages_nodejs
+[  0%] Built target geographic_msgs_generate_messages_cpp
+[  0%] Built target geographic_msgs_generate_messages_eus
+[  0%] Built target rosgraph_msgs_generate_messages_eus
+[  0%] Built target geographic_msgs_generate_messages_lisp
+[  0%] Built target nav_msgs_generate_messages_nodejs
+[  0%] Built target diagnostic_msgs_generate_messages_py
+[  0%] Built target sensor_msgs_generate_messages_cpp
+[  0%] Built target geographic_msgs_generate_messages_nodejs
+[  0%] Built target geographic_msgs_generate_messages_py
+[  0%] Built target sensor_msgs_generate_messages_eus
+[  0%] Built target sensor_msgs_generate_messages_lisp
+[  0%] Built target uuid_msgs_generate_messages_nodejs
+[  0%] Built target uuid_msgs_generate_messages_py
+[  0%] Built target tf2_msgs_generate_messages_py
+[  0%] Built target mavros_msgs_generate_messages_cpp
+[  0%] Built target actionlib_msgs_generate_messages_py
+[  0%] Built target mavros_msgs_generate_messages_lisp
+[  0%] Built target mavros_msgs_generate_messages_nodejs
+[  0%] Built target sensor_msgs_generate_messages_nodejs
+[  0%] Built target nav_msgs_generate_messages_lisp
+[  0%] Built target actionlib_msgs_generate_messages_cpp
+[  0%] Built target tf_generate_messages_py
+[  0%] Built target actionlib_msgs_generate_messages_lisp
+[ 13%] Built target uav_control_fsm_generate_messages_py
+[ 20%] Built target uav_control_fsm_generate_messages_nodejs
+[ 26%] Built target uav_control_fsm_generate_messages_lisp
+[ 40%] Built target uav_control_fsm_generate_messages_eus
+[ 46%] Built target uav_control_fsm_generate_messages_cpp
+[ 60%] Built target uav_control_manager
+Scanning dependencies of target uav_odometry_bridge
+[ 66%] Building CXX object CMakeFiles/uav_odometry_bridge.dir/src/odometry_bridge.cpp.o
+[ 80%] Built target uav_path_recorder_node
+[ 80%] Built target uav_control_fsm_generate_messages
+[ 86%] Linking CXX shared library /home/nvidia/agile/agile_ws/devel/lib/libuav_odometry_bridge.so
+[ 86%] Built target uav_odometry_bridge
+[ 93%] Linking CXX executable /home/nvidia/agile/agile_ws/devel/lib/uav_control_fsm/uav_control_fsm_node
+[100%] Built target uav_control_fsm_node
+Base path: /home/nvidia/agile/agile_ws
+Source space: /home/nvidia/agile/agile_ws/src
+Build space: /home/nvidia/agile/agile_ws/build
+Devel space: /home/nvidia/agile/agile_ws/devel
+Install space: /home/nvidia/agile/agile_ws/install
+####
+#### Running command: "make cmake_check_build_system" in "/home/nvidia/agile/agile_ws/build"
+####
+####
+#### Running command: "make -j2 -l2" in "/home/nvidia/agile/agile_ws/build/uav_control_fsm"
+####

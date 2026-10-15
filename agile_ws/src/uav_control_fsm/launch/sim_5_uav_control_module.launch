@@ -1,0 +1,110 @@
+<launch>
+	<env name="LANG" value="zh_CN.UTF-8" />
+	<env name="LC_ALL" value="zh_CN.UTF-8" />
+
+	<!-- 全机共用参数（与 sim_single 一致，不含 uav_id / world_map_transform） -->
+	<arg name="no_RC" default="true"/><!-- 是否没有遥控器；仿真 true -->
+	<arg name="loop_hz" default="20"/><!-- FSM 主循环频率 Hz -->
+	<arg name="takeoff_height" default="1.5"/><!-- 自动起飞目标高度 m -->
+	<arg name="vision_pose_pub_rate_hz" default="30.0"/><!-- 视觉位姿转发频率；0=与传感器同频，>0=定时重复发最新位姿 -->
+	<arg name="pos_smooth_enable" default="true"/><!-- Move_mode=0 惯性系位置软件平滑开关 -->
+	<arg name="enable_world_map" default="true"/><!-- 是否发布 world -> uavX_map 静态 TF -->
+	<arg name="enable_odom_remap" default="true"/><!-- 是否 remap 外部里程计到 OdometryBridge 订阅名 -->
+	<arg name="odom_remap_topic" default="fast_lio_odometry"/><!-- remap 源话题后缀；雷达:fast_lio_odometry / gazebo:gazebo_odometry / 视觉:vins_odometry -->
+	<arg name="odom_remap_to_topic" default="Odometry"/><!-- remap 目标话题后缀，完整路径 /uavX/<本项> -->
+
+	<!-- UAV1：每台仅 uav_id / world_map_transform 不同 -->
+	<include file="$(find uav_control_fsm)/launch/uav_control_fsm_unit.launch">
+		<arg name="uav_id" value="1" />
+		<arg name="no_RC" value="$(arg no_RC)" />
+		<arg name="loop_hz" value="$(arg loop_hz)" />
+		<arg name="takeoff_height" value="$(arg takeoff_height)" />
+		<arg name="vision_pose_pub_rate_hz" value="$(arg vision_pose_pub_rate_hz)" />
+		<arg name="pos_smooth_enable" value="$(arg pos_smooth_enable)" />
+		<arg name="load_pos_smooth_yaml" value="true" />
+		<arg name="enable_world_map" value="$(arg enable_world_map)" />
+		<arg name="world_map_transform" value="[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]" /><!-- uav1_map 在 world 中的位姿 -->
+		<arg name="enable_odom_remap" value="$(arg enable_odom_remap)" />
+		<arg name="odom_remap_topic" value="$(arg odom_remap_topic)" />
+		<arg name="odom_remap_to_topic" value="$(arg odom_remap_to_topic)" />
+		<arg name="rc_offboard_channel" value="5" />
+		<arg name="rc_offboard_enter_threshold" value="0.3" />
+		<arg name="rc_offboard_exit_threshold" value="-0.3" />
+	</include>
+
+	<!-- UAV2 -->
+	<include file="$(find uav_control_fsm)/launch/uav_control_fsm_unit.launch">
+		<arg name="uav_id" value="2" />
+		<arg name="no_RC" value="$(arg no_RC)" />
+		<arg name="loop_hz" value="$(arg loop_hz)" />
+		<arg name="takeoff_height" value="$(arg takeoff_height)" />
+		<arg name="vision_pose_pub_rate_hz" value="$(arg vision_pose_pub_rate_hz)" />
+		<arg name="pos_smooth_enable" value="$(arg pos_smooth_enable)" />
+		<arg name="load_pos_smooth_yaml" value="true" />
+		<arg name="enable_world_map" value="$(arg enable_world_map)" />
+		<arg name="world_map_transform" value="[0.0, 2.0, 0.0, 0.0, 0.0, 0.0]" />
+		<arg name="enable_odom_remap" value="$(arg enable_odom_remap)" />
+		<arg name="odom_remap_topic" value="$(arg odom_remap_topic)" />
+		<arg name="odom_remap_to_topic" value="$(arg odom_remap_to_topic)" />
+		<arg name="rc_offboard_channel" value="5" />
+		<arg name="rc_offboard_enter_threshold" value="0.3" />
+		<arg name="rc_offboard_exit_threshold" value="-0.3" />
+	</include>
+
+	<!-- UAV3 -->
+	<include file="$(find uav_control_fsm)/launch/uav_control_fsm_unit.launch">
+		<arg name="uav_id" value="3" />
+		<arg name="no_RC" value="$(arg no_RC)" />
+		<arg name="loop_hz" value="$(arg loop_hz)" />
+		<arg name="takeoff_height" value="$(arg takeoff_height)" />
+		<arg name="vision_pose_pub_rate_hz" value="$(arg vision_pose_pub_rate_hz)" />
+		<arg name="pos_smooth_enable" value="$(arg pos_smooth_enable)" />
+		<arg name="load_pos_smooth_yaml" value="true" />
+		<arg name="enable_world_map" value="$(arg enable_world_map)" />
+		<arg name="world_map_transform" value="[0.0, 4.0, 0.0, 0.0, 0.0, 0.0]" />
+		<arg name="enable_odom_remap" value="$(arg enable_odom_remap)" />
+		<arg name="odom_remap_topic" value="$(arg odom_remap_topic)" />
+		<arg name="odom_remap_to_topic" value="$(arg odom_remap_to_topic)" />
+		<arg name="rc_offboard_channel" value="5" />
+		<arg name="rc_offboard_enter_threshold" value="0.3" />
+		<arg name="rc_offboard_exit_threshold" value="-0.3" />
+	</include>
+
+	<!-- UAV4 -->
+	<include file="$(find uav_control_fsm)/launch/uav_control_fsm_unit.launch">
+		<arg name="uav_id" value="4" />
+		<arg name="no_RC" value="$(arg no_RC)" />
+		<arg name="loop_hz" value="$(arg loop_hz)" />
+		<arg name="takeoff_height" value="$(arg takeoff_height)" />
+		<arg name="vision_pose_pub_rate_hz" value="$(arg vision_pose_pub_rate_hz)" />
+		<arg name="pos_smooth_enable" value="$(arg pos_smooth_enable)" />
+		<arg name="load_pos_smooth_yaml" value="true" />
+		<arg name="enable_world_map" value="$(arg enable_world_map)" />
+		<arg name="world_map_transform" value="[2.0, 0.0, 0.0, 0.0, 0.0, 0.0]" />
+		<arg name="enable_odom_remap" value="$(arg enable_odom_remap)" />
+		<arg name="odom_remap_topic" value="$(arg odom_remap_topic)" />
+		<arg name="odom_remap_to_topic" value="$(arg odom_remap_to_topic)" />
+		<arg name="rc_offboard_channel" value="5" />
+		<arg name="rc_offboard_enter_threshold" value="0.3" />
+		<arg name="rc_offboard_exit_threshold" value="-0.3" />
+	</include>
+
+	<!-- UAV5 -->
+	<include file="$(find uav_control_fsm)/launch/uav_control_fsm_unit.launch">
+		<arg name="uav_id" value="5" />
+		<arg name="no_RC" value="$(arg no_RC)" />
+		<arg name="loop_hz" value="$(arg loop_hz)" />
+		<arg name="takeoff_height" value="$(arg takeoff_height)" />
+		<arg name="vision_pose_pub_rate_hz" value="$(arg vision_pose_pub_rate_hz)" />
+		<arg name="pos_smooth_enable" value="$(arg pos_smooth_enable)" />
+		<arg name="load_pos_smooth_yaml" value="true" />
+		<arg name="enable_world_map" value="$(arg enable_world_map)" />
+		<arg name="world_map_transform" value="[2.0, 2.0, 0.0, 0.0, 0.0, 0.0]" />
+		<arg name="enable_odom_remap" value="$(arg enable_odom_remap)" />
+		<arg name="odom_remap_topic" value="$(arg odom_remap_topic)" />
+		<arg name="odom_remap_to_topic" value="$(arg odom_remap_to_topic)" />
+		<arg name="rc_offboard_channel" value="5" />
+		<arg name="rc_offboard_enter_threshold" value="0.3" />
+		<arg name="rc_offboard_exit_threshold" value="-0.3" />
+	</include>
+</launch>

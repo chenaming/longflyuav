@@ -1,0 +1,132 @@
+{
+  "passed": true,
+  "isolated_ros_master": "http://127.0.0.1:11421",
+  "real_gpu": true,
+  "real_ros_transport": true,
+  "simulated_pose_and_fcu": true,
+  "hardware_goal_published": false,
+  "actual_flight_tested": false,
+  "goals": [
+    [
+      10.001270294189453,
+      20.162445068359375,
+      1.0
+    ],
+    [
+      10.002540588378906,
+      20.3215274810791,
+      1.0
+    ]
+  ],
+  "inference_results": [
+    {
+      "action": [
+        [
+          16.244520847000004,
+          0.12703615066666885,
+          0.0,
+          0.0
+        ]
+      ],
+      "action_ori": [
+        [
+          16.244520847000004,
+          0.12703615066666885,
+          0.0,
+          0.0
+        ]
+      ],
+      "convention": "mission_fru_cm_yaw_deg",
+      "inference_seconds": 0.15051005402347073,
+      "mission_id": "abb0c40b-fc02-4542-9e89-eccef7c620b1",
+      "observation_stamp": 1790590836.4585261,
+      "position_unit": "cm",
+      "request_id": "25bd3412-fb60-42ed-b870-a1db298387f4",
+      "schema": "openvla-agile/v1",
+      "status": "success",
+      "yaw_unit": "rad",
+      "goal_validation_error": null,
+      "goal_map_m": [
+        10.001270361506666,
+        20.16244520847,
+        1.0
+      ],
+      "goal_body_yaw_rad": 1.5707963267948966,
+      "yaw_sent_to_ego": false,
+      "planner_frame": "map",
+      "sent_to_ego": true,
+      "instruction": "fly forward",
+      "observation_map_m": [
+        10.0,
+        20.0,
+        1.0
+      ],
+      "proprio_sent": [
+        0.0,
+        -0.0,
+        0.0,
+        -0.0
+      ]
+    },
+    {
+      "action": [
+        [
+          32.15270086093751,
+          0.25406556961198035,
+          0.0,
+          0.0
+        ]
+      ],
+      "action_ori": [
+        [
+          15.908194025000007,
+          0.12703615066666885,
+          0.0,
+          0.0
+        ]
+      ],
+      "convention": "mission_fru_cm_yaw_deg",
+      "inference_seconds": 0.18079983303323388,
+      "mission_id": "abb0c40b-fc02-4542-9e89-eccef7c620b1",
+      "observation_stamp": 1790590839.4518313,
+      "position_unit": "cm",
+      "request_id": "594a7f30-5afe-4bde-bab3-e04a49baf3c2",
+      "schema": "openvla-agile/v1",
+      "status": "success",
+      "yaw_unit": "rad",
+      "goal_validation_error": null,
+      "goal_map_m": [
+        10.00254065569612,
+        20.321527008609376,
+        1.0
+      ],
+      "goal_body_yaw_rad": 1.5707963267948966,
+      "yaw_sent_to_ego": false,
+      "planner_frame": "map",
+      "sent_to_ego": true,
+      "instruction": "fly forward",
+      "observation_map_m": [
+        10.001270294189453,
+        20.162445068359375,
+        1.0
+      ],
+      "proprio_sent": [
+        16.2445068359375,
+        0.1270294189453115,
+        0.0,
+        -0.0
+      ]
+    }
+  ],
+  "hover_count": 2,
+  "checks": [
+    "one goal per trigger",
+    "duplicate/busy trigger rejected",
+    "90-degree heading transform",
+    "1s arrival dwell",
+    "stop+hover on completion",
+    "fixed origin across steps",
+    "next step uses updated pose",
+    "no automatic extra goal"
+  ]
+}

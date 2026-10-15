@@ -1,0 +1,57 @@
+<launch>
+	<!-- 单机 FSM 单元：uav_id 决定命名空间 uavX；sim / exp / 多机 launch 均直接 include 本文件 -->
+	<arg name="uav_id" default="1"/>
+
+	<arg name="no_RC" default="true"/>
+	<arg name="loop_hz" default="20"/>
+	<arg name="takeoff_height" default="1.5"/>
+	<!-- 安全超时：指令超时回 AUTO_HOVER；odom 超时退 MANUAL（退出 Offboard） -->
+	<arg name="cmd_timeout_sec" default="0.5"/>
+	<arg name="odom_timeout_sec" default="1.0"/>
+	<arg name="vision_pose_pub_rate_hz" default="30.0"/>
+	<arg name="pos_smooth_enable" default="true"/>
+	<arg name="load_pos_smooth_yaml" default="true"/>
+	<arg name="enable_world_map" default="true"/>
+	<arg name="world_map_transform" default="[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"/>
+
+	<arg name="enable_odom_remap" default="false"/>
+	<arg name="odom_remap_topic" default="fast_lio_odometry"/>
+	<arg name="odom_remap_to_topic" default="Odometry"/>
+
+	<arg name="rc_offboard_channel" default="5"/>
+	<arg name="rc_offboard_enter_threshold" default="0.3"/>
+	<arg name="rc_offboard_exit_threshold" default="-0.3"/>
+
+	<!-- 轨迹记录：默认开启 RViz 显示；save_to_file 在 path_recorder.yaml 或下方 param 中配置 -->
+	<arg name="enable_pub_rviz_path" default="true"/>
+	<arg name="path_recorder_save_to_file" default="false"/>
+
+	<group ns="uav$(arg uav_id)">
+		<param name="odometry_bridge/vision_pose_pub_rate_hz" type="double" value="$(arg vision_pose_pub_rate_hz)" />
+		<rosparam file="$(find uav_control_fsm)/config/uav_group.yaml" subst_value="true" />
+		<node pkg="uav_control_fsm" type="uav_control_fsm_node" name="uav_control_fsm" output="screen">
+			<rosparam if="$(arg load_pos_smooth_yaml)" file="$(find uav_control_fsm)/config/pos_smooth_param.yaml" />
+			<param name="uav_id" value="$(arg uav_id)" />
+			<param name="no_RC" value="$(arg no_RC)"/>
+			<param name="loop_hz" value="$(arg loop_hz)" />
+			<param name="takeoff_height" value="$(arg takeoff_height)" />
+			<param name="cmd_timeout_sec" value="$(arg cmd_timeout_sec)" />
+			<param name="odom_timeout_sec" value="$(arg odom_timeout_sec)" />
+			<param name="pos_smooth_enable" value="$(arg pos_smooth_enable)" />
+			<param name="enable_world_map" value="$(arg enable_world_map)" />
+			<param name="world_map_transform" value="$(arg world_map_transform)" />
+			<!-- FSM 监听的 Offboard 三档开关（与 PX4 RC_MAP 通道一致）；始终写入节点 -->
+			<param name="rc_offboard_channel" value="$(arg rc_offboard_channel)" />
+			<param name="rc_offboard_enter_threshold" value="$(arg rc_offboard_enter_threshold)" />
+			<param name="rc_offboard_exit_threshold" value="$(arg rc_offboard_exit_threshold)" />
+			<remap if="$(arg enable_odom_remap)" from="$(arg odom_remap_topic)" to="$(arg odom_remap_to_topic)" />
+		</node>
+
+		<node if="$(arg enable_pub_rviz_path)" pkg="uav_control_fsm" type="uav_path_recorder_node"
+		      name="path_recorder" output="screen">
+			<rosparam file="$(find uav_control_fsm)/config/path_recorder.yaml" command="load" />
+			<param name="uav_id" value="$(arg uav_id)" />
+			<param name="save_to_file" value="$(arg path_recorder_save_to_file)" />
+		</node>
+	</group>
+</launch>

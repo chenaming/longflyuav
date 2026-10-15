@@ -1,0 +1,235 @@
+state {"armed": false, "mode": "MANUAL", "connected": true, "system_status": 3}
+只读记录已开始；本脚本不会解锁、切模式或发目标。请在另一终端执行拆桨台架测试。
+原始记录：/home/nvidia/agile/fly/runtime/takeover_records/takeover_1792050839527277120.jsonl
+extended {"landed_state": 1}
+state {"armed": false, "mode": "OFFBOARD", "connected": true, "system_status": 3}
+state {"armed": true, "mode": "OFFBOARD", "connected": true, "system_status": 4}
+extended {"landed_state": 2}
+extended {"landed_state": 4}
+state {"armed": true, "mode": "AUTO.LAND", "connected": true, "system_status": 4}
+extended {"landed_state": 1}
+state {"armed": false, "mode": "AUTO.LAND", "connected": true, "system_status": 3}
+state {"armed": false, "mode": "MANUAL", "connected": true, "system_status": 3}
+{
+  "status": "disarm_observed_reason_not_confirmed",
+  "parameters": {
+    "COM_DISARM_LAND": {
+      "success": true,
+      "integer": 0,
+      "real": 2.0
+    },
+    "COM_DISARM_PRFLT": {
+      "success": true,
+      "integer": 0,
+      "real": 10.0
+    },
+    "COM_RC_OVERRIDE": {
+      "success": true,
+      "integer": 1,
+      "real": 0.0
+    },
+    "RC_MAP_FLTMODE": {
+      "success": true,
+      "integer": 6,
+      "real": 0.0
+    },
+    "RC_MAP_ARM_SW": {
+      "success": true,
+      "integer": 9,
+      "real": 0.0
+    },
+    "RC_MAP_KILL_SW": {
+      "success": true,
+      "integer": 10,
+      "real": 0.0
+    }
+  },
+  "confirmed_disarm_reason": null,
+  "motor_rotation_or_hover_verified": false,
+  "takeover": {
+    "t": 18461.668029152,
+    "unix": 1792050880.0854263,
+    "ros_stamp": 1792050880.0848875,
+    "kind": "state",
+    "data": {
+      "armed": true,
+      "mode": "AUTO.LAND",
+      "connected": true,
+      "system_status": 4
+    },
+    "publisher": "/uav1/mavros"
+  },
+  "disarm": {
+    "t": 18464.670957152,
+    "unix": 1792050883.0883553,
+    "ros_stamp": 1792050883.0876412,
+    "kind": "state",
+    "data": {
+      "armed": false,
+      "mode": "AUTO.LAND",
+      "connected": true,
+      "system_status": 3
+    },
+    "publisher": "/uav1/mavros"
+  },
+  "mode_after_takeover": "AUTO.LAND",
+  "takeover_to_disarm_s": 3.0029280000017025,
+  "nearby_fcu_messages": [],
+  "landed_observations_after_takeover": [
+    {
+      "t": 18461.668606272,
+      "unix": 1792050880.0860028,
+      "ros_stamp": 1792050880.085187,
+      "kind": "extended",
+      "data": {
+        "landed_state": 4
+      },
+      "publisher": "/uav1/mavros"
+    },
+    {
+      "t": 18461.861903136,
+      "unix": 1792050880.2793007,
+      "ros_stamp": 1792050880.2789862,
+      "kind": "extended",
+      "data": {
+        "landed_state": 4
+      },
+      "publisher": "/uav1/mavros"
+    },
+    {
+      "t": 18462.066024544,
+      "unix": 1792050880.4834225,
+      "ros_stamp": 1792050880.4827702,
+      "kind": "extended",
+      "data": {
+        "landed_state": 4
+      },
+      "publisher": "/uav1/mavros"
+    },
+    {
+      "t": 18462.262284768,
+      "unix": 1792050880.6796834,
+      "ros_stamp": 1792050880.6791227,
+      "kind": "extended",
+      "data": {
+        "landed_state": 1
+      },
+      "publisher": "/uav1/mavros"
+    },
+    {
+      "t": 18462.46586784,
+      "unix": 1792050880.8832648,
+      "ros_stamp": 1792050880.882742,
+      "kind": "extended",
+      "data": {
+        "landed_state": 1
+      },
+      "publisher": "/uav1/mavros"
+    },
+    {
+      "t": 18462.663806016,
+      "unix": 1792050881.081203,
+      "ros_stamp": 1792050881.08034,
+      "kind": "extended",
+      "data": {
+        "landed_state": 1
+      },
+      "publisher": "/uav1/mavros"
+    },
+    {
+      "t": 18462.867372,
+      "unix": 1792050881.2847703,
+      "ros_stamp": 1792050881.284127,
+      "kind": "extended",
+      "data": {
+        "landed_state": 1
+      },
+      "publisher": "/uav1/mavros"
+    },
+    {
+      "t": 18463.061800192,
+      "unix": 1792050881.4791968,
+      "ros_stamp": 1792050881.478938,
+      "kind": "extended",
+      "data": {
+        "landed_state": 1
+      },
+      "publisher": "/uav1/mavros"
+    },
+    {
+      "t": 18463.265605248,
+      "unix": 1792050881.683002,
+      "ros_stamp": 1792050881.6826966,
+      "kind": "extended",
+      "data": {
+        "landed_state": 1
+      },
+      "publisher": "/uav1/mavros"
+    },
+    {
+      "t": 18463.4619592,
+      "unix": 1792050881.8793573,
+      "ros_stamp": 1792050881.8789496,
+      "kind": "extended",
+      "data": {
+        "landed_state": 1
+      },
+      "publisher": "/uav1/mavros"
+    },
+    {
+      "t": 18463.667116352,
+      "unix": 1792050882.084514,
+      "ros_stamp": 1792050882.083796,
+      "kind": "extended",
+      "data": {
+        "landed_state": 1
+      },
+      "publisher": "/uav1/mavros"
+    },
+    {
+      "t": 18463.861905216,
+      "unix": 1792050882.2793033,
+      "ros_stamp": 1792050882.2789369,
+      "kind": "extended",
+      "data": {
+        "landed_state": 1
+      },
+      "publisher": "/uav1/mavros"
+    },
+    {
+      "t": 18464.066111648,
+      "unix": 1792050882.4835098,
+      "ros_stamp": 1792050882.483207,
+      "kind": "extended",
+      "data": {
+        "landed_state": 1
+      },
+      "publisher": "/uav1/mavros"
+    },
+    {
+      "t": 18464.267107808,
+      "unix": 1792050882.6845062,
+      "ros_stamp": 1792050882.6841176,
+      "kind": "extended",
+      "data": {
+        "landed_state": 1
+      },
+      "publisher": "/uav1/mavros"
+    },
+    {
+      "t": 18464.462019424,
+      "unix": 1792050882.8794162,
+      "ros_stamp": 1792050882.8791616,
+      "kind": "extended",
+      "data": {
+        "landed_state": 1
+      },
+      "publisher": "/uav1/mavros"
+    }
+  ],
+  "updated_unix": 1792050886.1563773,
+  "raw_record": "/home/nvidia/agile/fly/runtime/takeover_records/takeover_1792050839527277120.jsonl",
+  "arming_service_called": false,
+  "flight_mode_service_called": false
+}
+诊断报告：/home/nvidia/agile/fly/runtime/takeover_records/takeover_1792050839527277120.json
