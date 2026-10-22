@@ -2,6 +2,10 @@
 """Headless bench stack. Startup never requests OFFBOARD or arming."""
 import fcntl, json, os, signal, socket, subprocess, sys, time, uuid
 from pathlib import Path
+try:
+    from fly.stack_processes import Processes,remaining,save
+except ImportError:
+    from stack_processes import Processes,remaining,save
 
 BASE=Path('/home/nvidia/agile'); STATE=BASE/'runtime/vla'
 STATE.mkdir(parents=True,exist_ok=True)
@@ -45,9 +49,13 @@ def main():
         s=rospy.wait_for_message('/uav1/mavros/state',State,timeout=5)
         if not s.connected or s.armed:raise SystemExit('Stop refused: require connected/disarmed FCU.')
         os.kill(pid,signal.SIGTERM)
-        end=time.monotonic()+25
+        end=time.monotonic()+42
         while owned(pid) and time.monotonic()<end:time.sleep(.2)
         if owned(pid):raise SystemExit('Stop still pending; inspect supervisor log.')
+        leftovers=remaining(BASE)
+        if leftovers.refresh():raise SystemExit('Project processes remain: '+str(sorted(leftovers.items)))
+        if not read(STATE/'status.json').get('stopped'):
+            raise SystemExit('Supervisor exited without confirming shutdown; inspect supervisor log.')
         print('Stopped owned stack. No arming/mode command was sent.')
     elif command=='daemon':daemon()
     else:raise SystemExit('Usage: vla_stack.py start|status|stop')
@@ -58,7 +66,7 @@ def daemon():
     except BlockingIOError:raise SystemExit('Another supervisor is active.')
     if master():raise SystemExit('ROS master already active; refusing duplicate stack.')
     config=read(BASE/'vla_config.json')
-    run_id='chair-'+uuid.uuid4().hex[:12];children={};logs={};last={};stopping=[False]
+    run_id='chair-'+uuid.uuid4().hex[:12];children={};logs={};last={};stopping=[False];groups={}
     signal.signal(signal.SIGTERM,lambda *_:stopping.__setitem__(0,True))
     signal.signal(signal.SIGINT,lambda *_:stopping.__setitem__(0,True))
     commands={
@@ -73,8 +81,11 @@ def daemon():
     }
     def start(name):
         nonlocal run_id
+        if stopping[0]:return
         if name in children and children[name].poll() is None:return
         if time.monotonic()-last.get(name,0)<5:return
+        if name in groups:stop(name)
+        if stopping[0]:return
         last[name]=time.monotonic()
         if name=='bridge' and name in children:
             run_id='chair-'+uuid.uuid4().hex[:12]
@@ -82,37 +93,35 @@ def daemon():
         if name in logs:logs[name].close()
         logs[name]=(STATE/(name+'.log')).open('ab')
         children[name]=subprocess.Popen(commands[name],stdout=logs[name],stderr=logs[name],stdin=subprocess.DEVNULL,start_new_session=True)
+        groups[name]=Processes();groups[name].add(children[name].pid)
+        save(STATE/'owned_processes.json',groups.values())
     def stop(name):
-        p=children.get(name)
-        if not p or p.poll() is not None:return
-        os.killpg(p.pid,signal.SIGINT)
-        try:p.wait(timeout=8)
-        except subprocess.TimeoutExpired:
-            os.killpg(p.pid,signal.SIGTERM)
-            try:p.wait(timeout=3)
-            except subprocess.TimeoutExpired:os.killpg(p.pid,signal.SIGKILL);p.wait()
-    start('master')
-    deadline=time.monotonic()+15
-    while not master():
-        if time.monotonic()>deadline:raise SystemExit('ROS master failed.')
-        time.sleep(.2)
-    import rospy
-    from mavros_msgs.msg import State
-    from nav_msgs.msg import Odometry
-    from sensor_msgs.msg import CompressedImage
-    from std_msgs.msg import String
-    rospy.init_node('vla_stack_supervisor',disable_signals=True)
-    state=[None,0.];odom=[0.];image=[0.];pred=[{},0.]
-    def on_state(m):state[:]=[m,time.monotonic()]
-    def on_prediction(m):
-        try:pred[:]=[json.loads(m.data),time.monotonic()]
-        except ValueError:pass
-    rospy.Subscriber('/uav1/mavros/state',State,on_state)
-    rospy.Subscriber('/uav1/odin1/odometry',Odometry,lambda _:odom.__setitem__(0,time.monotonic()))
-    rospy.Subscriber('/uav1/odin1/image/compressed',CompressedImage,lambda _:image.__setitem__(0,time.monotonic()))
-    rospy.Subscriber('/vla/validated_prediction',String,on_prediction)
+        if name in groups:groups[name].stop()
+        if name in children:children[name].poll()
     try:
+        start('master')
+        deadline=time.monotonic()+15
+        while not master():
+            if stopping[0]:return
+            if time.monotonic()>deadline:raise SystemExit('ROS master failed.')
+            time.sleep(.2)
+        import rospy
+        from mavros_msgs.msg import State
+        from nav_msgs.msg import Odometry
+        from sensor_msgs.msg import CompressedImage
+        from std_msgs.msg import String
+        rospy.init_node('vla_stack_supervisor',disable_signals=True)
+        state=[None,0.];odom=[0.];image=[0.];pred=[{},0.]
+        def on_state(m):state[:]=[m,time.monotonic()]
+        def on_prediction(m):
+            try:pred[:]=[json.loads(m.data),time.monotonic()]
+            except ValueError:pass
+        rospy.Subscriber('/uav1/mavros/state',State,on_state)
+        rospy.Subscriber('/uav1/odin1/odometry',Odometry,lambda _:odom.__setitem__(0,time.monotonic()))
+        rospy.Subscriber('/uav1/odin1/image/compressed',CompressedImage,lambda _:image.__setitem__(0,time.monotonic()))
+        rospy.Subscriber('/vla/validated_prediction',String,on_prediction)
         while not stopping[0] and not rospy.is_shutdown():
+            save(STATE/'owned_processes.json',groups.values())
             now=time.monotonic();s=state[0];fresh=now-state[1]<2
             start('odin');start('mavros');start('monitor');start('evidence');start('relay')
             marker=read(STATE/'motor_owner.json');pause=False
@@ -129,8 +138,18 @@ def daemon():
             write(STATE/'status.json',{'pid':os.getpid(),'run_id':run_id,'updated_unix':time.time(),'ready':ready,'instruction':config['instruction'],'inference_url':config['inference_url'],'fcu':{'connected':s.connected,'armed':s.armed,'mode':s.mode,'fresh':fresh} if s else None,'odom_age_s':now-odom[0],'validated_prediction_age_s':now-pred[1],'last_request_id':p.get('request_id'),'motor_test_owns_fsm':pause,'processes':{k:{'pid':v.pid,'running':v.poll() is None} for k,v in children.items()},'scope':'protected bench; physical navigation not verified'})
             time.sleep(1)
     finally:
-        # The CLI verifies disarmed before signaling; no automatic restart or flight action.
-        for name in reversed(list(commands)):stop(name)
+        # Reap every tracked descendant across ROS sessions, even on startup failure.
+        all_processes=Processes([p for group in list(groups.values())+[remaining(BASE)] for p in group.refresh()])
+        try:
+            all_processes.stop()
+            for child in children.values():child.poll()
+            leftovers=remaining(BASE)
+            if leftovers.refresh():raise RuntimeError('Project processes remain: '+str(sorted(leftovers.items)))
+        except BaseException as exc:
+            save(STATE/'owned_processes.json',[all_processes,remaining(BASE)])
+            write(STATE/'status.json',{'pid':os.getpid(),'stopped':False,'shutdown_error':str(exc),'updated_unix':time.time(),'run_id':run_id})
+            raise
+        save(STATE/'owned_processes.json',[leftovers])
         write(STATE/'status.json',{'pid':os.getpid(),'stopped':True,'updated_unix':time.time(),'run_id':run_id})
 
 if __name__=='__main__':main()

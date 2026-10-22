@@ -1,0 +1,119 @@
+{
+  "instruction": "fly to the chair",
+  "run_id": "chair-1280ea87e486",
+  "request_id": 4,
+  "target_frame": "map",
+  "position_unit": "m",
+  "yaw_unit": "deg",
+  "target": {
+    "x": 0.11579677907761905,
+    "y": 0.0006154424152943953,
+    "z": -0.02147260120629479,
+    "yaw": 0.28896835272827026
+  },
+  "relative_to_observation": {
+    "dx": 0.11492850803083528,
+    "dy": -0.00026396236003826414,
+    "dz": -0.020535536096684234,
+    "dyaw": 0.26851549472460867
+  },
+  "bridge_check": "passed",
+  "rejection": null,
+  "control_published_by_fly": false,
+  "physical_axes_calibrated": false,
+  "physical_target_reached": false,
+  "trace": {
+    "request_id": 4,
+    "epoch": 1,
+    "run_id": "chair-1280ea87e486",
+    "instruction": "fly to the chair",
+    "image_stamp": 1792657423.5639732,
+    "elapsed_s": 0.2132452480000211,
+    "observation_age_s": 0.3117563724517822,
+    "preview_pair_alignment": true,
+    "control_publishing_configured": false,
+    "source_frame": "odom",
+    "target_frame": "map",
+    "origin_odin_xyz_m": [
+      0.001309,
+      -6.7e-05,
+      0.000127
+    ],
+    "origin_odin_yaw_deg": -0.0040857464851215925,
+    "input_proprio_cm_deg": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "server_action_ori_cm_rad": [
+      11.492840648175015,
+      -0.030498833894593957,
+      -2.0535536096684233,
+      0.004686479475566219
+    ],
+    "server_composition_max_error": 0.0,
+    "server_action_cm_rad": [
+      11.492840648175015,
+      -0.030498833894593957,
+      -2.0535536096684233,
+      0.004686479475566219
+    ],
+    "converted_action_m_rad": [
+      0.11492840648175015,
+      -0.0003049883389459396,
+      -0.020535536096684234,
+      0.004686479475566219
+    ],
+    "paired_mavros_xyz_m": [
+      0.0008682710467837751,
+      0.0008794047753326595,
+      -0.0009370651096105576
+    ],
+    "paired_mavros_yaw_deg": 0.0204528580036734,
+    "target_mavros_xyz_m": [
+      0.11579677907761905,
+      0.0006154424152943953,
+      -0.02147260120629479
+    ],
+    "target_mavros_yaw_deg": 0.28896835272827026,
+    "target_minus_paired_mavros_m": [
+      0.11492850803083528,
+      -0.00026396236003826414,
+      -0.020535536096684234
+    ],
+    "target_minus_paired_mavros_yaw_deg": 0.26851549472460867
+  },
+  "validated_prediction": {
+    "run_id": "chair-1280ea87e486",
+    "request_id": 4,
+    "instruction": "fly to the chair",
+    "observation_stamp": 1792657423.5639732,
+    "validated_stamp": 1792657423.8893971,
+    "target_frame": "map",
+    "target_xyz_m": [
+      0.11579677907761905,
+      0.0006154424152943953,
+      -0.02147260120629479
+    ],
+    "target_yaw_rad": 0.005043449189172655,
+    "coordinate_mode": "paired_estimate",
+    "physical_axes_calibrated": false,
+    "epoch": 1,
+    "latest_only": true,
+    "action_ori_cm_rad": [
+      11.492840648175015,
+      -0.030498833894593957,
+      -2.0535536096684233,
+      0.004686479475566219
+    ],
+    "observed_xyz_m": [
+      0.0008682710467837751,
+      0.0008794047753326595,
+      -0.0009370651096105576
+    ],
+    "observed_yaw_rad": 0.00035696971360697527
+  },
+  "client_wait_s": 0.3738534079998317,
+  "client_result_id": "d5d9b1fcab3b454e9557d4691ae3e61e"
+}

@@ -249,11 +249,16 @@ class Runtime:
               'last_request_id':m.last_request,'accepted_predictions':m.accepted_predictions,
               'rejected_predictions':m.rejected_predictions,'small_action_count':len(m.small),
               'home_xyz_m':m.home,'setpoint_xyz_yaw':m.sp,'target_xyz_yaw':m.target,
+              'takeoff_progress':m.takeoff_progress,
               'fcu':state,'setpoint_count':self.publish_count,'rpc':self.rpc_log,
               'events':self.events,'updated_unix':time.time()}
         data.update(rc_takeover_policy='PX4_actual_mode_only',release_mode=self.release_mode,
                     control_released=self.control_released)
         raw=json.dumps(data,ensure_ascii=False,indent=2,allow_nan=False)
+        if m.phase=='TAKEOFF' and m.takeoff_progress:
+            progress=m.takeoff_progress
+            print('TAKEOFF: relative_height=%.3f/%.3fm; %s'
+                  % (progress['relative_height_m'],progress['required_height_m'],m.reason),flush=True)
         self.status.publish(String(data=raw))
         path=BASE/'runtime'/'flight_report.json';tmp=path.with_suffix('.tmp')
         tmp.write_text(raw,encoding='utf-8');tmp.replace(path)

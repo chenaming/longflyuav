@@ -75,15 +75,80 @@ class MissionTests(unittest.TestCase):
         self.s['armed']=True;self.tick(2.7)
         self.assertAlmostEqual(self.m.target[2],1.4)
 
-    def test_takeoff_settle_discards_old_results(self):
-        self.m.arm_requested=True;self.s.update(armed=True,mode='OFFBOARD')
-        self.m.phase='TAKEOFF';self.p=[3,4,1.4,0];self.m.target=list(self.p)
-        for i in range(1,26):self.tick(i*.1)
+    def test_takeoff_height_gate_discards_old_results(self):
+        self.takeoff();self.p=[3,4,1.39,0]
+        old=self.prediction(.1)
+        self.tick(.1)
+        self.p[2]=1.4;self.tick(.2)
         self.assertEqual(self.m.phase,'WAIT_NEW_IMAGE')
-        old=self.prediction(.5,pose=[3,4,.4,0]);self.tick(2.6,old)
+        self.tick(.3,old)
         self.assertEqual(self.m.phase,'WAIT_NEW_IMAGE')
-        self.tick(2.7,self.prediction(2.7))
+        self.tick(.4,self.prediction(.4))
         self.assertEqual(self.m.phase,'NAVIGATE')
+
+    def takeoff(self):
+        self.m.arm_requested=True
+        self.s.update(armed=True,mode='OFFBOARD',landed=False)
+        self.m.phase='TAKEOFF';self.m.target=[3,4,1.4,0]
+        self.m.sp=list(self.m.target)
+
+    def test_height_immediately_enables_navigation_despite_motion_and_xy_offset(self):
+        self.takeoff();self.p=[3.3,4.2,1.4,0]
+        self.tick(.1,self.prediction(.1),speed=.3,yaw_rate=math.radians(10))
+        self.assertEqual(self.m.phase,'WAIT_NEW_IMAGE')
+        self.assertEqual(self.m.accepted_predictions,0)
+        self.assertFalse(self.m.arrival_inferred)
+        self.assertEqual(self.m.target,self.p)
+        self.tick(.2,self.prediction(.2),speed=.3)
+        self.assertEqual(self.m.phase,'NAVIGATE')
+        self.assertEqual(self.m.accepted_predictions,1)
+        self.assertGreater(self.m.target[0],self.p[0])
+        self.assertEqual(self.c.arrival_speed,.08)
+        self.assertEqual(self.c.arrival_yaw_speed,math.radians(3))
+
+    def test_takeoff_height_is_relative_and_has_no_early_tolerance(self):
+        self.takeoff()
+        for i,z in enumerate((1.,1.3,1.39,1.399999),1):
+            self.p[2]=z;self.tick(i*.1)
+            self.assertEqual(self.m.phase,'TAKEOFF')
+            self.assertIn('height',self.m.takeoff_progress['blocked_by'])
+        self.p[2]=1.4;self.tick(.5)
+        self.assertEqual(self.m.phase,'WAIT_NEW_IMAGE')
+
+    def test_takeoff_fcu_and_landed_guards_remain(self):
+        for field,value in (('landed',True),('fresh',False),('connected',False)):
+            blocker='landed' if field=='landed' else 'fcu_state'
+            with self.subTest(blocker=blocker):
+                self.setUp();self.takeoff();self.p=[3,4,1.4,0]
+                self.s[field]=value;self.tick(.1)
+                self.assertEqual(self.m.phase,'TAKEOFF')
+                self.assertIn(blocker,self.m.takeoff_progress['blocked_by'])
+                self.s.update(landed=False,fresh=True,connected=True);self.tick(.2)
+                self.assertEqual(self.m.phase,'WAIT_NEW_IMAGE')
+
+    def test_takeoff_timeout_still_lands_and_reports_actual_limit(self):
+        self.takeoff();self.p=[3,4,1.,0]
+        actions=[]
+        for i in range(1,605):actions.append(self.tick(i*.1)[1])
+        self.assertEqual(self.m.phase,'LAND_REQUEST')
+        self.assertIn('60 s',self.m.reason)
+        self.assertIn('height',self.m.reason)
+        self.assertIn(('mode','AUTO.LAND'),actions)
+        self.assertFalse(self.m.arrival_inferred)
+
+    def test_takeoff_pilot_mode_and_fault_still_preempt_navigation(self):
+        self.takeoff();self.p=[3.1,4,1.4,0]
+        self.s['mode']='POSCTL'
+        self.assertEqual(self.tick(.1),(None,None))
+        self.assertEqual(self.m.phase,'TAKEOVER')
+        self.setUp();self.takeoff();self.p=[3.1,4,1.4,0]
+        self.tick(.1,fault='odometry stale')
+        self.assertEqual(self.m.phase,'LAND_REQUEST')
+
+    def test_takeoff_configuration_stays_inside_flight_volume(self):
+        for changes in ({'height':2.}, {'height':.4},
+                        {'takeoff_timeout':0.}, {'takeoff_timeout':float('nan')}):
+            with self.assertRaises(ValueError):Config(**changes).validate()
 
     def test_repeated_frame_does_not_count_as_arrival(self):
         self.nav();pred=self.prediction(10.1,(0,0,0,0))

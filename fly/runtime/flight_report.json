@@ -6,32 +6,39 @@
   "semantic_goal_verified": false,
   "physical_flight_validated": false,
   "run_and_epoch": [
-    "chair-e2f954c9f5b6",
+    "chair-77ba2fb56b59",
     2,
     "fly to the chair",
     "map"
   ],
-  "last_request_id": 100,
-  "accepted_predictions": 41,
-  "rejected_predictions": 0,
+  "last_request_id": 119,
+  "accepted_predictions": 45,
+  "rejected_predictions": 3,
   "small_action_count": 0,
   "home_xyz_m": [
-    -0.0011683172779157758,
-    0.0015246635302901268,
-    -0.0012237607734277844
+    0.005341666750609875,
+    0.00011640621960395947,
+    0.0015599926700815558
   ],
   "setpoint_xyz_yaw": [
-    2.243151760012569,
-    -0.0848240202764336,
-    1.1199538999402274,
-    0.04922620405846079
+    2.484947919845581,
+    1.1573326587677002,
+    0.9833254218101501,
+    0.3791673603646996
   ],
   "target_xyz_yaw": [
-    2.3268809858700847,
-    -0.08597453400937961,
-    1.1305825690318565,
-    0.04922620405846079
+    2.484947919845581,
+    1.1573326587677002,
+    0.9833254218101501,
+    0.3791673603646996
   ],
+  "takeoff_progress": {
+    "relative_height_m": 1.00379476940725,
+    "required_height_m": 1.0,
+    "elapsed_seconds": 15.9268602559996,
+    "timeout_seconds": 60.0,
+    "blocked_by": []
+  },
   "fcu": {
     "fresh": true,
     "connected": true,
@@ -39,10 +46,10 @@
     "mode": "POSCTL",
     "landed": false
   },
-  "setpoint_count": 1147,
+  "setpoint_count": 1419,
   "rpc": [
     {
-      "t": 1191.196378216,
+      "t": 4371.997514816,
       "action": [
         "mode",
         "OFFBOARD"
@@ -50,7 +57,7 @@
       "response": "mode_sent: True"
     },
     {
-      "t": 1191.425786444,
+      "t": 4372.313918912,
       "action": [
         "arm",
         true
@@ -60,56 +67,71 @@
   ],
   "events": [
     {
-      "t": 1188.053072072,
+      "t": 4369.166857792,
       "phase": "WAIT_INITIAL",
       "reason": "waiting for a fresh model response"
     },
     {
-      "t": 1189.149654937,
+      "t": 4369.941377024,
       "event": "exclusive_setpoint_handoff"
     },
     {
-      "t": 1188.974147196,
+      "t": 4369.751152672,
       "phase": "PRESTREAM",
       "reason": "fresh initial prediction received; holding ground position"
     },
     {
-      "t": 1191.164855866,
+      "t": 4371.942816512,
       "phase": "ENTER_OFFBOARD",
       "reason": "requesting OFFBOARD"
     },
     {
-      "t": 1191.394186586,
+      "t": 4372.28222752,
       "phase": "ARM",
       "reason": "OFFBOARD observed; requesting normal arm"
     },
     {
-      "t": 1192.371093117,
+      "t": 4373.2810968,
       "phase": "TAKEOFF",
       "reason": "climbing 1 m relative to starting position"
     },
     {
-      "t": 1207.584391148,
+      "t": 4389.207957056,
       "phase": "WAIT_NEW_IMAGE",
-      "reason": "hover settled; discarding all pre-hover images/results"
+      "reason": "takeoff height reached; waiting for a new image/result"
     },
     {
-      "t": 1208.026961503,
+      "t": 4389.863002528,
       "phase": "NAVIGATE",
       "reason": "following fresh model targets"
     },
     {
-      "t": 1227.371078024,
+      "t": 4404.548229888,
+      "phase": "HOLD_STALE",
+      "reason": "inference stale; hold a fixed position"
+    },
+    {
+      "t": 4405.084839488,
+      "phase": "NAVIGATE",
+      "reason": "following fresh model targets"
+    },
+    {
+      "t": 4415.753212192,
+      "phase": "HOLD_STALE",
+      "reason": "inference stale; hold a fixed position"
+    },
+    {
+      "t": 4417.257470048,
       "event": "pilot_or_px4_mode_takeover",
       "mode": "POSCTL"
     },
     {
-      "t": 1227.390593157,
+      "t": 4417.28545664,
       "phase": "TAKEOVER",
       "reason": "PX4 confirmed POSCTL; no automatic re-entry or disarm"
     }
   ],
-  "updated_unix": 1792061014.0859659,
+  "updated_unix": 1792657887.6676962,
   "rc_takeover_policy": "PX4_actual_mode_only",
   "release_mode": "POSCTL",
   "control_released": true

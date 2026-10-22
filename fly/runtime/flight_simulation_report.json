@@ -42,41 +42,41 @@
       "reason": "climbing 1 m relative to starting position"
     },
     {
-      "t": 9.6,
+      "t": 9.85,
       "phase": "WAIT_NEW_IMAGE",
-      "reason": "hover settled; discarding all pre-hover images/results"
+      "reason": "takeoff height reached; waiting for a new image/result"
     },
     {
-      "t": 9.75,
+      "t": 10.0,
       "phase": "NAVIGATE",
       "reason": "following fresh model targets"
     },
     {
-      "t": 20.0,
+      "t": 20.25,
       "phase": "LAND_REQUEST",
       "reason": "consecutive small actions + stable aircraft (heuristic arrival)"
     },
     {
-      "t": 20.05,
+      "t": 20.3,
       "rpc": [
         "mode",
         "AUTO.LAND"
       ]
     },
     {
-      "t": 20.1,
+      "t": 20.35,
       "phase": "LANDING",
       "reason": "consecutive small actions + stable aircraft (heuristic arrival)"
     },
     {
-      "t": 27.05,
+      "t": 27.3,
       "rpc": [
         "arm",
         false
       ]
     },
     {
-      "t": 27.1,
+      "t": 27.35,
       "phase": "DONE",
       "reason": "consecutive small actions + stable aircraft (heuristic arrival)"
     }

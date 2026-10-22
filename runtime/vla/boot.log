@@ -13,3 +13,8 @@ Started PID 3113 ; readiness: ./vla_status.sh
 Started PID 2948 ; readiness: ./vla_status.sh
 Started PID 3091 ; readiness: ./vla_status.sh
 Started PID 3077 ; readiness: ./vla_status.sh
+Started PID 2971 ; readiness: ./vla_status.sh
+Started PID 3202 ; readiness: ./vla_status.sh
+Started PID 3703 ; readiness: ./vla_status.sh
+Started PID 3769 ; readiness: ./vla_status.sh
+Started PID 3118 ; readiness: ./vla_status.sh

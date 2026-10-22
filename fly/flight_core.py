@@ -16,7 +16,7 @@ class Config:
     height: float = 1.0
     speed: float = 0.20
     yaw_speed: float = math.radians(10)
-    settle_seconds: float = 2.0
+    takeoff_timeout: float = 60.0
     observation_age: float = 2.0
     prediction_gap: float = 2.0
     inference_failure_land: float = 5.0
@@ -60,7 +60,8 @@ class Mission:
         self.last_prediction = None; self.last_valid_image = None
         self.navigation_stamp = float('inf'); self.navigation_start = None
         self.small = []; self.stable_since = None
-        self.takeoff_stable = None; self.ground_since = None
+        self.ground_since = None
+        self.takeoff_progress = None
         self.arm_requested = False; self.disarm_requested = False
         self.service_at = -1e9
         self.last_tick = now
@@ -205,15 +206,25 @@ class Mission:
             elif not self.arm_requested and 0 <= ros_now-self.last_image <= c.observation_age:
                 action=('arm',True); self.arm_requested=True
         elif self.phase == 'TAKEOFF':
-            near = norm([a-b for a,b in zip(pose[:3],self.target[:3])]) <= .08
-            stable = near and speed <= c.arrival_speed and abs(yaw_rate) <= c.arrival_yaw_speed
-            self.takeoff_stable = (self.takeoff_stable if self.takeoff_stable is not None else now) if stable else None
-            if self.takeoff_stable is not None and now-self.takeoff_stable >= c.settle_seconds:
+            # Begin navigation as soon as measured z reaches the takeoff height.
+            # No horizontal-error, velocity, yaw-rate or settling-time gate.
+            target_z = self.home[2]+c.height
+            blocked = []
+            if not math.isfinite(pose[2]) or pose[2] < target_z: blocked.append('height')
+            if not state['fresh'] or not state['connected']: blocked.append('fcu_state')
+            if state['landed']: blocked.append('landed')
+            self.takeoff_progress = dict(
+                relative_height_m=pose[2]-self.home[2], required_height_m=c.height,
+                elapsed_seconds=now-self.entered, timeout_seconds=c.takeoff_timeout,
+                blocked_by=blocked)
+            self.reason = 'waiting for takeoff height: %s' % (', '.join(blocked) or 'reached')
+            if not blocked:
                 self.navigation_stamp=ros_now; self.navigation_start=now
                 self.sp=list(pose); self.target=list(pose); self.small.clear()
-                self.transition('WAIT_NEW_IMAGE',now,'hover settled; discarding all pre-hover images/results')
-            elif now-self.entered > 20:
-                self.land(now,pose,'takeoff did not settle within 20 s')
+                self.transition('WAIT_NEW_IMAGE',now,'takeoff height reached; waiting for a new image/result')
+            elif now-self.entered > c.takeoff_timeout:
+                self.land(now,pose,'takeoff not ready within %g s: %s'
+                          % (c.takeoff_timeout,', '.join(blocked)))
         elif self.phase in ('WAIT_NEW_IMAGE','NAVIGATE','HOLD_STALE'):
             since = now-(self.last_prediction if self.last_prediction is not None else self.navigation_start)
             image_age = ros_now-self.last_valid_image if self.last_valid_image is not None else float('inf')

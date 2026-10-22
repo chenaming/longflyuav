@@ -1021,3 +1021,716 @@ started core service [/rosout]
 shutting down processing monitor...
 ... shutting down processing monitor complete
 [1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/35c8efd2-1dd2-11b2-82d1-3c6d66d9412d/roslaunch-nvidia-desktop-2974.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:37885/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [2994][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 35c8efd2-1dd2-11b2-82d1-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [3011][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/35ad19ec-1dd2-11b2-8730-3c6d66d9412d/roslaunch-nvidia-desktop-3204.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:37885/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [3217][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 35ad19ec-1dd2-11b2-8730-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [3233][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/34e04c28-1dd2-11b2-ae15-3c6d66d9412d/roslaunch-nvidia-desktop-3771.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:41683/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [3788][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 34e04c28-1dd2-11b2-ae15-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [3832][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/d9897b84-cddb-11f1-832e-3c6d66d9412d/roslaunch-nvidia-desktop-7428.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:41271/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [7441][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to d9897b84-cddb-11f1-832e-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [7462][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/602555b6-cde4-11f1-b1d8-3c6d66d9412d/roslaunch-nvidia-desktop-10700.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:40427/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [10713][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 602555b6-cde4-11f1-b1d8-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [10728][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/70794082-cde7-11f1-882a-3c6d66d9412d/roslaunch-nvidia-desktop-13447.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:42519/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [13460][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 70794082-cde7-11f1-882a-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [13475][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/1f7dcbac-cde8-11f1-9872-3c6d66d9412d/roslaunch-nvidia-desktop-13916.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:43053/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [13929][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 1f7dcbac-cde8-11f1-9872-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [13950][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/8f0f6a34-cde8-11f1-b792-3c6d66d9412d/roslaunch-nvidia-desktop-15040.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:41651/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [15055][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 8f0f6a34-cde8-11f1-b792-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [15076][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/5d8110e8-cde9-11f1-a692-3c6d66d9412d/roslaunch-nvidia-desktop-15673.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:41487/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [15686][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 5d8110e8-cde9-11f1-a692-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [15701][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/e55b8002-cde9-11f1-88bd-3c6d66d9412d/roslaunch-nvidia-desktop-16194.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:38275/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [16212][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to e55b8002-cde9-11f1-88bd-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [16233][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/55bd8d2a-cdec-11f1-aafd-3c6d66d9412d/roslaunch-nvidia-desktop-17623.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:36707/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [17636][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 55bd8d2a-cdec-11f1-aafd-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [17657][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/a99364ec-cdec-11f1-8578-3c6d66d9412d/roslaunch-nvidia-desktop-18503.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:36417/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [18516][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to a99364ec-cdec-11f1-8578-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [18537][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/1ceff8b0-cded-11f1-b322-3c6d66d9412d/roslaunch-nvidia-desktop-19436.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:38927/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [19449][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 1ceff8b0-cded-11f1-b322-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [19464][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/7362e926-cdef-11f1-b076-3c6d66d9412d/roslaunch-nvidia-desktop-21301.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:38175/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [21314][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 7362e926-cdef-11f1-b076-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [21330][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/351de556-1dd2-11b2-916a-3c6d66d9412d/roslaunch-nvidia-desktop-3120.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:34541/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [3133][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 351de556-1dd2-11b2-916a-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [3149][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/b987bc24-cdea-11f1-81dd-3c6d66d9412d/roslaunch-nvidia-desktop-7126.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:46325/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [7139][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to b987bc24-cdea-11f1-81dd-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [7160][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/12e7e550-cdeb-11f1-9614-3c6d66d9412d/roslaunch-nvidia-desktop-8094.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:39147/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [8107][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 12e7e550-cdeb-11f1-9614-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [8128][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/62d4efe0-cdeb-11f1-821e-3c6d66d9412d/roslaunch-nvidia-desktop-8562.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:34655/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [8575][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 62d4efe0-cdeb-11f1-821e-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [8591][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/d5356ca8-cdec-11f1-9b90-3c6d66d9412d/roslaunch-nvidia-desktop-9968.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:43139/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [9984][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to d5356ca8-cdec-11f1-9b90-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [10005][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/dd741e78-cdf1-11f1-975b-3c6d66d9412d/roslaunch-nvidia-desktop-14295.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:34821/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [14308][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to dd741e78-cdf1-11f1-975b-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [14329][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/1c54c20a-cdf2-11f1-9247-3c6d66d9412d/roslaunch-nvidia-desktop-15255.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:43125/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [15268][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 1c54c20a-cdf2-11f1-9247-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [15289][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/7310e4de-cdf2-11f1-8b53-3c6d66d9412d/roslaunch-nvidia-desktop-16283.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:38933/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [16296][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to 7310e4de-cdf2-11f1-8b53-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [16317][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/d0c2a69e-cdf2-11f1-a0a2-3c6d66d9412d/roslaunch-nvidia-desktop-17334.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;roscore
+[1mstarted roslaunch server http://nvidia-desktop:34119/[0m
+ros_comm version 1.17.4
+
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+
+NODES
+
+auto-starting new master
+[1mprocess[master]: started with pid [17347][0m
+[1mROS_MASTER_URI=http://nvidia-desktop:11311/[0m
+]2;roscore http://nvidia-desktop:11311/
+[1msetting /run_id to d0c2a69e-cdf2-11f1-a0a2-3c6d66d9412d[0m
+[1mprocess[rosout-1]: started with pid [17368][0m
+started core service [/rosout]
+[rosout-1] killing on exit
+[master] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

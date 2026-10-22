@@ -5186,3 +5186,2122 @@ NODES
 shutting down processing monitor...
 ... shutting down processing monitor complete
 [1mdone[0m
+[33m[WARN] [72.971851232]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [72.988678336]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [72.988731584]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [72.989968032]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [72.996053376]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [73.013658176]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [73.313850752]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[0m[INFO] [72.981464800]: [path_recorder] uav_id=1[0m
+[0m[INFO] [72.983309856]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [72.983328800]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [72.983337312]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [72.983344864]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [72.983361792]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/35c8efd2-1dd2-11b2-82d1-3c6d66d9412d/roslaunch-nvidia-desktop-3481.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:44233/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [3530][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [3531][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [71.778944864]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [71.794075232]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [71.794121184]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [71.796038464]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [71.801356768]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [71.819249024]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [72.119431328]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[0m[INFO] [71.787560128]: [path_recorder] uav_id=1[0m
+[0m[INFO] [71.788971040]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [71.788991776]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [71.789000448]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [71.789008032]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [71.789032000]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/35ad19ec-1dd2-11b2-8730-3c6d66d9412d/roslaunch-nvidia-desktop-3447.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:45775/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [3496][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [3497][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [66.033913152]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [66.081238752]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [66.081297440]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [66.084152160]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [66.094486304]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [66.224776960]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [66.325004192]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [1792647421.651682416]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1792647421.681311056]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1792647421.681377680]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1792647421.682793552]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [1792647421.689922992]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1792647421.716657456]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1792647422.016856688]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[0m[INFO] [1792647421.670347120]: [path_recorder] uav_id=1[0m
+[0m[INFO] [1792647421.671984240]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [1792647421.672005200]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [1792647421.672025200]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [1792647421.672036720]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [1792647421.672048272]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/34e04c28-1dd2-11b2-ae15-3c6d66d9412d/roslaunch-nvidia-desktop-4290.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:37353/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [4345][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [4359][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [1792647964.395691672]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1792647964.441454266]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1792647964.441502595]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1792647964.449020042]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [1792647964.456207060]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1792647964.539400829]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1792647964.739586840]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[0m[INFO] [1792647964.436645286]: [path_recorder] uav_id=1[0m
+[0m[INFO] [1792647964.440139625]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [1792647964.440156684]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [1792647964.440175535]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [1792647964.440183281]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [1792647964.440199860]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/d9897b84-cddb-11f1-832e-3c6d66d9412d/roslaunch-nvidia-desktop-7669.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:40351/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [7698][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [7700][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [1792651626.191111308]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1792651626.221655883]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1792651626.221707904]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1792651626.224091334]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [1792651626.232943843]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1792651626.284373059]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1792651626.584566632]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[0m[INFO] [1792651626.212188360]: [path_recorder] uav_id=1[0m
+[0m[INFO] [1792651626.214683127]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [1792651626.214702035]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [1792651626.214711057]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [1792651626.214719152]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [1792651626.214742315]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/602555b6-cde4-11f1-b1d8-3c6d66d9412d/roslaunch-nvidia-desktop-10913.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:34185/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [10967][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [10968][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [1792655045.253339494]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1792655045.291431907]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1792655045.291493281]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1792655045.294808978]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [1792655045.305323663]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1792655045.377561460]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1792655045.577760742]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[0m[INFO] [1792655045.256854863]: [path_recorder] uav_id=1[0m
+[0m[INFO] [1792655045.260221918]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [1792655045.260240574]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [1792655045.260249341]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [1792655045.260257181]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [1792655045.260275164]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[0m[INFO] [1792655055.127819937]: [path_recorder] UAV1: start recording[0m
+[0m[INFO] [1792655060.125411401]: [path_recorder] UAV1: stop recording (disarmed)[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/55bd8d2a-cdec-11f1-aafd-3c6d66d9412d/roslaunch-nvidia-desktop-17873.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:34595/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [17945][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [17946][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [1792655185.460976562]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1792655185.504143630]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1792655185.504188076]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1792655185.505494578]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [1792655185.509824277]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1792655185.549159832]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1792655185.849367313]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [1792655196.120468283]: External flight setpoint ownership=true; odometry forwarding stays active[0m
+[0m[INFO] [1792655185.499950693]: [path_recorder] uav_id=1[0m
+[0m[INFO] [1792655185.501127250]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [1792655185.501144369]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [1792655185.501152849]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [1792655185.501160816]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [1792655185.501176304]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[0m[INFO] [1792655200.117724572]: [path_recorder] UAV1: start recording[0m
+[0m[INFO] [1792655226.117944487]: [path_recorder] UAV1: stop recording (disarmed)[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/a99364ec-cdec-11f1-8578-3c6d66d9412d/roslaunch-nvidia-desktop-18744.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:44661/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [18816][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [18817][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [1792655378.185986230]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1792655378.208423663]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1792655378.208489196]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1792655378.220471383]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [1792655378.229171828]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1792655378.266221507]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1792655378.566419442]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [1792655389.671219918]: External flight setpoint ownership=true; odometry forwarding stays active[0m
+[0m[INFO] [1792655378.194121868]: [path_recorder] uav_id=1[0m
+[0m[INFO] [1792655378.195833632]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [1792655378.195856031]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [1792655378.195865086]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [1792655378.195872638]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [1792655378.195893341]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[0m[INFO] [1792655393.113501783]: [path_recorder] UAV1: start recording[0m
+[0m[INFO] [1792655418.109751904]: [path_recorder] UAV1: stop recording (disarmed)[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/1ceff8b0-cded-11f1-b322-3c6d66d9412d/roslaunch-nvidia-desktop-19651.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:38225/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [19717][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [19718][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [1792656382.908905952]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1792656382.957228893]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1792656382.957351736]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1792656382.960142970]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [1792656382.984432531]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1792656383.028691623]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1792656383.328892551]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [1792656393.801122779]: External flight setpoint ownership=true; odometry forwarding stays active[0m
+[0m[INFO] [1792656382.988904937]: [path_recorder] uav_id=1[0m
+[0m[INFO] [1792656382.991114853]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [1792656382.991130629]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [1792656382.991139652]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [1792656382.991147460]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [1792656382.991164483]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[0m[INFO] [1792656397.069266999]: [path_recorder] UAV1: start recording[0m
+[0m[INFO] [1792656461.069247309]: [path_recorder] UAV1: stop recording (disarmed)[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/7362e926-cdef-11f1-b076-3c6d66d9412d/roslaunch-nvidia-desktop-21542.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:44673/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [21615][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [21616][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [70.848164672]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [70.862401120]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [70.862445696]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [70.863554048]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [70.866887552]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [70.883922816]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [71.284135360]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[0m[INFO] [70.856942496]: [path_recorder] uav_id=1[0m
+[0m[INFO] [70.858387008]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [70.858404160]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [70.858412832]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [70.858422080]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [70.858438400]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[0m[INFO] [495.155213408]: [path_recorder] UAV1: start recording[0m
+[0m[INFO] [496.155019264]: [path_recorder] UAV1: stop recording (disarmed)[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/351de556-1dd2-11b2-916a-3c6d66d9412d/roslaunch-nvidia-desktop-3359.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:34597/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [3429][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [3430][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [1792654352.344078368]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1792654352.380797344]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1792654352.380860352]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1792654352.384496352]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [1792654352.394902752]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1792654352.481745248]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1792654352.781943232]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [1792654363.219113440]: External flight setpoint ownership=true; odometry forwarding stays active[0m
+[0m[INFO] [1792654352.396256192]: [path_recorder] uav_id=1[0m
+[0m[INFO] [1792654352.400337120]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [1792654352.400358048]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [1792654352.400367136]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [1792654352.400375136]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [1792654352.400397568]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[0m[INFO] [1792654366.778327392]: [path_recorder] UAV1: start recording[0m
+[0m[INFO] [1792654412.630195072]: [path_recorder] UAV1: stop recording (disarmed)[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/b987bc24-cdea-11f1-81dd-3c6d66d9412d/roslaunch-nvidia-desktop-7378.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:45597/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [7404][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [7405][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [1792655258.900632672]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1792655258.924755104]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1792655258.924826208]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1792655258.926544480]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [1792655258.931230592]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1792655258.956378720]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1792655259.256556512]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [1792655269.630098688]: External flight setpoint ownership=true; odometry forwarding stays active[0m
+[0m[INFO] [1792655258.876774400]: [path_recorder] uav_id=1[0m
+[0m[INFO] [1792655258.881915264]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [1792655258.881936288]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [1792655258.881944768]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [1792655258.881952448]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [1792655258.881969664]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[0m[INFO] [1792655273.637356864]: [path_recorder] UAV1: start recording[0m
+[0m[INFO] [1792655318.635804000]: [path_recorder] UAV1: stop recording (disarmed)[0m
+[0m[INFO] [1792655321.636349504]: [path_recorder] UAV1: start recording[0m
+[0m[INFO] [1792655322.634183552]: [path_recorder] UAV1: stop recording (disarmed)[0m
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/d5356ca8-cdec-11f1-9b90-3c6d66d9412d/roslaunch-nvidia-desktop-10276.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:45201/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [10346][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [10347][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [1792657420.343328928]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1792657420.376912032]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1792657420.376964512]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1792657420.380094848]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [1792657420.400113248]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1792657420.498447488]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1792657420.698663552]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [1792657430.435488288]: External flight setpoint ownership=true; odometry forwarding stays active[0m
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+[0m[INFO] [1792657420.327259296]: [path_recorder] uav_id=1[0m
+[0m[INFO] [1792657420.328614048]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [1792657420.328634368]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [1792657420.328643232]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [1792657420.328651104]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [1792657420.328665088]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[0m[INFO] [1792657434.639943904]: [path_recorder] UAV1: start recording[0m
+[0m[INFO] [1792657474.635692192]: [path_recorder] UAV1: stop recording (disarmed)[0m
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/dd741e78-cdf1-11f1-975b-3c6d66d9412d/roslaunch-nvidia-desktop-14535.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:41531/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [14561][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [14562][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [1792657526.204744352]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1792657526.260650368]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1792657526.260705568]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1792657526.264862144]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [1792657526.293255904]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1792657526.392629728]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1792657526.592819424]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [1792657536.164634016]: External flight setpoint ownership=true; odometry forwarding stays active[0m
+[0m[INFO] [1792657526.227412736]: [path_recorder] uav_id=1[0m
+[0m[INFO] [1792657526.233438464]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [1792657526.233461856]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [1792657526.233470656]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [1792657526.233483808]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [1792657526.233501984]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[0m[INFO] [1792657539.640923264]: [path_recorder] UAV1: start recording[0m
+[0m[INFO] [1792657588.640773056]: [path_recorder] UAV1: stop recording (disarmed)[0m
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/1c54c20a-cdf2-11f1-9247-3c6d66d9412d/roslaunch-nvidia-desktop-15495.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:37529/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [15565][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [15566][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [1792657671.281589184]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1792657671.335716224]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1792657671.335778624]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1792657671.337220992]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [1792657671.341746656]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1792657671.362967424]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1792657671.663157920]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [1792657683.367948416]: External flight setpoint ownership=true; odometry forwarding stays active[0m
+[0m[INFO] [1792657671.325384288]: [path_recorder] uav_id=1[0m
+[0m[INFO] [1792657671.327087296]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [1792657671.327110848]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [1792657671.327119616]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [1792657671.327127008]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [1792657671.327146464]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[0m[INFO] [1792657686.639416800]: [path_recorder] UAV1: start recording[0m
+[0m[INFO] [1792657735.640728832]: [path_recorder] UAV1: stop recording (disarmed)[0m
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/7310e4de-cdf2-11f1-8b53-3c6d66d9412d/roslaunch-nvidia-desktop-16497.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:46619/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [16547][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [16548][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m
+[33m[WARN] [1792657828.931766432]: BENCH DISARMED: no automatic arming, takeoff, or mode changes; bounded Move_mode=0 only[0m
+[0m[INFO] [1792657828.961444544]: [uav_control_fsm] UAV1 TF manager initialized[0m
+[0m[INFO] [1792657828.961501536]:   TF: world -> uav1_map -> uav1/base_link[0m
+[0m[INFO] [1792657828.964308736]: [OdometryBridge] uav1 vision_pose_pub_rate_hz=50.000 (timer publish)[0m
+[0m[INFO] [1792657828.986767712]: [OdometryBridge] uav1 set_location_source=Fast_Lio -> subscribe /uav1/fast_lio_odometry -> mavros/vision_pose/pose[0m
+[0m[INFO] [1792657829.028928864]: [uav_control_fsm] UAV1: RC ch6 3-pos switch: low(<-0.30)=hold, mid=exit, high(>0.30)=enter[0m
+[0m[INFO] [1792657829.329138528]: [uav_control_fsm] UAV1 Mavros connected[0m
+default_location_source: Fast_Lio
+[33m[WARN] [1792657840.167465728]: External flight setpoint ownership=true; odometry forwarding stays active[0m
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+[0m[INFO] [1792657828.952726656]: [path_recorder] uav_id=1[0m
+[0m[INFO] [1792657828.954509312]: [path_recorder] odom topic : /uav1/mavros/local_position/odom[0m
+[0m[INFO] [1792657828.954530560]: [path_recorder] cmd topic  : /uav1/move_command[0m
+[0m[INFO] [1792657828.954539552]: [path_recorder] path topic : /uav1/flight_path[0m
+[0m[INFO] [1792657828.954547776]: [path_recorder] map frame  : uav1_map[0m
+[0m[INFO] [1792657828.954571296]: [path_recorder] save_to_file=false, stop_on_landing=false[0m
+[0m[INFO] [1792657843.640385472]: [path_recorder] UAV1: start recording[0m
+[0m[INFO] [1792657896.637567648]: [path_recorder] UAV1: stop recording (disarmed)[0m
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcDispatch::work: couldn't find source iterator
+[31mWARNING: disk usage in log directory [/home/nvidia/.ros/log] is over 1GB.
+It's recommended that you use the 'rosclean' command.[0m
+... logging to /home/nvidia/.ros/log/d0c2a69e-cdf2-11f1-a0a2-3c6d66d9412d/roslaunch-nvidia-desktop-17548.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+]2;/home/nvidia/agile/vla_bench.launch
+[1mstarted roslaunch server http://nvidia-desktop:33981/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /uav1/base_link_frame: uav1/base_link
+ * /uav1/default_location_source: Fast_Lio
+ * /uav1/enable_map_to_base_link: True
+ * /uav1/enable_world_to_map: True
+ * /uav1/location_profiles/Fast_Lio/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Fast_Lio/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/GPS/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_AID_MASK: 1
+ * /uav1/location_profiles/GPS/px4_params/int/EKF2_HGT_MODE: 0
+ * /uav1/location_profiles/Gazebo/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Gazebo/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/location_profiles/Vins/px4_params/float/MC_YAWRATE_MAX: 70.0
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_AID_MASK: 24
+ * /uav1/location_profiles/Vins/px4_params/int/EKF2_HGT_MODE: 3
+ * /uav1/map_frame: uav1_map
+ * /uav1/odometry_bridge/vision_pose_pub_rate_hz: 50.0
+ * /uav1/path_recorder/clear_path_on_rearm: True
+ * /uav1/path_recorder/max_points: 100
+ * /uav1/path_recorder/min_dist: 0.05
+ * /uav1/path_recorder/path_publish_rate: 10.0
+ * /uav1/path_recorder/save_dir: ~/flight_logs
+ * /uav1/path_recorder/save_to_file: False
+ * /uav1/path_recorder/stop_on_landing: False
+ * /uav1/path_recorder/uav_id: 1
+ * /uav1/px4_params_common/float/COM_RC_LOSS_T: 3.0
+ * /uav1/px4_params_common/float/GF_MAX_HOR_DIST: 100.0
+ * /uav1/px4_params_common/float/GF_MAX_VER_DIST: 50.0
+ * /uav1/px4_params_common/float/MPC_XY_VEL_MAX: 5.0
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_DN: 1.5
+ * /uav1/px4_params_common/float/MPC_Z_VEL_MAX_UP: 1.5
+ * /uav1/px4_params_common/int/COM_ARM_WO_GPS: 1
+ * /uav1/px4_params_common/int/GF_ACTION: 2
+ * /uav1/px4_params_common/int/GF_PREDICT: 1
+ * /uav1/px4_params_common/int/NAV_RCL_ACT: 0
+ * /uav1/sensors/camera_link/336_link/enabled: False
+ * /uav1/sensors/camera_link/336_link/static: True
+ * /uav1/sensors/camera_link/336_link/transform: [0.12, 0.0, -0.05...
+ * /uav1/sensors/camera_link/D435i_link/enabled: True
+ * /uav1/sensors/camera_link/D435i_link/static: True
+ * /uav1/sensors/camera_link/D435i_link/transform: [0.1, 0.0, -0.05,...
+ * /uav1/sensors/camera_link/enabled: True
+ * /uav1/sensors/camera_link/static: True
+ * /uav1/sensors/camera_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/sensors/lidar_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/enabled: True
+ * /uav1/sensors/lidar_link/mid360_link/static: True
+ * /uav1/sensors/lidar_link/mid360_link/transform: [0.0, 0.0, 0.1, 0...
+ * /uav1/sensors/lidar_link/odin_link/enabled: False
+ * /uav1/sensors/lidar_link/odin_link/static: True
+ * /uav1/sensors/lidar_link/odin_link/transform: [0.0, 0.0, 0.08, ...
+ * /uav1/sensors/lidar_link/static: True
+ * /uav1/sensors/lidar_link/transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/uav_control_fsm/bench_allow_armed: False
+ * /uav1/uav_control_fsm/bench_disarmed: True
+ * /uav1/uav_control_fsm/cmd_timeout_sec: 0.5
+ * /uav1/uav_control_fsm/enable_world_map: True
+ * /uav1/uav_control_fsm/loop_hz: 30
+ * /uav1/uav_control_fsm/no_RC: False
+ * /uav1/uav_control_fsm/odom_timeout_sec: 1.0
+ * /uav1/uav_control_fsm/pos_smooth_arrival_dist: 0.1
+ * /uav1/uav_control_fsm/pos_smooth_enable: True
+ * /uav1/uav_control_fsm/pos_smooth_lookahead_dist: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_max_accel: 1.2
+ * /uav1/uav_control_fsm/pos_smooth_max_vel: 0.5
+ * /uav1/uav_control_fsm/pos_smooth_vel_deadband: 0.05
+ * /uav1/uav_control_fsm/rc_offboard_channel: 6
+ * /uav1/uav_control_fsm/rc_offboard_enter_threshold: 0.3
+ * /uav1/uav_control_fsm/rc_offboard_exit_threshold: -0.3
+ * /uav1/uav_control_fsm/takeoff_height: 1.0
+ * /uav1/uav_control_fsm/uav_id: 1
+ * /uav1/uav_control_fsm/world_map_transform: [0.0, 0.0, 0.0, 0...
+ * /uav1/world_frame: world
+ * /uav1/world_to_map/static: True
+ * /uav1/world_to_map/transform: [0.0, 0.0, 0.0, 0...
+
+NODES
+  /uav1/
+    path_recorder (uav_control_fsm/uav_path_recorder_node)
+    uav_control_fsm (uav_control_fsm/uav_control_fsm_node)
+
+[1mROS_MASTER_URI=http://localhost:11311[0m
+]2;/home/nvidia/agile/vla_bench.launch http://localhost:11311
+[1mprocess[uav1/uav_control_fsm-1]: started with pid [17575][0m
+[1mprocess[uav1/path_recorder-2]: started with pid [17576][0m
+[uav1/path_recorder-2] killing on exit
+[uav1/uav_control_fsm-1] killing on exit
+shutting down processing monitor...
+... shutting down processing monitor complete
+[1mdone[0m

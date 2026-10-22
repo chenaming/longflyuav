@@ -28,7 +28,10 @@ def simulate():
             elif action[0]=='arm':state['armed']=action[1]
         old=list(pose)
         if state['armed'] and state['mode']=='OFFBOARD' and sp:
-            for i in range(3):pose[i]+=(sp[i]-pose[i])*.30
+            for i in range(3):
+                pose[i]+=(sp[i]-pose[i])*.30
+                # Resolve the toy plant's asymptotic approach at numeric precision.
+                if abs(sp[i]-pose[i])<1e-9:pose[i]=sp[i]
             if pose[2]>.34:state['landed']=False
         if state['armed'] and state['mode']=='AUTO.LAND':
             pose[2]=max(.3,pose[2]-.2*dt)
