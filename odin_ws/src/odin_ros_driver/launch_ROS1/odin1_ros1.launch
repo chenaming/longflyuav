@@ -1,0 +1,51 @@
+<launch>
+    <!-- 
+        Usage: roslaunch odin_ros_driver odin1_ros1.launch
+    -->
+
+    <arg name="ns" default="uav1" />
+    <arg name="node_name" default="host_sdk_sample"/>
+    
+    <!-- Set parameter file path -->
+    <arg name="config_file" default="$(find odin_ros_driver)/config/control_command.yaml"/>
+    
+    <!-- Set RViz configuration file path -->
+    <arg name="rviz_config" default="$(find odin_ros_driver)/config/odin_ros.rviz"/>
+    <arg name="launch_rviz" default="false"/>
+
+    <group ns="$(arg ns)">
+        <node name="$(arg node_name)" pkg="odin_ros_driver" type="host_sdk_sample" output="screen">
+            <param name="config_file" value="$(arg config_file)"/>
+        </node>
+
+        <!-- Use relative topic names so they follow group ns -->
+        <node pkg="odin_ros_driver" type="pcd2depth_node" name="pcd2depth_node" output="screen">
+            <rosparam command="load" file="$(find odin_ros_driver)/config/control_command.yaml"/>
+            <param name="calib_file_path" value="$(find odin_ros_driver)/config/calib.yaml"/>
+            <param name="cloud_raw_topic" value="odin1/cloud_raw"/>
+            <param name="color_raw_topic" value="odin1/image"/>
+            <param name="color_compressed_topic_" value="odin1/image/compressed"/>
+            <param name="depth_image_topic" value="odin1/depth_img_competetion"/>
+            <param name="depth_cloud_topic" value="odin1/depth_img_competetion_cloud"/>
+        </node>
+
+        <node pkg="odin_ros_driver" type="cloud_reprojection_node" name="cloud_reprojection_node" output="screen">
+            <rosparam command="load" file="$(find odin_ros_driver)/config/control_command.yaml"/>
+            <param name="calib_file_path" value="$(find odin_ros_driver)/config/calib.yaml"/>
+            <param name="cloud_slam_topic" value="odin1/cloud_slam"/>
+            <param name="odometry_topic" value="odin1/odometry"/>
+            <param name="wiwc_topic" value="odin1/wiwc"/>
+            <param name="reprojected_image_topic" value="odin1/reprojected_image"/>
+        </node>
+
+        <node pkg="odin_ros_driver" type="image_overlay_node" name="image_overlay_node" output="screen">
+            <rosparam command="load" file="$(find odin_ros_driver)/config/control_command.yaml"/>
+            <param name="register_keys/overlay_reprojected_topic" value="odin1/reprojected_image"/>
+            <param name="register_keys/overlay_camera_topic" value="odin1/image/undistorted"/>
+            <param name="register_keys/overlay_output_topic" value="odin1/overlay_image"/>
+        </node>
+    </group>
+
+    <!-- RViz kept outside ns; its .rviz usually hardcodes /odin1/... -->
+    <node if="$(arg launch_rviz)" name="rviz" pkg="rviz" type="rviz" args="-d $(arg rviz_config)" output="screen"/>
+</launch>
